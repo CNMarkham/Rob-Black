@@ -11,17 +11,36 @@ public class SimpleBullet : MonoBehaviour
     // public AudioSource shoot noise ...
 
     public float bulletspeed;
-    public Transform rotation;
+    public Transform rotation; // rotation of the gun
+    public GameObject image;
+
+    public float scatterCoefficient;
+    public float scatterFactor;
+    public float scatterOffset;
+    public float scatterStart;
+    public float scatterEnd;
+
+    private Vector3 rightVector;
 
     private void Start()
-    { 
+    {
+        scatterOffset = 0;
+    }
 
+    public void updateRotation()
+    {
+        rightVector = rotation.forward * -1;
     }
 
     void Update()
     {
-        transform.localPosition += rotation.right * bulletspeed * Time.deltaTime;
+        image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
 
-        // this.transform.rotation = rotation.rotation;
+        if (scatterOffset < scatterEnd)
+        {
+            scatterOffset += (scatterFactor / 100) * scatterCoefficient * Time.deltaTime;
+        }
+
+        transform.localPosition += rightVector * bulletspeed * Time.deltaTime + new Vector3(scatterOffset, 0, 0);
     }
 }

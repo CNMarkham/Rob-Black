@@ -6,7 +6,6 @@ public class index : MonoBehaviour
 {
     public GameObject SimpleBulletPrefab;
 
-
     public static index idx;
 
     // Start is called before the first frame update
