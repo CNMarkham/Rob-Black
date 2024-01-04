@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SimpleBullet : MonoBehaviour
 {
-    public float damage;
-    public float knockback;
+    public int damage;
+    public int knockback;
 
     // any more required attrs
     // public AudioSource shoot noise ...
@@ -21,6 +21,7 @@ public class SimpleBullet : MonoBehaviour
     public float scatterEnd;
 
     private Vector3 rightVector;
+    private Vector3 offsetVector;
 
     private void Start()
     {
@@ -30,17 +31,20 @@ public class SimpleBullet : MonoBehaviour
     public void updateRotation()
     {
         rightVector = rotation.forward * -1;
+        image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, rotation.transform.rotation.eulerAngles.y + 90, image.transform.rotation.eulerAngles.z);
+        offsetVector = rotation.right;
     }
 
     void Update()
     {
-        image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
+        // image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
 
         if (scatterOffset < scatterEnd)
         {
             scatterOffset += (scatterFactor / 100) * scatterCoefficient * Time.deltaTime;
+            scatterCoefficient = Random.Range(scatterCoefficient, scatterCoefficient + 2f) * (Random.Range(0, 1)*2 - 1);
         }
-
-        transform.localPosition += rightVector * bulletspeed * Time.deltaTime + new Vector3(scatterOffset, 0, 0);
+        
+        transform.localPosition += rightVector * bulletspeed * Time.deltaTime + scatterOffset * offsetVector;
     }
 }
