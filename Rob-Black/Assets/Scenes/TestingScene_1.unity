@@ -168,13 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0cabdf6c4cf2ee43adfa2accb0b2612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 7392325678142886653, guid: 8e982286db5773e4b8b7fced2a311558, type: 3}
+  Bullet: {fileID: 5793877904562973874, guid: 9aa3aa26806d57d44bc32b9784944f00, type: 3}
   bulletSpeed: 10
   bulletStartPos: {fileID: 383268987}
   holdDown: 1
   bulletsPerBurst: 30
-  timeBetweenBursts: 150
-  timeBetweenBullets: 300
+  timeBetweenBursts: 0
+  bulletsPerSecond: 5
   scatterFactor: 2
   scatterStart: 2
   scatterEnd: 5
@@ -356,6 +356,10 @@ PrefabInstance:
     - target: {fileID: 4843543320224758745, guid: c65ff52159709174dbd5be38f1da2772, type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843543320224758745, guid: c65ff52159709174dbd5be38f1da2772, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4843543320224758746, guid: c65ff52159709174dbd5be38f1da2772, type: 3}
       propertyPath: enemyPrefab

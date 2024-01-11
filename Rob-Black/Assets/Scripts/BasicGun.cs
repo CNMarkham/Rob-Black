@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime;
 
 public class BasicGun : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class BasicGun : MonoBehaviour
     public Transform bulletStartPos;
     public bool holdDown;
 
-    public int bulletsPerBurst; // Magazine size
-    public int timeBetweenBursts; // ms // reload time
-    public int timeBetweenBullets; // ms
+    public float bulletsPerBurst; // Magazine size
+    public float timeBetweenBursts; // ms // reload time
+    public float bulletsPerSecond; // ms
 
     public float scatterFactor;
     public float scatterStart;
@@ -23,58 +24,64 @@ public class BasicGun : MonoBehaviour
     private bool inBurst;
     private int shotsFired;
 
-    void shoot()
+    private bool canShoot;
+
+    private void Start()
     {
-        if (inBurst && timeinms % timeBetweenBullets == 0)
-        {
+        canShoot = true;
+    }
 
-            shotsFired += 1;
+    void instanciateBullet()
+    {
+        GameObject newBullet = Instantiate(Bullet);
 
-            GameObject newBullet = Instantiate(Bullet);
+        SimpleBullet bulletScript = newBullet.GetComponent<SimpleBullet>();
 
-            SimpleBullet bulletScript = newBullet.GetComponent<SimpleBullet>();
+        bulletScript.enabled = false;
 
-            bulletScript.enabled = false;
+        bulletScript.scatterFactor = scatterFactor;
+        bulletScript.scatterStart = scatterStart;
+        bulletScript.scatterEnd = scatterEnd;
 
-            bulletScript.scatterFactor = scatterFactor;
-            bulletScript.scatterStart = scatterStart;
-            bulletScript.scatterEnd = scatterEnd;
+        bulletScript.rotation = transform;
+        newBullet.transform.position = bulletStartPos.position + new Vector3(-1, 0, 0);
 
-            bulletScript.rotation = transform;
-            newBullet.transform.position = bulletStartPos.position + new Vector3(-1,0,0);
+        bulletScript.bulletspeed = bulletSpeed;
 
-            bulletScript.bulletspeed = bulletSpeed;
+        bulletScript.updateRotation();
 
-            bulletScript.updateRotation();
+        bulletScript.enabled = true;
+    }
 
-            bulletScript.enabled = true;
-        }
-
-        if (shotsFired >= bulletsPerBurst)
-        {
-            inBurst = false;
-        }
+    IEnumerator shoot()
+    {
+        canShoot = false;
+        instanciateBullet();
+        yield return new WaitForSeconds((1000f/bulletsPerSecond)/1000f);
+        canShoot = true;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        timeinms = (int)Mathf.Floor(Time.time * 1000);
+        // timeinms = (int)Mathf.Floor(Time.time * 1000);
 
-        if (timeinms % timeBetweenBursts == 0)
+        // time delta time is chjange in time per fram
+        // have seperate varialbe always going up (by delta time)
+        // each time you wsnty to shoot subtract cooldown from variablde
+        // and you can only shoot when the variable is greater than cooldown
+        //stop adding delta time if more than cooldown
+
+        // ATUALLTLY USE VARIABLES
+
+        if (holdDown && Input.GetMouseButton(0) && canShoot)
         {
-            inBurst = true;
-            shotsFired = 0;
+            StartCoroutine(shoot());
         }
 
-        if (holdDown && Input.GetMouseButton(0))
+        if (!holdDown && Input.GetMouseButtonDown(0) && canShoot)
         {
-            shoot();
-        }
-
-        if (!holdDown && Input.GetMouseButtonDown(0))
-        {
-            shoot();
+            StartCoroutine(shoot());
         }
     }
 }

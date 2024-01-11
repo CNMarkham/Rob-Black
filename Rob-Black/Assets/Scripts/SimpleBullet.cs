@@ -23,6 +23,8 @@ public class SimpleBullet : MonoBehaviour
     private Vector3 rightVector;
     private Vector3 offsetVector;
 
+    public bool SCATTER;
+
     private void Start()
     {
         scatterOffset = 0;
@@ -35,14 +37,19 @@ public class SimpleBullet : MonoBehaviour
         offsetVector = rotation.right;
     }
 
+    void updateScatter()
+    {
+        scatterOffset += (scatterFactor / 100) * scatterCoefficient * Time.deltaTime;
+        scatterCoefficient = Random.Range(scatterCoefficient, scatterCoefficient + 2f) * (Random.Range(0, 1) * 2 - 1);
+    }
+
     void Update()
     {
         // image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
 
-        if (scatterOffset < scatterEnd)
+        if (scatterOffset < scatterEnd && SCATTER)
         {
-            scatterOffset += (scatterFactor / 100) * scatterCoefficient * Time.deltaTime;
-            scatterCoefficient = Random.Range(scatterCoefficient, scatterCoefficient + 2f) * (Random.Range(0, 1)*2 - 1);
+            updateScatter();
         }
         
         transform.localPosition += rightVector * bulletspeed * Time.deltaTime + scatterOffset * offsetVector;

@@ -8,7 +8,8 @@ public class BasicEnemy : MonoBehaviour
     public string name;
     public int damage;
     public float knockbackMultiplier;
-
+    Vector3 RecoilDestination;
+    public bool isRecoiling;
     public void Damage(int amount) {
 
         health -= amount;
@@ -25,20 +26,58 @@ public class BasicEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+
+    private void Start()
+    {
+        RecoilDestination = transform.position;
+        startAppend();
+    }
+
+    private void startAppend() { }
+
+    private void Update()
+    {
+        if (index.idx.Round(gameObject.transform.position, 2) != index.idx.Round(RecoilDestination,2) && isRecoiling)
+        {
+            gameObject.transform.position = Vector3.Lerp(transform.position, RecoilDestination, 0.05f);
+        }
+
+        else
+        {
+            RecoilDestination = transform.position;
+            isRecoiling = false;
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            Destroy(other.gameObject);
+            SimpleBullet sb = other.gameObject.GetComponent<SimpleBullet>();
 
-            Damage(other.gameObject.GetComponent<SimpleBullet>().damage);
+            if (other.gameObject != null && sb != null)
+            {
+                Damage(sb.damage);
 
-            if (health <= 0) { Die();  }
+                Destroy(other.gameObject);
 
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, other.gameObject.transform.position * -1, knockbackMultiplier);
+                if (health <= 0) { Die(); }
+                RecoilDestination = gameObject.transform.position + other.transform.right * knockbackMultiplier;
+                isRecoiling = true;
+               // gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position , gameObject.transform.position + other.transform.right *knockbackMultiplier, knockbackMultiplier);
+            }
 
         }
+
+        triggerEnterAppend();
     }
+
+    private void triggerEnterAppend() { }
+    private void triggerStayAppend() { }
+
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -48,5 +87,7 @@ public class BasicEnemy : MonoBehaviour
             other.gameObject.GetComponentInParent<PlayerHealth>().Damage(damage);
 
         }
+
+        triggerStayAppend();
     }
 }

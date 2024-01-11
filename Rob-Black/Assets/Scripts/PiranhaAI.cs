@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PiranhaAI : MonoBehaviour
+public class PiranhaAI : BasicEnemy
 {
     public GameObject Player;
     public float speed;
     public bool touchingPlayer;
 
     // Start is called before the first frame update
-    void Start()
+    void startAppend()
     {
         Player = FindObjectOfType<PlayerHealth>().gameObject;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void triggerEnterAppend(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -33,6 +33,9 @@ public class PiranhaAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Player.gameObject == null ) { return; };
+        if (!!isRecoiling) { return; }
+
         transform.LookAt(Player.transform);
 
 
