@@ -376,16 +376,20 @@ MonoBehaviour:
   Name: Uzi
   spriteRenderer: {fileID: 756859969}
   Bullet: {fileID: 5793877904562973874, guid: 9aa3aa26806d57d44bc32b9784944f00, type: 3}
+  holdDown: 1
   bulletSpeed: 10
   bulletStartPos: {fileID: 383268987}
-  holdDown: 1
   magazineSize: 10
   reloadTime: 2000
-  bulletsPerSecond: 2
+  bulletsPerShot: 1
+  bulletsPerSecond: 5
+  bulletSpreadDegree: 5
   scatterFactor: 2
   scatterStart: 2
   scatterEnd: 5
-  inBurst: 0
+  disableBurst: 0
+  burstSize: 0
+  timeBetweenBursts: 0
   shotsFired: 0
   canShoot: 1
   isReloading: 0
