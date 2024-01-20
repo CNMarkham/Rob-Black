@@ -23,6 +23,8 @@ public class SimpleBullet : MonoBehaviour
     private Vector3 rightVector;
     private Vector3 offsetVector;
 
+    public float offsetDegrees;
+
     public bool SCATTER;
 
     private void Start()
@@ -30,11 +32,22 @@ public class SimpleBullet : MonoBehaviour
         scatterOffset = 0;
     }
 
+    public void rotateDegrees(float n)
+    {
+        offsetDegrees += n;
+        updateRotation();
+    }
+
     public void updateRotation()
     {
+        Quaternion oldrot = rotation.rotation;
+        rotation.rotation = Quaternion.Euler(rotation.rotation.eulerAngles.x, rotation.rotation.eulerAngles.y + offsetDegrees, rotation.rotation.eulerAngles.z);
+
         rightVector = rotation.forward * -1;
         image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, rotation.transform.rotation.eulerAngles.y + 90, image.transform.rotation.eulerAngles.z);
         offsetVector = rotation.right;
+
+        rotation.rotation = oldrot;
     }
 
     void updateScatter()

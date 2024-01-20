@@ -9,12 +9,12 @@ public class PiranhaAI : BasicEnemy
     public bool touchingPlayer;
 
     // Start is called before the first frame update
-    void startAppend()
+    void Start()
     {
-        Player = FindObjectOfType<PlayerHealth>().gameObject;
+        Player = FindObjectOfType<PlayerMove>().gameObject;
     }
 
-    private void triggerEnterAppend(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
