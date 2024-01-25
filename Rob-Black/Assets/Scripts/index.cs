@@ -21,6 +21,18 @@ public class index : MonoBehaviour
             Mathf.Round(vector3.z * multiplier) / multiplier);
     }
 
+    public bool randomBool()
+    {
+        return System.DateTime.Now.Millisecond % 2 == 0;
+    }
+
+    public float randomSign()
+    {
+
+        if (randomBool()) return 1f;
+        return -1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

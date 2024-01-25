@@ -13,7 +13,13 @@ public class GunUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gun = FindObjectOfType<PlayerAttributes>().Gun.GetComponent<BasicGun>();
+
+        var GunObject = FindObjectOfType<PlayerAttributes>().Gun;
+
+        if (GunObject == null) return;
+
+        Gun = GunObject.GetComponent<BasicGun>();
+
         GunName.text = Gun.Name;
 
         if (Gun.isReloading)

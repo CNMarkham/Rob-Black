@@ -8,11 +8,15 @@ public class BasicGun : MonoBehaviour
     // Add shotgun so ex: bulletsPerShot
     // Add bulletSpread so that the shotgun isn't over powered
 
+    // swords are possible with curreent architecture
+
     [Header("Gun Data")]
 
+    public bool disableShooting;
     public string Name;
     public SpriteRenderer spriteRenderer;
     public GameObject Bullet;
+    public Color32 bulletBurnColor;
 
     [Header("Gun Settings")]
     public bool holdDown;
@@ -33,13 +37,16 @@ public class BasicGun : MonoBehaviour
     public float bulletsPerSecond;
     public float bulletSpreadDegree;
 
-    [Header("Scattering")]
+    [Header("Decay")]
 
     // TODO:
+    // Scattering -- based on decay time
 
-    public float scatterFactor;
-    public float scatterStart;
-    public float scatterEnd;
+    public float decayTime;
+    public float decayStartDegrees = 0; // KEEP @ 0 FOR MOST OF THE TIME UNLESS YOU WANT A HOLE IN THE MIDDLE
+    public float decayEndDegrees;
+    public float decayIterations = 100;
+    public bool DECAY;
 
     [Header("Burst")]
 
@@ -78,11 +85,16 @@ public class BasicGun : MonoBehaviour
 
         bulletScript.enabled = false;
 
-        bulletScript.scatterFactor = scatterFactor;
-        bulletScript.scatterStart = scatterStart;
-        bulletScript.scatterEnd = scatterEnd;
+        bulletScript.DECAY = DECAY;
+        bulletScript.decayTime = decayTime;
+        bulletScript.decayStartDegrees = decayStartDegrees;
+        bulletScript.decayEndDegrees = decayEndDegrees;
+        bulletScript.decayIterations = decayIterations;
+        bulletScript.bulletBurnColor = bulletBurnColor;
 
-        bulletScript.rotation = transform;
+        bulletScript.rotation = transform.rotation;
+        bulletScript.forward = transform.forward;
+        bulletScript.right = transform.right;
         newBullet.transform.position = bulletStartPos.position + new Vector3(-1, 0, 0);
 
         bulletScript.bulletspeed = bulletSpeed;
@@ -153,6 +165,8 @@ public class BasicGun : MonoBehaviour
         //stop adding delta time if more than cooldown
 
         // ATUALLTLY USE VARIABLES
+
+        if (disableShooting) return;
 
         if (
 
