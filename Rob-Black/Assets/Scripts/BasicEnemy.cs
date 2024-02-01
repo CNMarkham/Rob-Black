@@ -5,7 +5,6 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public int health;
-    public string name;
     public int damage;
     public float knockbackMultiplier;
     Vector3 RecoilDestination;

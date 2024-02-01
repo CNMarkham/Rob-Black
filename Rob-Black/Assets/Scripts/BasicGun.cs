@@ -18,6 +18,8 @@ public class BasicGun : MonoBehaviour
     public GameObject Bullet;
     public Color32 bulletBurnColor;
 
+    public Color32 gunColor = new Color32(255,255,255,255);
+
     [Header("Gun Settings")]
     public bool holdDown;
 
@@ -74,7 +76,7 @@ public class BasicGun : MonoBehaviour
             timeBetweenBursts = 0;
         }
 
-
+        disableShooting = true;
     }
 
     void instanciateBullet()
@@ -165,6 +167,8 @@ public class BasicGun : MonoBehaviour
         //stop adding delta time if more than cooldown
 
         // ATUALLTLY USE VARIABLES
+
+        spriteRenderer.color = gunColor; // maybe add 2 colors and have them occilate between another
 
         if (disableShooting) return;
 
