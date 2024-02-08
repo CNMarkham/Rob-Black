@@ -100,7 +100,7 @@ public class FloorGenerator : MonoBehaviour
         while (true) {
             // Find the ones that are the closest
 
-            List
+            //List
 
             // add true in place of the closest one
             // if there are more than one closest one choose it randomly
