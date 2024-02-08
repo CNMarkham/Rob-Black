@@ -5,8 +5,39 @@ using UnityEngine;
 public class index : MonoBehaviour
 {
     public GameObject SimpleBulletPrefab;
+    public GameObject GunAparatus;
+    public GameObject FloorGenerationObject;
+
+    public FloorGenerator FloorGeneratorIndex;
+
+    public GameObject Player;
 
     public static index idx;
+
+    public Dictionary<int, bool> randdict;
+
+    public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position)
+    {
+        GameObject newap = Instantiate(GunAparatus);
+
+        PlayerAttributes attrs = Player.GetComponent<PlayerAttributes>();
+
+        GunPickupAparatus pickupscript = newap.GetComponent<GunPickupAparatus>();
+
+        gun.transform.parent = newap.transform;
+
+        attrs.playerGuns.RemoveAt(gunindex);
+
+        pickupscript.gun = gun;
+
+        attrs.Gun = null;
+
+        newap.transform.position = position;
+
+        // TODO: make sure that it doesn't clip outside of the world
+
+        return newap;
+    }
 
     public  Vector3 Round(Vector3 vector3, int decimalPlaces = 2)
     {
@@ -23,7 +54,7 @@ public class index : MonoBehaviour
 
     public bool randomBool()
     {
-        return System.DateTime.Now.Millisecond % 2 == 0;
+        return randdict[Random.Range(0,2)];
     }
 
     public float randomSign()
@@ -37,6 +68,12 @@ public class index : MonoBehaviour
     void Start()
     {
         idx = FindObjectOfType<index>();
+        FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
+
+        randdict = new();
+
+        randdict.Add(0, false);
+        randdict.Add(1, true);
     }
 
     // Update is called once per frame

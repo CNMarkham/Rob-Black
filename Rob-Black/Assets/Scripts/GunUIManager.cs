@@ -29,7 +29,7 @@ public class GunUIManager : MonoBehaviour
 
         else
         {
-            Munitions.text = $"{Gun.magazineSize - Gun.shotsFired} / {Gun.magazineSize}";
+            Munitions.text = $"{Gun.magazineSize - Gun.shotsFired} / {Gun.magazineSize} / {Gun.magazineCount}";
         }
     }
 }

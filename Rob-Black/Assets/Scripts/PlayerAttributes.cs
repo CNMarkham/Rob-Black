@@ -26,14 +26,22 @@ public class PlayerAttributes : MonoBehaviour
         foreach (GameObject gun in playerGuns)
         {
             gun.SetActive(false);
-            gun.GetComponent<BasicGun>().disableShooting = false;
+
+            BasicGun bg = gun.GetComponent<BasicGun>();
+
+            bg.disableShooting = false;
+            bg.isHeld = false;
+           
         }
 
         playerGuns[gunIndex].SetActive(true);
 
         Gun = playerGuns[gunIndex];
 
-        Gun.GetComponent<BasicGun>().disableShooting = false;
+        BasicGun bgb = Gun.GetComponent<BasicGun>();
+
+        bgb.disableShooting = false;
+        bgb.isHeld = true;
     }
 
     IEnumerator startScrollCooldown(float timetowait)
@@ -67,6 +75,11 @@ public class PlayerAttributes : MonoBehaviour
         if (playerGuns.Count != 0) { Gun = playerGuns[currentGunIndex]; }
 
         var scrollDeltaY = (int)Input.mouseScrollDelta.y;
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            index.idx.guntoaparatus(Gun, currentGunIndex, index.idx.Player.transform.position + new Vector3(-1, -1, -1));
+        }
 
         if (scrollDeltaY != 0)
         {

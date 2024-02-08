@@ -9,7 +9,34 @@ public class FloorGenerator : MonoBehaviour
     // Str8 away <_>
     // corner |^>
 
-    List<List<GameObject>> generateFloor() // Game objects are prefabs
+    (int, int) distbetweenpoints(int x1, int y1, int x2, int y2)
+    {
+        return (Mathf.Abs(x1 - x2), Mathf.Abs(y1 - y2));
+    }
+
+    bool outofbounds(int boundx, int boundy, (int, int) point)
+    {
+        if (point.Item1 >= boundx || point.Item1 < 0)
+        {
+            return true;
+        }
+
+        if (point.Item2 >= boundy || point.Item2 < 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    (int, int) addintint((int, int) in1, (int, int) in2)
+    {
+        return (in1.Item1 + in2.Item1, in1.Item1 + in2.Item2);
+    }
+    
+    (int,int) observe((int, int) x) { return x; }
+
+    public List<List<GameObject>> generateFloor() // Game objects are prefabs
     {
         int boundX = 5;
         int boundY = 5;
@@ -18,20 +45,70 @@ public class FloorGenerator : MonoBehaviour
 
         int specialRooms = 2;
 
+        Dictionary<bool, (int, int)> appdict = new();
+
+        appdict.Add(true, (1, 0));
+        appdict.Add(false, (0, 1));
+
+        (int, int) spawnpos = (0, 0);
+        (int, int) endpos = (0, 0);
+
         // Instansiate XxY matrix of null objects
 
+        List<List<GameObject>> matrix = new List<List<GameObject>>();
+
+        for (int x = 0; x < boundX; x++)
+        {
+            var newar = new List<GameObject>();
+            
+            for (int y = 0; y < boundY; y++)
+            {
+                newar.Add(null);
+            }
+
+            matrix.Add(newar);
+        }
+
+        print(matrix.Count);
+        print(matrix[0].Count);
         // Place spawn and end point (make sure they are at least boundX away from eachother)
 
+        for (int z = 0; z < boundX; z++)
+        {
+            var newbool = index.idx.randomBool();
+
+            var newpos = endpos;
+
+            switch (newbool)
+            {
+                case true:
+                    newpos.Item1 += 1;
+                    break;
+                case false:
+                    newpos.Item2 += 1;
+                    break;
+            }
+
+            endpos = newpos;
+
+        }
+
+        print(endpos);
+
         // Starting at spawn increment in every possible direction.
-        
-        // Find the ones that are the closest
 
-        // add true in place of the closest one
-        // if there are more than one closest one choose it randomly
+        while (true) {
+            // Find the ones that are the closest
 
-        // loop through all of the true ones
-        // determine wether or not it's a corner or str8 away
-        // Choose one of them from the list of both types and set it to the prefab
+            List
+
+            // add true in place of the closest one
+            // if there are more than one closest one choose it randomly
+
+            // loop through all of the true ones
+            // determine wether or not it's a corner or str8 away
+            // Choose one of them from the list of both types and set it to the prefab
+        }
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
 

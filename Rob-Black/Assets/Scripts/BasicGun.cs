@@ -30,6 +30,7 @@ public class BasicGun : MonoBehaviour
 
     [Header("Reloading")]
 
+    public int magazineCount;
     public float magazineSize; // Magazine size
     public float reloadTime; // ms // reload time
 
@@ -64,6 +65,7 @@ public class BasicGun : MonoBehaviour
     public int shotsFired;
     public bool canShoot;
     public bool isReloading;
+    public bool isHeld;
 
 
     private void Start()
@@ -109,16 +111,19 @@ public class BasicGun : MonoBehaviour
 
     IEnumerator reload()
     {
-        if (isReloading)
+        if (isReloading || magazineCount <= 0 || shotsFired == 0)
         {
             yield break;
         }
+
+        magazineCount -= 1;
 
         isReloading = true;
 
         Color32 oldColor = spriteRenderer.color;
 
         spriteRenderer.color = Color.gray;
+
         yield return new WaitForSeconds(((float)(reloadTime)) / 1000f);
 
         shotsFired = 0;
@@ -174,7 +179,7 @@ public class BasicGun : MonoBehaviour
 
         if (
 
-            ((holdDown && Input.GetMouseButton(0)) || (!holdDown && Input.GetMouseButtonDown(0))) && canShoot
+            ((holdDown && Input.GetMouseButton(0)) || (!holdDown && Input.GetMouseButtonDown(0))) && canShoot && isHeld
 
             )
         {
