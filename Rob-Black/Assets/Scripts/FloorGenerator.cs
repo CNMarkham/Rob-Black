@@ -36,7 +36,10 @@ public class FloorGenerator : MonoBehaviour
     
     (int,int) observe((int, int) x) { return x; }
 
-    public List<List<GameObject>> generateFloor() // Game objects are prefabs
+    public (List<List<GameObject>>, Dictionary<(int,int) ,int>) generateFloor() // Game objects are prefabs
+        // list<go> is the list of prefabs and positions
+        // dict<pos,i> is the position then the number of the room so like room 1 is 0,0
+
     {
         int boundX = 5;
         int boundY = 5;
@@ -49,6 +52,8 @@ public class FloorGenerator : MonoBehaviour
 
         appdict.Add(true, (1, 0));
         appdict.Add(false, (0, 1));
+
+        Dictionary<(int, int), int> rooms = new();
 
         (int, int) spawnpos = (0, 0);
         (int, int) endpos = (0, 0);
@@ -97,7 +102,7 @@ public class FloorGenerator : MonoBehaviour
 
         // Starting at spawn increment in every possible direction.
 
-        while (true) {
+        //while (\) {
             // Find the ones that are the closest
 
             //List
@@ -108,9 +113,47 @@ public class FloorGenerator : MonoBehaviour
             // loop through all of the true ones
             // determine wether or not it's a corner or str8 away
             // Choose one of them from the list of both types and set it to the prefab
-        }
+        //}
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
+
+        return (new(), new());
+
+
+    }
+
+    public string generateStringFromFloor(List<List<GameObject>> floor, Dictionary<(int,int), int> roomnum)
+    {
+        string floorstring = "";
+
+        List<List<int>> tointlist = new();
+
+        int rw = 0; // x
+        int rm = 0; // y
+
+        foreach (List<GameObject> row in floor)
+        {
+            
+            foreach(GameObject room in row)
+            {
+
+                if (room != null)
+                {
+                    tointlist[rw][rm] = roomnum[(rw, rm)];
+                }
+
+                else
+                {
+
+                }
+
+                rm++;
+            }
+
+            rw++;
+        }
+
+
 
         return null;
 
