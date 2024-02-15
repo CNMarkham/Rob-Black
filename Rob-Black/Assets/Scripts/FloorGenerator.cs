@@ -5,23 +5,50 @@ using UnityEngine;
 public class FloorGenerator : MonoBehaviour
 {
 
+
     // Types of rooms
     // Str8 away <_>
     // corner |^>
+    public enum Directions { Up, Down , Left, Right}
+    public enum roomtype { normal, boss, store, item, start }
 
-    (int, int) distbetweenpoints(int x1, int y1, int x2, int y2)
+    public struct roomstruct
     {
-        return (Mathf.Abs(x1 - x2), Mathf.Abs(y1 - y2));
+        public Dictionary<Directions, bool> validdirections;
+        public GameObject prefab;
+        public roomtype roomtype;
     }
 
-    bool outofbounds(int boundx, int boundy, (int, int) point)
+    public struct position
     {
-        if (point.Item1 >= boundx || point.Item1 < 0)
+        public int x;
+        public int y;
+    }
+
+    public struct floor
+    {
+
+        // list of lists of dictionaried of directions (of which doors to open) along with their room prefab
+        public List<List<roomstruct>> rooms;
+
+        // dictionary of positions with their room number so room 1 is 0,0
+        public Dictionary<position, int> roomorder;
+
+    }
+
+    position distbetweenpoints(position p1, position p2)
+    {
+        return new position { x = Mathf.Abs(p1.x - p2.x), y = Mathf.Abs(p1.y - p2.y) };
+    }
+
+    bool outofbounds(int boundx, int boundy, position point)
+    {
+        if (point.x >= boundx || point.x < 0)
         {
             return true;
         }
 
-        if (point.Item2 >= boundy || point.Item2 < 0)
+        if (point.y >= boundy || point.y < 0)
         {
             return true;
         }
@@ -29,16 +56,28 @@ public class FloorGenerator : MonoBehaviour
         return false;
     }
 
-    (int, int) addintint((int, int) in1, (int, int) in2)
-    {
-        return (in1.Item1 + in2.Item1, in1.Item1 + in2.Item2);
-    }
-    
-    (int,int) observe((int, int) x) { return x; }
+    position p(int x, int y) { return new position { x = x, y = y }; }
 
-    public (List<List<GameObject>>, Dictionary<(int,int) ,int>) generateFloor() // Game objects are prefabs
-        // list<go> is the list of prefabs and positions
-        // dict<pos,i> is the position then the number of the room so like room 1 is 0,0
+    roomstruct r(Dictionary<Directions, bool> validdirections, GameObject prefab, roomtype roomtype) 
+    { return new roomstruct { validdirections = validdirections, prefab = prefab, roomtype = roomtype };  }
+
+    Dictionary<Directions, bool> d(bool up, bool down, bool left, bool right) 
+    {
+
+        Dictionary<Directions, bool> nd = new();
+
+        nd.Add(Directions.Up, up);
+        nd.Add(Directions.Down, down);
+        nd.Add(Directions.Left, left);
+        nd.Add(Directions.Right, right);
+
+        return nd;
+
+    }
+
+    roomstruct nullrm() { return new roomstruct { prefab = null }; }
+
+    public floor generateFloor() // Game objects are prefabs
 
     {
         int boundX = 5;
@@ -48,81 +87,115 @@ public class FloorGenerator : MonoBehaviour
 
         int specialRooms = 2;
 
-        Dictionary<bool, (int, int)> appdict = new();
+        int storesAllowed = 1;
 
-        appdict.Add(true, (1, 0));
-        appdict.Add(false, (0, 1));
+        Dictionary<position, int> roomorder = new();
+        List<List<roomstruct>> roomsonlevel = new();
 
-        Dictionary<(int, int), int> rooms = new();
-
-        (int, int) spawnpos = (0, 0);
-        (int, int) endpos = (0, 0);
+        position spawnpos = p(0,0);
+        position endpos;
 
         // Instansiate XxY matrix of null objects
 
-        List<List<GameObject>> matrix = new List<List<GameObject>>();
-
         for (int x = 0; x < boundX; x++)
         {
-            var newar = new List<GameObject>();
-            
+
+            List<roomstruct> row = new();
+
             for (int y = 0; y < boundY; y++)
             {
-                newar.Add(null);
+                row.Add(nullrm());
             }
 
-            matrix.Add(newar);
+            roomsonlevel.Add(row);
+
         }
 
-        print(matrix.Count);
-        print(matrix[0].Count);
-        // Place spawn and end point (make sure they are at least boundX away from eachother)
+        print(roomsonlevel.Count);
+        print(roomsonlevel[0].Count);
 
-        for (int z = 0; z < boundX; z++)
+        // init start level
+
+        roomsonlevel[0][0] = r(d(true, false, false, true), new GameObject(), roomtype.start);
+
+        // set z to biggest num between bX & bY
+
+        int z;
+
+        if (boundX > boundY) { z = boundX; }
+        else { z = boundY; }
+
+
+        // Place spawn and end point (make sure they are at least z away from eachother)
+
+        int tempendposX = 0;
+        int tempendposY = 0;
+
+        for (int w = 0; w < z - 1; w++)
         {
-            var newbool = index.idx.randomBool();
-
-            var newpos = endpos;
-
-            switch (newbool)
+            if (index.idx.randomBool())
             {
-                case true:
-                    newpos.Item1 += 1;
-                    break;
-                case false:
-                    newpos.Item2 += 1;
-                    break;
+
+                tempendposX += 1;
+
+                if (tempendposX > boundX - 1)
+                {
+                    tempendposX -= 1;
+                    tempendposY += 1;
+
+                }
+
+
             }
 
-            endpos = newpos;
+            else
+            {
+
+                tempendposY += 1;
+
+                if (tempendposY > boundY - 1)
+                {
+                    tempendposY -= 1;
+                    tempendposX += 1;
+
+                }
+            }
 
         }
 
-        print(endpos);
+        //print(tempendposY);
+        //print(tempendposX);
+
+        endpos = p(tempendposX, tempendposY);
+
+        print(endpos.x);
+        print(endpos.y);
+
+        // TODO: FIX END POINT GEN
 
         // Starting at spawn increment in every possible direction.
 
         //while (\) {
-            // Find the ones that are the closest
+        // Find the ones that are the closest
 
-            //List
+        //List
 
-            // add true in place of the closest one
-            // if there are more than one closest one choose it randomly
+        // add true in place of the closest one
+        // if there are more than one closest one choose it randomly
 
-            // loop through all of the true ones
-            // determine wether or not it's a corner or str8 away
-            // Choose one of them from the list of both types and set it to the prefab
+        // loop through all of the true ones
+        // determine wether or not it's a corner or str8 away
+        // Choose one of them from the list of both types and set it to the prefab
         //}
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
 
-        return (new(), new());
+        return new();
 
 
     }
 
-    public string generateStringFromFloor(List<List<GameObject>> floor, Dictionary<(int,int), int> roomnum)
+    public string generateStringFromFloor(floor floor)
     {
         string floorstring = "";
 
@@ -131,20 +204,23 @@ public class FloorGenerator : MonoBehaviour
         int rw = 0; // x
         int rm = 0; // y
 
-        foreach (List<GameObject> row in floor)
+        List<List<roomstruct>> roommatrix = floor.rooms;
+        Dictionary<position, int> roomorder = floor.roomorder;
+
+        foreach (List<roomstruct> row in roommatrix)
         {
             
-            foreach(GameObject room in row)
+            foreach(roomstruct room in row)
             {
 
-                if (room != null)
+                if (room.prefab != null)
                 {
-                    tointlist[rw][rm] = roomnum[(rw, rm)];
+                    tointlist[rw][rm] = roomorder[new position { x = rw, y = rm }];
                 }
 
                 else
                 {
-
+                    tointlist[rw][rm] = 0;
                 }
 
                 rm++;
