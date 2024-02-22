@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class FloorGenerator : MonoBehaviour
 {
+
+    // TODO: add seeds -- replace random func with Psudo random func
 
 
     // Types of rooms
@@ -25,6 +27,12 @@ public class FloorGenerator : MonoBehaviour
         public int y;
     }
 
+    public struct posint
+    {
+        public position position;
+        public int integer;
+    }
+
     public struct floor
     {
 
@@ -39,6 +47,13 @@ public class FloorGenerator : MonoBehaviour
     position distbetweenpoints(position p1, position p2)
     {
         return new position { x = Mathf.Abs(p1.x - p2.x), y = Mathf.Abs(p1.y - p2.y) };
+    }
+
+    int distbetweenpointsint(position p1, position p2)
+    {
+        position p = distbetweenpoints(p1, p2);
+
+        return Mathf.Abs(p.x) + Mathf.Abs(p.y);
     }
 
     bool outofbounds(int boundx, int boundy, position point)
@@ -92,7 +107,7 @@ public class FloorGenerator : MonoBehaviour
         Dictionary<position, int> roomorder = new();
         List<List<roomstruct>> roomsonlevel = new();
 
-        position spawnpos = p(0,0);
+        position spawnpos = p(0, 0);
         position endpos;
 
         // Instansiate XxY matrix of null objects
@@ -120,10 +135,7 @@ public class FloorGenerator : MonoBehaviour
 
         // set z to biggest num between bX & bY
 
-        int z;
-
-        if (boundX > boundY) { z = boundX; }
-        else { z = boundY; }
+        int z = Mathf.Max(boundX, boundY);
 
 
         // Place spawn and end point (make sure they are at least z away from eachother)
@@ -168,25 +180,69 @@ public class FloorGenerator : MonoBehaviour
 
         endpos = p(tempendposX, tempendposY);
 
-        print(endpos.x);
-        print(endpos.y);
-
-        // TODO: FIX END POINT GEN
-
         // Starting at spawn increment in every possible direction.
 
-        //while (\) {
-        // Find the ones that are the closest
+        List<position> possiblities = new();
+        position currentroom = spawnpos;
+        int currentroomnum = 1;
 
-        //List
+        roomorder[currentroom] = currentroomnum;
 
-        // add true in place of the closest one
-        // if there are more than one closest one choose it randomly
+        while (false)
+        {
+            currentroomnum += 1;
+            possiblities = new();
 
-        // loop through all of the true ones
-        // determine wether or not it's a corner or str8 away
-        // Choose one of them from the list of both types and set it to the prefab
-        //}
+            possiblities.Add(p(currentroom.x, currentroom.y + 1));
+            possiblities.Add(p(currentroom.x, currentroom.y - 1));
+            
+            possiblities.Add(p(currentroom.x + 1, currentroom.y));
+            possiblities.Add(p(currentroom.x - 1, currentroom.y));
+
+            List<position> modifiedpossibilities = possiblities;
+
+            foreach (position posibility in possiblities)
+            {
+                if (outofbounds(boundX, boundY, posibility))
+                {
+                    modifiedpossibilities.Remove(posibility);
+                }
+
+                if (roomorder.ContainsKey(posibility)) {
+                    modifiedpossibilities.Remove(posibility);
+                }
+            }
+
+            List<posint> possibilitywithdist = new();
+
+            foreach (position posibility in possiblities)
+            {
+                possibilitywithdist.Add(new posint { position = posibility, integer = distbetweenpointsint(posibility, endpos)});
+            }
+
+            List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
+            position chosenposibility = orderedpossibilities[0].position;
+            
+            if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
+            {
+                break;
+            }
+
+            if (deviations > 0)
+            {
+                if (index.idx.randomBool() && index.idx.randomBool())
+                {
+                    deviations -= 1;
+
+                    chosenposibility = orderedpossibilities[orderedpossibilities.Count - 1].position;
+
+                } 
+            }
+
+            roomorder[chosenposibility] = currentroomnum;
+            //roomsonlevel[chosenposibility.x][chosenposibility.y] = r(, , roomtype.normal);
+
+        }
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
 
