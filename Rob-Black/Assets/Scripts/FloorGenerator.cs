@@ -19,18 +19,34 @@ public class FloorGenerator : MonoBehaviour
         public Dictionary<Directions, bool> validdirections;
         public GameObject prefab;
         public roomtype roomtype;
+        public int roomnum;
+
+        public override string ToString()
+        {
+            return roomnum.ToString();
+        }
     }
 
     public struct position
     {
         public int x;
         public int y;
+
+        public override string ToString()
+        {
+            return "(" + x.ToString() + "," + y.ToString() + ")";
+        }
     }
 
     public struct posint
     {
         public position position;
         public int integer;
+
+        public override string ToString()
+        {
+            return position.ToString() + ":" + integer.ToString();
+        }
     }
 
     public struct floor
@@ -73,8 +89,8 @@ public class FloorGenerator : MonoBehaviour
 
     position p(int x, int y) { return new position { x = x, y = y }; }
 
-    roomstruct r(Dictionary<Directions, bool> validdirections, GameObject prefab, roomtype roomtype) 
-    { return new roomstruct { validdirections = validdirections, prefab = prefab, roomtype = roomtype };  }
+    roomstruct r(Dictionary<Directions, bool> validdirections, GameObject prefab, roomtype roomtype, int roomnum) 
+    { return new roomstruct { validdirections = validdirections, prefab = prefab, roomtype = roomtype, roomnum = roomnum };  }
 
     Dictionary<Directions, bool> d(bool up, bool down, bool left, bool right) 
     {
@@ -110,6 +126,11 @@ public class FloorGenerator : MonoBehaviour
         position spawnpos = p(0, 0);
         position endpos;
 
+        Dictionary<bool, int> bindict = new();
+
+        bindict.Add(true, 1);
+        bindict.Add(false, 0);
+
         // Instansiate XxY matrix of null objects
 
         for (int x = 0; x < boundX; x++)
@@ -131,7 +152,7 @@ public class FloorGenerator : MonoBehaviour
 
         // init start level
 
-        roomsonlevel[0][0] = r(d(true, false, false, true), new GameObject(), roomtype.start);
+        roomsonlevel[0][0] = r(d(false, true, false, true), new GameObject(), roomtype.start, 1);
 
         // set z to biggest num between bX & bY
 
@@ -179,6 +200,7 @@ public class FloorGenerator : MonoBehaviour
         //print(tempendposX);
 
         endpos = p(tempendposX, tempendposY);
+        roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, z);
 
         // Starting at spawn increment in every possible direction.
 
@@ -188,7 +210,7 @@ public class FloorGenerator : MonoBehaviour
 
         roomorder[currentroom] = currentroomnum;
 
-        while (false)
+        while (true)
         {
             currentroomnum += 1;
             possiblities = new();
@@ -199,7 +221,7 @@ public class FloorGenerator : MonoBehaviour
             possiblities.Add(p(currentroom.x + 1, currentroom.y));
             possiblities.Add(p(currentroom.x - 1, currentroom.y));
 
-            List<position> modifiedpossibilities = possiblities;
+            List<position> modifiedpossibilities = new List<position>(possiblities);
 
             foreach (position posibility in possiblities)
             {
@@ -213,16 +235,24 @@ public class FloorGenerator : MonoBehaviour
                 }
             }
 
+            print("modified possibilities: " + coolprintlist(modifiedpossibilities));
+
             List<posint> possibilitywithdist = new();
 
-            foreach (position posibility in possiblities)
+            foreach (position posibility in modifiedpossibilities)
             {
                 possibilitywithdist.Add(new posint { position = posibility, integer = distbetweenpointsint(posibility, endpos)});
             }
 
+            print("possibilitywithdist: " + coolprintlist(possibilitywithdist));
+
             List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
             position chosenposibility = orderedpossibilities[0].position;
-            
+
+            print("orderedpossibilities: " + coolprintlist(orderedpossibilities));
+            print("chosenpossibility0: " + chosenposibility);
+
+
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
             {
                 break;
@@ -239,9 +269,18 @@ public class FloorGenerator : MonoBehaviour
                 } 
             }
 
+            //var roomsonlevelint = new List<List<roomstruct>>(roomsonlevel);
+            //roomsonlevelint.ForEach(o => o.ForEach(o => o.tbp=bindict[!o.prefab.Equals(null)].ToString()));
+
+            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, currentroomnum);
+
             roomorder[chosenposibility] = currentroomnum;
+            print("roomorder: " + coolprintdict(roomorder));
+            print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
+            print("chosen possibility: " + chosenposibility);
             //roomsonlevel[chosenposibility.x][chosenposibility.y] = r(, , roomtype.normal);
 
+            currentroom = chosenposibility;
         }
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
@@ -253,7 +292,7 @@ public class FloorGenerator : MonoBehaviour
 
     public string generateStringFromFloor(floor floor)
     {
-        string floorstring = "";
+        string floorstring = "[\n";
 
         List<List<int>> tointlist = new();
 
@@ -285,10 +324,69 @@ public class FloorGenerator : MonoBehaviour
             rw++;
         }
 
+        foreach (List<int> row in tointlist)
+        {
+            string pls = "[ ";
 
+            foreach (int x in row)
+            {
+                pls += x.ToString() + ", ";
+            }
 
-        return null;
+            pls += " ]";
+
+            floorstring += pls + "\n";
+        }
+
+        floorstring += "\n]";
+
+        return floorstring;
 
 
     }
+
+    string coolprintdict<K, V>(Dictionary<K, V> dict)
+    {
+
+        var pls = "{\n";
+
+        foreach (K key in dict.Keys)
+        {
+            pls += typeof(K).ToString() + " " + key.ToString() + ": " + typeof(V).ToString() + " " + dict[key].ToString() + "\n";
+        }
+
+        pls += "\n}";
+
+        return pls;
+    
+    }
+
+    string coolprintlist<T>(List<T> list)
+    {
+        var pls = "[ ";
+
+        foreach (T item in list)
+        {
+            pls += item.ToString() + ", ";
+        }
+
+        pls += " ]";
+
+        return pls;
+    }
+
+    string coolprintmatrix<T>(List<List<T>> list)
+    {
+        var pls = "[\n";
+
+        foreach (List<T> item in list)
+        {
+            pls += coolprintlist(item) + "\n";
+        }
+
+        pls += "\n]";
+
+        return pls;
+    }
+
 }

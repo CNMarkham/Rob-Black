@@ -56,7 +56,7 @@ public class PlayerAttributes : MonoBehaviour
         if (currentGunIndex < 0 || scrollCooldown) {  yield break; }
 
         int newGunIndex = currentGunIndex + scrollBy;
-        print(newGunIndex);
+        //print(newGunIndex);
 
         if (newGunIndex > playerGuns.Count - 1) { newGunIndex = 0; }
         if (newGunIndex < 0) { newGunIndex = playerGuns.Count - 1; }
@@ -81,7 +81,7 @@ public class PlayerAttributes : MonoBehaviour
             index.idx.guntoaparatus(Gun, currentGunIndex, index.idx.Player.transform.position + new Vector3(-1, -1, -1));
         }
 
-        if (scrollDeltaY != 0)
+        if (scrollDeltaY != 0 && Gun != null)
         {
             var NewCoke = (int)(scrollDeltaY / Mathf.Abs(scrollDeltaY));
 
