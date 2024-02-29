@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 public class FloorGenerator : MonoBehaviour
 {
 
@@ -12,7 +11,7 @@ public class FloorGenerator : MonoBehaviour
     // Str8 away <_>
     // corner |^>
     public enum Directions { Up, Down , Left, Right}
-    public enum roomtype { normal, boss, store, item, start }
+    public enum roomtype { normal, boss, store, item, start , nule}
 
     public struct roomstruct
     {
@@ -23,6 +22,20 @@ public class FloorGenerator : MonoBehaviour
 
         public override string ToString()
         {
+            if (roomnum < -1)
+            {
+                if (roomnum==-2)
+                {
+                    return "S";
+                }
+
+                if (roomnum==-3)
+                {
+                    return "I";
+                }
+            }
+
+
             return roomnum.ToString();
         }
     }
@@ -106,17 +119,17 @@ public class FloorGenerator : MonoBehaviour
 
     }
 
-    roomstruct nullrm() { return new roomstruct { prefab = null }; }
+    roomstruct nullrm() { return new roomstruct { prefab = null, roomtype= roomtype.nule }; }
 
     public floor generateFloor() // Game objects are prefabs
 
     {
-        int boundX = 5;
-        int boundY = 5;
+        int boundX = 8;
+        int boundY = 10;
 
-        int deviations = 2; // times it choses the least efficient one instaid of the most efficient one
+        int deviations = 10; // times it choses the least efficient one instaid of the most efficient one
 
-        int specialRooms = 2;
+        int specialRooms = 3;
 
         int storesAllowed = 1;
 
@@ -130,6 +143,21 @@ public class FloorGenerator : MonoBehaviour
 
         bindict.Add(true, 1);
         bindict.Add(false, 0);
+
+        Dictionary<bool, List<GameObject>> spcdict = new();
+
+        spcdict.Add(true, index.idx.storeRooms);
+        spcdict.Add(false, index.idx.itemRooms);
+
+        Dictionary<bool, roomtype> spctydict = new();
+
+        spctydict.Add(true, roomtype.store);
+        spctydict.Add(false, roomtype.item);
+
+        Dictionary<roomtype, int> spctyindict = new();
+
+        spctyindict.Add(roomtype.store, -2);
+        spctyindict.Add(roomtype.item, -3);
 
         // Instansiate XxY matrix of null objects
 
@@ -200,7 +228,6 @@ public class FloorGenerator : MonoBehaviour
         //print(tempendposX);
 
         endpos = p(tempendposX, tempendposY);
-        roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, z);
 
         // Starting at spawn increment in every possible direction.
 
@@ -255,6 +282,7 @@ public class FloorGenerator : MonoBehaviour
 
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
             {
+                roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, currentroomnum);
                 break;
             }
 
@@ -282,6 +310,94 @@ public class FloorGenerator : MonoBehaviour
 
             currentroom = chosenposibility;
         }
+
+        for (int i = 0; i < specialRooms; i++)
+        {
+            var added = false;
+
+            while (!added)
+            {
+                var ouest = roomorder.ToList()[Random.Range(0, roomorder.Count - 1)].Key;
+
+                var x = ouest.x;
+                var y = ouest.y;
+
+                var roomtbp = roomsonlevel[x][y];
+
+                if (y == 0 && x == 0) { continue; }
+
+                List<position> npossibilities = new List<position>() { };
+
+                npossibilities.Add(p(x, y + 1));
+                print(new Vector2Int(x, y));
+                npossibilities.Add(p(x, y - 1));
+
+                npossibilities.Add(p(x + 1, y));
+                npossibilities.Add(p(x - 1, y));
+                print("possibilities: " + coolprintlist(npossibilities));
+
+                int newx = -1;
+                int newy = -1;
+
+               // var possibility = npossibilities[Random.Range(0, npossibilities.Count - 1)];
+
+                for (int j = 0; j < npossibilities.Count; j++)
+                {
+                    if (roomorder.ContainsKey(npossibilities[j]))
+                    {
+                        if (roomorder[npossibilities[j]] == 0)
+                        {
+                            // && roomsonlevel[npossibilities[j].x][npossibilities[j].y].roomtype == roomtype.nule
+                            newx = npossibilities[j].x;
+                            newy = npossibilities[j].y;
+                            print("worked"); // Doesn't print TODO: fix
+                            print("worked"); // Doesn't print TODO: fix
+                            break;
+                        }
+
+                        else
+                        {
+
+                            continue;
+                        }
+                    }
+                }
+
+                print(newx);
+                print(newy);
+
+                specialRooms -= 1;
+
+                var rmtype = index.idx.randomBool();
+
+                if (storesAllowed <= 0)
+                {
+                    rmtype = false;
+                }
+
+                else
+                {
+                    if (rmtype == true)
+                    {
+                        storesAllowed -= 1;
+                    }
+                }
+
+                roomorder[p(newx,newy)] = spctyindict[spctydict[rmtype]];
+                roomsonlevel[newx][newy] =  r(d(false, false, false, false), index.idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+
+                added = true;
+
+            }
+
+            print("roomorder: " + coolprintdict(roomorder));
+            print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
+
+            return new();
+
+        }
+
+
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
 

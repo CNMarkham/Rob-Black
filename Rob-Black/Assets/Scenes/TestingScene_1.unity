@@ -1135,6 +1135,16 @@ MonoBehaviour:
   FloorGenerationObject: {fileID: 0}
   FloorGeneratorIndex: {fileID: 0}
   Player: {fileID: 1846954194}
+  normalRooms:
+  - {fileID: 7557498072830849521, guid: 3a3e4baaf46bdbf4bacf05539448985b, type: 3}
+  bossRooms:
+  - {fileID: 6602410296269402083, guid: 7e86085140b3f8f4ebf5e615b752c2c8, type: 3}
+  storeRooms:
+  - {fileID: 7894901418986174918, guid: d3887b8cee3086d40820119e8e4141c6, type: 3}
+  itemRooms:
+  - {fileID: 1503996414195086746, guid: 4287f1789569ce74788055b83c1a3698, type: 3}
+  startRooms:
+  - {fileID: 6233803657054109550, guid: ba983a69da3e2a743996437f1ae809c2, type: 3}
 --- !u!114 &1531854687
 MonoBehaviour:
   m_ObjectHideFlags: 0

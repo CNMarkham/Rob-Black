@@ -16,6 +16,18 @@ public class index : MonoBehaviour
 
     public Dictionary<int, bool> randdict;
 
+    [Header("Rooms")]
+    public List<GameObject> normalRooms = new() { };
+    public List<GameObject> bossRooms = new() { };
+    public List<GameObject> storeRooms = new() { };
+    public List<GameObject> itemRooms = new() { };
+    public List<GameObject> startRooms = new() { };
+
+    public GameObject randomroom(List<GameObject> rooms)
+    {
+        return rooms[Random.Range(0, rooms.Count - 1)];
+    }
+
     public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position)
     {
         GameObject newap = Instantiate(GunAparatus);
