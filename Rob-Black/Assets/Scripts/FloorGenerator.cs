@@ -129,7 +129,7 @@ public class FloorGenerator : MonoBehaviour
 
         int deviations = 10; // times it choses the least efficient one instaid of the most efficient one
 
-        int specialRooms = 3;
+        int specialRooms = 4;
 
         int storesAllowed = 1;
 
@@ -167,7 +167,7 @@ public class FloorGenerator : MonoBehaviour
             List<roomstruct> row = new();
 
             for (int y = 0; y < boundY; y++)
-            {
+            {  
                 row.Add(nullrm());
             }
 
@@ -311,6 +311,9 @@ public class FloorGenerator : MonoBehaviour
             currentroom = chosenposibility;
         }
 
+        // the p[eorodksk of thios porem os to cahs the previously used rooms and restsart the whole thing if it didn't work
+        Dictionary<position, bool> ouestcache = new();
+
         for (int i = 0; i < specialRooms; i++)
         {
             var added = false;
@@ -318,6 +321,8 @@ public class FloorGenerator : MonoBehaviour
             while (!added)
             {
                 var ouest = roomorder.ToList()[Random.Range(0, roomorder.Count - 1)].Key;
+
+                if (ouestcache.ContainsKey(ouest)) { continue; }
 
                 var x = ouest.x;
                 var y = ouest.y;
@@ -339,34 +344,32 @@ public class FloorGenerator : MonoBehaviour
                 int newx = -1;
                 int newy = -1;
 
-               // var possibility = npossibilities[Random.Range(0, npossibilities.Count - 1)];
+                // var possibility = npossibilities[Random.Range(0, npossibilities.Count - 1)];
 
-                for (int j = 0; j < npossibilities.Count; j++)
+                // test wjhile lopoopeppefs
+
+
+                for (int j = 0; j < npossibilities.Count; j++) // loop through possible rooms
                 {
-                    if (roomorder.ContainsKey(npossibilities[j]))
+                    print("IN For Loop");
+                    if (!roomorder.ContainsKey(npossibilities[j])) // Check if room is in bounds
                     {
-                        if (roomorder[npossibilities[j]] == 0)
-                        {
-                            // && roomsonlevel[npossibilities[j].x][npossibilities[j].y].roomtype == roomtype.nule
-                            newx = npossibilities[j].x;
-                            newy = npossibilities[j].y;
-                            print("worked"); // Doesn't print TODO: fix
-                            print("worked"); // Doesn't print TODO: fix
-                            break;
-                        }
-
-                        else
-                        {
-
-                            continue;
-                        }
+                        print("dididnt Contained Key");
+                        // && roomsonlevel[npossibilities[j].x][npossibilities[j].y].roomtype == roomtype.nule
+                        newx = npossibilities[j].x;
+                        newy = npossibilities[j].y;
+                        print("worked"); // Doesn't print TODO: fix
+                        print("worked"); // Doesn't print TODO: fix
+                        break;
                     }
                 }
 
                 print(newx);
                 print(newy);
 
-                specialRooms -= 1;
+
+
+
 
                 var rmtype = index.idx.randomBool();
 
@@ -383,8 +386,17 @@ public class FloorGenerator : MonoBehaviour
                     }
                 }
 
-                roomorder[p(newx,newy)] = spctyindict[spctydict[rmtype]];
-                roomsonlevel[newx][newy] =  r(d(false, false, false, false), index.idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                ouestcache.Add(ouest, true);
+                if (outofbounds(boundX, boundY, ouest))
+                {
+                    continue;
+                }
+
+                roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
+
+
+                roomsonlevel[newx][newy] = r(d(false, false, false, false), index.idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
 
                 added = true;
 
@@ -393,7 +405,7 @@ public class FloorGenerator : MonoBehaviour
             print("roomorder: " + coolprintdict(roomorder));
             print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
 
-            return new();
+         
 
         }
 
