@@ -413,7 +413,7 @@ public class FloorGenerator : MonoBehaviour
 
         // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
 
-        return new();
+        return new() { rooms = roomsonlevel };
 
 
     }

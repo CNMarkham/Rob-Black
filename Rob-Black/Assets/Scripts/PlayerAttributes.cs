@@ -11,6 +11,7 @@ public class PlayerAttributes : MonoBehaviour
     public int currentGunIndex = 0;
 
     public GameObject SpriteChild;
+    public GameObject GunHolder;
 
     private bool scrollCooldown;
     public float scrollCooldownTime;

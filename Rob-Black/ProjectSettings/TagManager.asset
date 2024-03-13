@@ -13,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - PlayerPhysics
+  - PlayerHitbox
+  - Obstacle
+  - Don't touch player physics
   - 
   - 
   - 
