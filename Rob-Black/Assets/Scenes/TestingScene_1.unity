@@ -555,7 +555,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 9.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1846954195}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 9.2
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1079,7 +1079,7 @@ Transform:
   m_GameObject: {fileID: 1132475349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1978385, y: -18.641886, z: 0.26442513}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1374,6 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9fe970b3d1c3647a2c76086914f93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: {fileID: 0}
 --- !u!114 &1522467795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,9 +1434,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleBulletPrefab: {fileID: 7392325678142886653, guid: 8e982286db5773e4b8b7fced2a311558, type: 3}
   GunAparatus: {fileID: 2434259863966612509, guid: f87ed110975fbeb479b33d0611028315, type: 3}
-  FloorGenerationObject: {fileID: 0}
-  FloorGeneratorIndex: {fileID: 0}
+  FloorGenerationObject: {fileID: 1132475349}
+  FloorGeneratorIndex: {fileID: 1132475351}
   Player: {fileID: 1846954194}
+  registered: 0
   normalRooms:
   - {fileID: 7557498072830849521, guid: 3a3e4baaf46bdbf4bacf05539448985b, type: 3}
   bossRooms:

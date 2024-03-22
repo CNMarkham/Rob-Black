@@ -121,7 +121,7 @@ public class FloorGenerator : MonoBehaviour
 
     roomstruct nullrm() { return new roomstruct { prefab = null, roomtype= roomtype.nule }; }
 
-    public floor generateFloor() // Game objects are prefabs
+    public floor generateFloor(index idx, List<GameObject> storerooms, List<GameObject> itemrooms) // Game objects are prefabs
 
     {
         int boundX = 8;
@@ -146,8 +146,8 @@ public class FloorGenerator : MonoBehaviour
 
         Dictionary<bool, List<GameObject>> spcdict = new();
 
-        spcdict.Add(true, index.idx.storeRooms);
-        spcdict.Add(false, index.idx.itemRooms);
+        spcdict.Add(true, storerooms);
+        spcdict.Add(false, itemrooms);
 
         Dictionary<bool, roomtype> spctydict = new();
 
@@ -194,7 +194,7 @@ public class FloorGenerator : MonoBehaviour
 
         for (int w = 0; w < z - 1; w++)
         {
-            if (index.idx.randomBool())
+            if (idx.randomBool())
             {
 
                 tempendposX += 1;
@@ -288,7 +288,7 @@ public class FloorGenerator : MonoBehaviour
 
             if (deviations > 0)
             {
-                if (index.idx.randomBool() && index.idx.randomBool())
+                if (idx.randomBool() && idx.randomBool())
                 {
                     deviations -= 1;
 
@@ -371,7 +371,7 @@ public class FloorGenerator : MonoBehaviour
 
 
 
-                var rmtype = index.idx.randomBool();
+                var rmtype = idx.randomBool();
 
                 if (storesAllowed <= 0)
                 {
@@ -395,7 +395,7 @@ public class FloorGenerator : MonoBehaviour
                 roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
 
 
-                roomsonlevel[newx][newy] = r(d(false, false, false, false), index.idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                roomsonlevel[newx][newy] = r(d(false, false, false, false), idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
                 // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
 
                 added = true;

@@ -12,6 +12,8 @@ public class TestTextFloorGen : MonoBehaviour
     public List<GameObject> Item;
     public List<GameObject> StartRooms;
 
+    // public index index;
+
     GameObject selectroom(int roomtype)
     {
         switch (roomtype)
@@ -33,31 +35,53 @@ public class TestTextFloorGen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // doesn't work because this runs before index is finished initializing
 
-        fgen = gameObject.GetComponent<FloorGenerator>();
+        while (true) {
 
-        FloorGenerator.floor floor = fgen.generateFloor();
-
-        float x = 0;
-        float y = 0;
-
-        foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)
-        {
-
-
-            foreach (FloorGenerator.roomstruct room in roomlist)
+            try
             {
+                // doesn't work because this runs before index is finished initializing
 
-                y += 5;
+                while (FindObjectOfType<index>() == null) { };
 
-                GameObject rm = Instantiate(selectroom(room.roomnum));
-                rm.transform.position = new Vector3(x, 0, y);
+                index index = FindObjectOfType<index>();
+
+                fgen = gameObject.GetComponent<FloorGenerator>();
+
+                FloorGenerator.floor floor = fgen.generateFloor(index, index.storeRooms, index.itemRooms);
+
+                float x = 33;
+                float y = 0;
+
+                foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)
+                {
+
+
+                    foreach (FloorGenerator.roomstruct room in roomlist)
+                    {
+
+                        x -= 33;
+
+                        if (room.prefab != null) {
+                            GameObject rm = Instantiate(selectroom(room.roomnum));
+                            rm.transform.position = new Vector3(x, 0, y);
+                        }
+
+
+                    }
+
+                    x = 0;
+
+                    y -= 17f;
+
+                }
+
+                return;
             }
 
-            x += 5;
-
+            catch { }
         }
+
     }
 
     // Update is called once per frame

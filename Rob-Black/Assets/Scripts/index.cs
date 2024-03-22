@@ -12,19 +12,24 @@ public class index : MonoBehaviour
 
     public GameObject Player;
 
-    public static index idx;
-
     public Dictionary<int, bool> randdict;
 
-    [Header("Rooms")]
-    public List<GameObject> normalRooms = new() { };
-    public List<GameObject> bossRooms = new() { };
-    public List<GameObject> storeRooms = new() { };
-    public List<GameObject> itemRooms = new() { };
-    public List<GameObject> startRooms = new() { };
+    public bool registered;
 
+    [Header("Rooms")]
+    public List<GameObject> normalRooms;
+    public List<GameObject> bossRooms;
+    public List<GameObject> storeRooms;
+    public List<GameObject> itemRooms;
+    public List<GameObject> startRooms;
+
+    public void untilRegistered()
+    {
+        while (!registered) { }
+    }
     public GameObject randomroom(List<GameObject> rooms)
     {
+        print(rooms);
         return rooms[Random.Range(0, rooms.Count - 1)];
     }
 
@@ -66,6 +71,7 @@ public class index : MonoBehaviour
 
     public bool randomBool()
     {
+        Debug.Log("randombool");
         return randdict[Random.Range(0,2)];
     }
 
@@ -77,8 +83,9 @@ public class index : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Debug.Log("start");
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
 
@@ -86,11 +93,9 @@ public class index : MonoBehaviour
 
         randdict.Add(0, false);
         randdict.Add(1, true);
+
+        registered = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static index idx;
 }
