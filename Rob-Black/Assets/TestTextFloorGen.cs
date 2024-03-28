@@ -50,7 +50,7 @@ public class TestTextFloorGen : MonoBehaviour
 
                 FloorGenerator.floor floor = fgen.generateFloor(index, index.storeRooms, index.itemRooms);
 
-                float x = 33;
+                float x = 0;
                 float y = 0;
 
                 foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)

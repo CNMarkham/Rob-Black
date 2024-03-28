@@ -27,6 +27,12 @@ public class index : MonoBehaviour
     {
         while (!registered) { }
     }
+
+    public T randomChoice<T>(List<T> list)
+    {
+        return list[Random.Range(0, list.Count - 1)];
+    }
+
     public GameObject randomroom(List<GameObject> rooms)
     {
         print(rooms);
