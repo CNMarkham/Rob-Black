@@ -8,7 +8,7 @@ public class GunPickupAparatus : MonoBehaviour
 
     public bool disableNextTrigger;
 
-    public void dropGun(GameObject gun, GameObject player)
+    public static void dropGun(GameObject gun, GameObject player)
     {
         GameObject newAparatus = Instantiate(index.idx.GunAparatus);
 

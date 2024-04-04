@@ -30,13 +30,13 @@ public class index : MonoBehaviour
 
     public T randomChoice<T>(List<T> list)
     {
-        return list[Random.Range(0, list.Count - 1)];
+        return list[Random.Range(0, list.Count)];
     }
 
     public GameObject randomroom(List<GameObject> rooms)
     {
         print(rooms);
-        return rooms[Random.Range(0, rooms.Count - 1)];
+        return rooms[Random.Range(0, rooms.Count)];
     }
 
     public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position)

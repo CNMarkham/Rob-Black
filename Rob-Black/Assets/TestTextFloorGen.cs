@@ -25,7 +25,7 @@ public class TestTextFloorGen : MonoBehaviour
                 return index.idx.randomroom(Item);
 
             default:
-                return Normal[0];
+                return index.idx.randomroom(Normal);
            
 
         }
@@ -53,6 +53,12 @@ public class TestTextFloorGen : MonoBehaviour
                 float x = 0;
                 float y = 0;
 
+                Vector3 bossroom = new Vector3(0,0,0);
+                int bossroomnum = 0;
+                int bossroomindex = 0;
+
+                List<GameObject> rooms = new() { };
+
                 foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)
                 {
 
@@ -65,6 +71,17 @@ public class TestTextFloorGen : MonoBehaviour
                         if (room.prefab != null) {
                             GameObject rm = Instantiate(selectroom(room.roomnum));
                             rm.transform.position = new Vector3(x, 0, y);
+
+                            if (room.roomnum > bossroomnum)
+                            {
+                                bossroomnum = room.roomnum;
+                                bossroomindex = rooms.Count;
+                                bossroom = rm.transform.position;
+                            }
+
+                            rooms.Add(rm);
+
+
                         }
 
 
@@ -75,6 +92,10 @@ public class TestTextFloorGen : MonoBehaviour
                     y -= 17f;
 
                 }
+
+                Destroy(rooms[bossroomindex]);
+                GameObject nrm = Instantiate(index.idx.randomroom(Boss));
+                nrm.transform.position = bossroom;
 
                 return;
             }

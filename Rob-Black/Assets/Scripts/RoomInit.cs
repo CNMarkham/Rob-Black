@@ -35,7 +35,10 @@ public class RoomInit : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnRate + index.idx.randomSign() * Random.Range(0, spawnRateAmplitude));
 
-            enemies.Add(Instantiate(index.idx.randomChoice(enemyTypes), index.idx.randomChoice(enemySpawns).position, Quaternion.identity));
+            GameObject enemy = index.idx.randomChoice(enemyTypes);
+            Vector3 enemypos = index.idx.randomChoice(enemySpawns).position;
+
+            enemies.Add(Instantiate(enemy, enemypos, Quaternion.identity));
         }
 
         StartCoroutine(waitforenemiestodie());
@@ -49,10 +52,13 @@ public class RoomInit : MonoBehaviour
 
     public void initializeRoom()
     {
+
         if (coroutineEnded)
         {
             return;
         }
+
+        enemies = new List<GameObject>() { };
 
         // close doors
         // add door close function
