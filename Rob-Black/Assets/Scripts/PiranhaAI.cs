@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PiranhaAI : BasicEnemy
 {
+    public DamageManager dm;
+
     public GameObject Player;
     public float speed;
     public bool touchingPlayer;
@@ -19,6 +21,15 @@ public class PiranhaAI : BasicEnemy
         if (other.CompareTag("Player"))
         {
             touchingPlayer = true;
+        }
+
+        if (other.CompareTag("Bullet"))
+        {
+            var damage = other.GetComponent<SimpleBullet>().damage;
+
+            dm.emepos = other.transform.position;
+            
+            dm.addHealth(-damage);
         }
     }
 
@@ -45,3 +56,4 @@ public class PiranhaAI : BasicEnemy
         }
     }
 }
+

@@ -26,6 +26,7 @@ public class BasicGun : MonoBehaviour
     [Header("Bullet Settings")]
 
     public float bulletSpeed;
+    public int bulletDamage;
     public Transform bulletStartPos;
 
     [Header("Reloading")]

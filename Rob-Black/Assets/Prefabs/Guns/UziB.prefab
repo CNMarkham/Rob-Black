@@ -141,6 +141,7 @@ MonoBehaviour:
     rgba: 4294967295
   holdDown: 1
   bulletSpeed: 10
+  bulletDamage: 5
   bulletStartPos: {fileID: 2615736940590819568}
   magazineCount: 9999
   magazineSize: 10
