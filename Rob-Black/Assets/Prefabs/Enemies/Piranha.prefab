@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7818435507466775053}
   - component: {fileID: 7818435507466775052}
+  - component: {fileID: 8082886533055687273}
   - component: {fileID: 7818435507466775051}
   - component: {fileID: 7818435507466775054}
   - component: {fileID: 3464107615479262516}
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7818435507466775050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.078, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59,6 +60,29 @@ CapsuleCollider:
   m_Height: 3.81
   m_Direction: 2
   m_Center: {x: 0.28, y: 0, z: 0}
+--- !u!136 &8082886533055687273
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818435507466775050}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.56
+  m_Height: 3.8
+  m_Direction: 2
+  m_Center: {x: 0.25, y: 0, z: 0}
 --- !u!54 &7818435507466775051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100,12 +124,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   damage: 4
-  knockbackMultiplier: 1
+  knockbackMultiplier: 2.11
   isRecoiling: 0
   dm: {fileID: 3464107615479262516}
   Player: {fileID: 0}
-  speed: 2.5
+  speed: 4.81
   touchingPlayer: 0
+  rb: {fileID: 7818435507466775051}
 --- !u!114 &3464107615479262516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,9 +147,11 @@ MonoBehaviour:
   ignoredamage: 0
   iframelength: 1
   blips: 4
+  recoilForce: 45
   healthbar: {fileID: 0}
   Player: {fileID: 7818435507466775050}
   playerSprite: {fileID: 7818435507617955091}
+  permaemepos: {fileID: 0}
   playerHealth: {fileID: 0}
   emepos: {x: 0, y: 0, z: 0}
 --- !u!1 &7818435507617955089

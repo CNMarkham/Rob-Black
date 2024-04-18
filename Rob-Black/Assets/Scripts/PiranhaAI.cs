@@ -10,10 +10,14 @@ public class PiranhaAI : BasicEnemy
     public float speed;
     public bool touchingPlayer;
 
+    public Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = FindObjectOfType<PlayerMove>().gameObject;
+
+        speed = Random.Range(speed, speed + speed/2.5f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,7 +56,9 @@ public class PiranhaAI : BasicEnemy
 
         if (!touchingPlayer)
         {
-            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+            // transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+            rb.velocity += new Vector3(transform.forward.x, 0, transform.forward.z) * speed * Time.deltaTime;
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
     }
 }

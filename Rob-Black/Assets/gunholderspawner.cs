@@ -9,6 +9,9 @@ public class gunholderspawner : MonoBehaviour
     public GameObject gun;
     public GameObject player;
 
+    public int price;
+    public TMPro.TMP_Text priceTag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +26,10 @@ public class gunholderspawner : MonoBehaviour
         gun.transform.Rotate(0, 100, 0);
 
         newap.transform.position = transform.position + new Vector3(0, 0, 0);
+
+        if (price == null || price == 0)
+        {
+            priceTag.text = "";
+        }
     }
 }

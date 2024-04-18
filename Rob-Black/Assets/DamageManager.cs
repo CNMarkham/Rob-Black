@@ -16,6 +16,8 @@ public class DamageManager : MonoBehaviour
     public GameObject Player;
     public SpriteRenderer playerSprite;
 
+    public GameObject permaemepos;
+
     public TMPro.TMP_Text playerHealth;
 
     public Vector3 emepos;
@@ -27,7 +29,9 @@ public class DamageManager : MonoBehaviour
 
         if (amount < 0)
         {
+            //if (permaemepos != null) emepos = permaemepos.transform.position;
             Player.GetComponent<Rigidbody>().AddExplosionForce(recoilForce, emepos, 10f, 0f, ForceMode.Impulse);
+            Debug.Log("Forced");
             StartCoroutine("Iframe");
         }
 
@@ -77,7 +81,7 @@ public class DamageManager : MonoBehaviour
 
     private void Update()
     {
-        playerHealth.text = health.ToString();
-        healthbar.health = health;
+        if (playerHealth != null) playerHealth.text = health.ToString();
+        if (healthbar != null) healthbar.health = health;
     }
 }

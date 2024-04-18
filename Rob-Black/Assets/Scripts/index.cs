@@ -23,6 +23,11 @@ public class index : MonoBehaviour
     public List<GameObject> itemRooms;
     public List<GameObject> startRooms;
 
+    public GameObject getPlayer()
+    {
+        return Player;
+    }
+
     public void untilRegistered()
     {
         while (!registered) { }
