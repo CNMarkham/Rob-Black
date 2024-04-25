@@ -8,8 +8,11 @@ public class GunPickupAparatus : MonoBehaviour
 
     public bool disableNextTrigger;
 
+    public bool nopickup = false;
+
     public static void dropGun(GameObject gun, GameObject player)
     {
+
         GameObject newAparatus = Instantiate(index.idx.GunAparatus);
 
         gun.transform.parent = newAparatus.transform;
@@ -28,8 +31,17 @@ public class GunPickupAparatus : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other) // fdro[t adoijwijoe djoiwhogi
+    public void doublePickupRadius()
     {
+        var box = GetComponent<BoxCollider>();
+        box.size = new Vector3(box.size.x * 2, box.size.y * 2, box.size.z * 2);
+
+    }
+
+    public void OnTriggerEnter(Collider other) // fdro[t adoijwijoe djoiwhogi
+    {
+        if (nopickup) return;
+
         if (disableNextTrigger)
         {
             disableNextTrigger = false;
@@ -38,40 +50,45 @@ public class GunPickupAparatus : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            //Debug.Log(other.name);
-            PlayerAttributes attr = other.GetComponentInParent<PlayerAttributes>();
-
-            try
-            {
-                if (attr.playerGuns[attr.currentGunIndex].GetComponent<BasicGun>().isReloading)
-                {
-                    return;
-                }
-            }
-            catch { }
-
-            // Remove gun if maximim guns would be reached
-            if (attr.maximumGuns < attr.playerGuns.Count + 1)
-            {
-                dropGun(attr.Gun, other.gameObject);
-                attr.playerGuns.Remove(attr.Gun);
-            }
-
-            // we have to call this first before we move it to the child
-            attr.playerGuns.Add(gun);
-            attr.currentGunIndex = attr.playerGuns.Count - 1;
-
-            gun.transform.parent = attr.GunHolder.transform;
-
-            gun.transform.localPosition = new Vector3(0, 0, 0);
-            gun.transform.localRotation = Quaternion.Euler(0, 90, 270);
-
-            attr.disableGunsAndEnableGun(attr.currentGunIndex);
-
-            gun.GetComponent<BasicGun>().disableShooting = false;
-
-            Destroy(this.gameObject);
+            playercol(other.gameObject);
 
         }
+    }
+
+    public void playercol(GameObject other)
+    {
+        //Debug.Log(other.name);
+        PlayerAttributes attr = other.GetComponentInParent<PlayerAttributes>();
+
+        try
+        {
+            if (attr.playerGuns[attr.currentGunIndex].GetComponent<BasicGun>().isReloading)
+            {
+                return;
+            }
+        }
+        catch { }
+
+        // Remove gun if maximim guns would be reached
+        if (attr.maximumGuns < attr.playerGuns.Count + 1)
+        {
+            dropGun(attr.Gun, other.gameObject);
+            attr.playerGuns.Remove(attr.Gun);
+        }
+
+        // we have to call this first before we move it to the child
+        attr.playerGuns.Add(gun);
+        attr.currentGunIndex = attr.playerGuns.Count - 1;
+
+        gun.transform.parent = attr.GunHolder.transform;
+
+        gun.transform.localPosition = new Vector3(0, 0, 0);
+        gun.transform.localRotation = Quaternion.Euler(0, 90, 270);
+
+        attr.disableGunsAndEnableGun(attr.currentGunIndex);
+
+        gun.GetComponent<BasicGun>().disableShooting = false;
+
+        Destroy(this.gameObject);
     }
 }

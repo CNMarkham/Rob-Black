@@ -16,6 +16,8 @@ public class PlayerAttributes : MonoBehaviour
     private bool scrollCooldown;
     public float scrollCooldownTime;
 
+
+
     // Start is called before the first frame update
     void Start()
     {

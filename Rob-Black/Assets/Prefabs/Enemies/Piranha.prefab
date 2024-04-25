@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   ignoredamage: 0
-  iframelength: 1
+  iframelength: 0
   blips: 4
   recoilForce: 45
   healthbar: {fileID: 0}

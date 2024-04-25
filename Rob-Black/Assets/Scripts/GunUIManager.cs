@@ -14,6 +14,8 @@ public class GunUIManager : MonoBehaviour
     void Update()
     {
 
+        if (FindObjectOfType<PlayerAttributes>() == null) return;
+
         var GunObject = FindObjectOfType<PlayerAttributes>().Gun;
 
         if (GunObject == null) return;
