@@ -36,12 +36,19 @@ public class RoomInit : MonoBehaviour
             yield return new WaitForSeconds(spawnRate + index.idx.randomSign() * Random.Range(0, spawnRateAmplitude));
 
             GameObject enemy = index.idx.randomChoice(enemyTypes);
+
             Vector3 enemypos = index.idx.randomChoice(enemySpawns).position;
 
-            enemies.Add(Instantiate(enemy, enemypos, Quaternion.identity));
+            GameObject newenemy = Instantiate(enemy, enemypos, Quaternion.identity);
+
+            newenemy.transform.parent = this.transform.parent.transform;
+
+            enemies.Add(newenemy);
         }
 
         StartCoroutine(waitforenemiestodie());
+
+
     }
 
     IEnumerator waitforenemiestodie() 

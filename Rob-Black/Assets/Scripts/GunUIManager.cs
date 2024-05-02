@@ -8,9 +8,17 @@ public class GunUIManager : MonoBehaviour
     public TMP_Text GunName;
     public TMP_Text Munitions;
 
+    public GameObject raw;
+
     public BasicGun Gun;
 
     // Update is called once per frame
+
+    public void setblack(bool isblack)
+    {
+        raw.SetActive(isblack);
+    }
+
     void Update()
     {
 

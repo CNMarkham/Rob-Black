@@ -8,6 +8,8 @@ public class index : MonoBehaviour
     public GameObject GunAparatus;
     public GameObject FloorGenerationObject;
 
+    public GunUIManager guimg;
+
     public FloorGenerator FloorGeneratorIndex;
 
     public GameObject Player;
@@ -16,12 +18,19 @@ public class index : MonoBehaviour
 
     public bool registered;
 
+    public floormanager floormanager;
+
     [Header("Rooms")]
     public List<GameObject> normalRooms;
     public List<GameObject> bossRooms;
     public List<GameObject> storeRooms;
     public List<GameObject> itemRooms;
     public List<GameObject> startRooms;
+
+    public void screenblack(bool isblack)
+    {
+        guimg.setblack(isblack);
+    }
 
     public GameObject getPlayer()
     {

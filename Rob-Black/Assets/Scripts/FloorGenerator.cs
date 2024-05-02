@@ -180,7 +180,7 @@ public class FloorGenerator : MonoBehaviour
 
         // init start level
 
-        roomsonlevel[0][0] = r(d(false, true, false, true), new GameObject(), roomtype.start, 1);
+        roomsonlevel[0][0] = r(d(false, true, false, true), index.idx.Player.gameObject, roomtype.start, 1);
 
         // set z to biggest num between bX & bY
 
@@ -282,7 +282,7 @@ public class FloorGenerator : MonoBehaviour
 
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
             {
-                roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, currentroomnum);
+                roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), index.idx.Player.gameObject, roomtype.start, currentroomnum);
                 break;
             }
 
@@ -300,7 +300,7 @@ public class FloorGenerator : MonoBehaviour
             //var roomsonlevelint = new List<List<roomstruct>>(roomsonlevel);
             //roomsonlevelint.ForEach(o => o.ForEach(o => o.tbp=bindict[!o.prefab.Equals(null)].ToString()));
 
-            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(d(true, false, false, true), new GameObject(), roomtype.start, currentroomnum);
+            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(d(true, false, false, true), index.idx.Player.gameObject, roomtype.start, currentroomnum);
 
             roomorder[chosenposibility] = currentroomnum;
             print("roomorder: " + coolprintdict(roomorder));
