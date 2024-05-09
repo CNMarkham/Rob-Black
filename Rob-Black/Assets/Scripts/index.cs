@@ -8,6 +8,8 @@ public class index : MonoBehaviour
     public GameObject GunAparatus;
     public GameObject FloorGenerationObject;
 
+    public Cinemachine.CinemachineVirtualCamera virtualCamera;
+
     public GunUIManager guimg;
 
     public FloorGenerator FloorGeneratorIndex;
