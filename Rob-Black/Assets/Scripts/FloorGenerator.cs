@@ -124,8 +124,8 @@ public class FloorGenerator : MonoBehaviour
     public floor generateFloor(index idx, List<GameObject> storerooms, List<GameObject> itemrooms) // Game objects are prefabs
 
     {
-        int boundX = 8;
-        int boundY = 10;
+        int boundX = 8; // max: 100, min: 8
+        int boundY = 10; // max: 100, min: 10
 
         int deviations = 10; // times it choses the least efficient one instaid of the most efficient one
 
