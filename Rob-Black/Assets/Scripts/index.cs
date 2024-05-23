@@ -29,6 +29,15 @@ public class index : MonoBehaviour
     public List<GameObject> itemRooms;
     public List<GameObject> startRooms;
 
+    public List<GameObject> bills;
+
+    public void pay_bills(dollabill.denomonation bill, Transform transform)
+    {
+
+        Debug.LogError(transform);
+        Instantiate(bills[0], transform.position, Quaternion.identity); // (int)bill
+    }
+    
     public void screenblack(bool isblack)
     {
         guimg.setblack(isblack);
@@ -47,6 +56,11 @@ public class index : MonoBehaviour
     public T randomChoice<T>(List<T> list)
     {
         return list[Random.Range(0, list.Count)];
+    }
+
+    public int randomInteger(int x, int y)
+    {
+        return Random.Range(x, y);
     }
 
     public GameObject randomroom(List<GameObject> rooms)

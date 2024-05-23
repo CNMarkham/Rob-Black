@@ -44,7 +44,17 @@ public class DamageManager : MonoBehaviour
 
     public void Die()
     {
-        Destroy(Player);
+        try
+        {
+            GetComponent<BasicEnemy>().Die();
+        }
+
+        catch (System.Exception e)
+        {
+            print(e);
+            Destroy(Player);
+        }
+
     }
 
     IEnumerator Iframe()

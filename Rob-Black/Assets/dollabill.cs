@@ -7,12 +7,12 @@ public class dollabill : MonoBehaviour
 
     public enum denomonation
     {
-        hundred,
-        fifty,
-        tweny,
-        ten,
-        five,
-        one
+        hundred = 0,
+        fifty = 1,
+        tweny = 2,
+        ten = 3,
+        five = 4,
+        one = 5
     }
 
     public denomonation den;

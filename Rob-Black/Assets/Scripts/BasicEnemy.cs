@@ -9,9 +9,17 @@ public class BasicEnemy : MonoBehaviour
     public float knockbackMultiplier;
     Vector3 RecoilDestination;
     public bool isRecoiling;
+
+
+
     public void Damage(int amount) {
 
         health -= amount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
 
     }
 
@@ -22,6 +30,14 @@ public class BasicEnemy : MonoBehaviour
 
     public void Die()
     {
+        EnemyDeathEvent[] deathEvents = gameObject.GetComponents<EnemyDeathEvent>();
+        Debug.LogError(deathEvents[0]);
+        foreach (EnemyDeathEvent e in deathEvents)
+        {
+            e.OnDeath(gameObject);
+        }
+
+        
         Destroy(gameObject);
     }
 }
