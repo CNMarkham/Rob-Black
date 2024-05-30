@@ -20,6 +20,7 @@ public class index : MonoBehaviour
 
     public bool registered;
 
+    // Stores floor manager which generates and delete rooms and floors
     public floormanager floormanager;
 
     [Header("Rooms")]
@@ -35,7 +36,7 @@ public class index : MonoBehaviour
     {
 
         Debug.LogError(transform);
-        Instantiate(bills[0], transform.position, Quaternion.identity); // (int)bill
+        Instantiate(bills[(int)bill], transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
     }
     
     public void screenblack(bool isblack)

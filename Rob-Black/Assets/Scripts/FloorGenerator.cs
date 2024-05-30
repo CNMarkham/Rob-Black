@@ -7,11 +7,8 @@ public class FloorGenerator : MonoBehaviour
     // TODO: add seeds -- replace random func with Psudo random func
 
 
-    // Types of rooms
-    // Str8 away <_>
-    // corner |^>
-    public enum Directions { Up, Down , Left, Right}
-    public enum roomtype { normal, boss, store, item, start , nule}
+    public enum Directions { Up, Down , Left, Right} // directions
+    public enum roomtype { normal, boss, store, item, start , nule} // nule, in french, translates to "null" in english; an empty room
 
     public struct roomstruct
     {
@@ -38,7 +35,7 @@ public class FloorGenerator : MonoBehaviour
 
             return roomnum.ToString();
         }
-    }
+    } // room struct
 
     public struct position
     {
@@ -49,7 +46,7 @@ public class FloorGenerator : MonoBehaviour
         {
             return "(" + x.ToString() + "," + y.ToString() + ")";
         }
-    }
+    } // position (x,y)
 
     public struct posint
     {
@@ -60,7 +57,7 @@ public class FloorGenerator : MonoBehaviour
         {
             return position.ToString() + ":" + integer.ToString();
         }
-    }
+    } // position with integer attached
 
     public struct floor
     {
@@ -71,14 +68,14 @@ public class FloorGenerator : MonoBehaviour
         // dictionary of positions with their room number so room 1 is 0,0
         public Dictionary<position, int> roomorder;
 
-    }
+    } // floor struct
 
     position distbetweenpoints(position p1, position p2)
     {
         return new position { x = Mathf.Abs(p1.x - p2.x), y = Mathf.Abs(p1.y - p2.y) };
-    }
+    } // distance between points as point (x dist, y dist)
 
-    int distbetweenpointsint(position p1, position p2)
+    int distbetweenpointsint(position p1, position p2) // distance between points
     {
         position p = distbetweenpoints(p1, p2);
 
@@ -98,26 +95,13 @@ public class FloorGenerator : MonoBehaviour
         }
 
         return false;
-    }
+    } // checks if point (x,y) is within bounds of rectangle (a,b)
 
-    position p(int x, int y) { return new position { x = x, y = y }; }
+    position p(int x, int y) { return new position { x = x, y = y }; } // shorthand for new position
 
-    roomstruct r(Dictionary<Directions, bool> validdirections, GameObject prefab, roomtype roomtype, int roomnum) 
-    { return new roomstruct { validdirections = validdirections, prefab = prefab, roomtype = roomtype, roomnum = roomnum };  }
+    roomstruct r(GameObject prefab, roomtype roomtype, int roomnum) // Shorthand for new roomstruct
+    { return new roomstruct { prefab = prefab, roomtype = roomtype, roomnum = roomnum };  }
 
-    Dictionary<Directions, bool> d(bool up, bool down, bool left, bool right) 
-    {
-
-        Dictionary<Directions, bool> nd = new();
-
-        nd.Add(Directions.Up, up);
-        nd.Add(Directions.Down, down);
-        nd.Add(Directions.Left, left);
-        nd.Add(Directions.Right, right);
-
-        return nd;
-
-    }
 
     roomstruct nullrm() { return new roomstruct { prefab = null, roomtype= roomtype.nule }; }
 
@@ -139,20 +123,28 @@ public class FloorGenerator : MonoBehaviour
         position spawnpos = p(0, 0);
         position endpos;
 
+        // initialize spawnposition and end position
+
         Dictionary<bool, int> bindict = new();
 
         bindict.Add(true, 1);
         bindict.Add(false, 0);
+
+        // true: 1, false: 0
 
         Dictionary<bool, List<GameObject>> spcdict = new();
 
         spcdict.Add(true, storerooms);
         spcdict.Add(false, itemrooms);
 
+        // true: store rooms[gameobject], false: item rooms[gameobject]
+
         Dictionary<bool, roomtype> spctydict = new();
 
         spctydict.Add(true, roomtype.store);
         spctydict.Add(false, roomtype.item);
+
+        // spcdict but returns roomtype enum not array
 
         Dictionary<roomtype, int> spctyindict = new();
 
@@ -175,12 +167,14 @@ public class FloorGenerator : MonoBehaviour
 
         }
 
+        // np.zeroes((x,y)) but with rooms instead of 0
+
         print(roomsonlevel.Count);
         print(roomsonlevel[0].Count);
 
         // init start level
 
-        roomsonlevel[0][0] = r(d(false, true, false, true), index.idx.Player.gameObject, roomtype.start, 1);
+        roomsonlevel[0][0] = r(index.idx.Player.gameObject, roomtype.start, 1);
 
         // set z to biggest num between bX & bY
 
@@ -282,7 +276,7 @@ public class FloorGenerator : MonoBehaviour
 
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
             {
-                roomsonlevel[endpos.x][endpos.y] = r(d(true, false, false, true), index.idx.Player.gameObject, roomtype.start, currentroomnum);
+                roomsonlevel[endpos.x][endpos.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
                 break;
             }
 
@@ -300,7 +294,7 @@ public class FloorGenerator : MonoBehaviour
             //var roomsonlevelint = new List<List<roomstruct>>(roomsonlevel);
             //roomsonlevelint.ForEach(o => o.ForEach(o => o.tbp=bindict[!o.prefab.Equals(null)].ToString()));
 
-            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(d(true, false, false, true), index.idx.Player.gameObject, roomtype.start, currentroomnum);
+            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
 
             roomorder[chosenposibility] = currentroomnum;
             print("roomorder: " + coolprintdict(roomorder));
@@ -311,7 +305,7 @@ public class FloorGenerator : MonoBehaviour
             currentroom = chosenposibility;
         }
 
-        // the p[eorodksk of thios porem os to cahs the previously used rooms and restsart the whole thing if it didn't work
+        // the purpose of thios dict is to cache the previously used rooms and restart the whole thing if it didn't work
         Dictionary<position, bool> ouestcache = new();
 
         for (int i = 0; i < specialRooms; i++)
@@ -395,7 +389,7 @@ public class FloorGenerator : MonoBehaviour
                 roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
 
 
-                roomsonlevel[newx][newy] = r(d(false, false, false, false), idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                roomsonlevel[newx][newy] = r(idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
                 // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
 
                 added = true;

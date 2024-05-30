@@ -59,6 +59,8 @@ public class floormanager : MonoBehaviour
     public void newfloor(int level, Vector3 position)
     {
 
+        PlayerFloorCount.floorNumber += 1;
+
         while (true)
         {
 

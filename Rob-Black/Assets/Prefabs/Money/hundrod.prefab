@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 531783887331393552}
   - component: {fileID: 3892896116618524136}
   - component: {fileID: 1104076111155649573}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hundrod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
