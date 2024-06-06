@@ -1,9 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    // one of if not the easiest script I've ever written (in this project) 🥲
+
     public float playerSpeed;
 
     public Rigidbody rb;

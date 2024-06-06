@@ -13,7 +13,7 @@ public class newfloorstaircase : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(zoomcor);
+        //print(zoomcor);
 
         if (!collision.collider.CompareTag("Player") || zoomcor) { return; }
 
@@ -21,9 +21,11 @@ public class newfloorstaircase : MonoBehaviour
         StartCoroutine(zoom());
     }
 
-    private IEnumerator zoom()
+    private IEnumerator zoom() // genjutsu
     {
-        print(zoomcor);
+
+        
+        //print(zoomcor);
 
         float oldplayerspeed = (float) index.idx.Player.GetComponent<PlayerMove>().playerSpeed;
 
@@ -44,7 +46,7 @@ public class newfloorstaircase : MonoBehaviour
 
         }
 
-        Debug.Log(timer);
+        //Debug.Log(timer);
         index.idx.Player.transform.position = new Vector3(-33, 0, 0);
 
         index.idx.screenblack(true);
@@ -61,7 +63,7 @@ public class newfloorstaircase : MonoBehaviour
            
 
         }
-        Debug.Log(timer);
+        // Debug.Log(timer);
         //.LogError("point 2");
         // index.idx.Player.transform.position = new Vector3(-33, 0, 0);
 
@@ -75,7 +77,7 @@ public class newfloorstaircase : MonoBehaviour
         Destroy(gameObject);
 
         zoomcor = false;
-        print("emndmsakj");
+       // print("emndmsakj");
        // Debug.LogError("point3");
 
     }

@@ -31,7 +31,7 @@ public class BasicEnemy : MonoBehaviour
     public void Die()
     {
         EnemyDeathEvent[] deathEvents = gameObject.GetComponents<EnemyDeathEvent>();
-        Debug.LogError(deathEvents[0]);
+        // Debug.LogError(deathEvents[0]);
         foreach (EnemyDeathEvent e in deathEvents)
         {
             e.OnDeath(gameObject);

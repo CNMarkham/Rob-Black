@@ -42,13 +42,13 @@ public class SimpleBullet : MonoBehaviour
         }
     }
 
-    public void rotateDegrees(float n)
+    public void rotateDegrees(float n) // It rotates the bullet by n dg
     {
         offsetDegrees += n;
         updateRotation();
     }
 
-    public void updateRotation()
+    public void updateRotation() // sets the rotation to a new rotation based on quaternion.Euler
     {
         Quaternion oldrot = rotation;
         rotation = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y + offsetDegrees, rotation.eulerAngles.z);
@@ -59,7 +59,7 @@ public class SimpleBullet : MonoBehaviour
         rotation = oldrot;
     }
 
-    public IEnumerator decayBullet()
+    public IEnumerator decayBullet() // makes the bullet fade out after time as to not explode the computer when excess bullets are fired
     {
 
         float sign = index.idx.randomSign();
@@ -71,7 +71,7 @@ public class SimpleBullet : MonoBehaviour
 
         SpriteRenderer renderer = image.GetComponent<SpriteRenderer>();
 
-        rotateDegrees(decayStartDegrees * sign);
+        rotateDegrees(decayStartDegrees * sign); // Choses randomly in which direction the bullet should rotate as it decays
 
         for (int i = 0; i < (decayIterations - end_game_iterations); i++)
         {

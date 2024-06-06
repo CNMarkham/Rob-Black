@@ -1,14 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime;
 
-public class BasicGun : MonoBehaviour
+public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDERESTIMATED THE COMPLEXITY AND AM PAYING FOR IT 😭
 {
-    // Add shotgun so ex: bulletsPerShot
-    // Add bulletSpread so that the shotgun isn't over powered
-
-    // swords are possible with curreent architecture
+    // swords are possible with curreent architecture 🤨
 
     [Header("Gun Data")]
 
@@ -43,9 +40,6 @@ public class BasicGun : MonoBehaviour
 
     [Header("Decay")]
 
-    // TODO:
-    // Scattering -- based on decay time
-
     public float decayTime;
     public float decayStartDegrees = 0; // KEEP @ 0 FOR MOST OF THE TIME UNLESS YOU WANT A HOLE IN THE MIDDLE
     public float decayEndDegrees;
@@ -55,8 +49,6 @@ public class BasicGun : MonoBehaviour
     [Header("Burst")]
 
     public bool disableBurst;
-
-    // make it so that the values below get greyed out
 
     public float burstSize;
     public float timeBetweenBursts;

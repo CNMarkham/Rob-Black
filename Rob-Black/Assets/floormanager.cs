@@ -41,6 +41,8 @@ public class floormanager : MonoBehaviour
     public void resetrooms()
     {
 
+        index.idx.kill_bill(); // It is strange to see money you stole one the *next* floor
+
         index.idx.screenblack(true);
 
         System.Threading.Thread.Sleep(100);

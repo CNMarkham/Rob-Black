@@ -35,8 +35,18 @@ public class index : MonoBehaviour
     public void pay_bills(dollabill.denomonation bill, Transform transform)
     {
 
-        Debug.LogError(transform);
+        //Debug.LogError(transform);
         Instantiate(bills[(int)bill], transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
+    }
+
+    public void kill_bill()
+    {
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Money"))
+        {
+            Destroy(go); // google deepmind????
+        }
+
     }
     
     public void screenblack(bool isblack)
@@ -66,11 +76,11 @@ public class index : MonoBehaviour
 
     public GameObject randomroom(List<GameObject> rooms)
     {
-        print(rooms);
+        //print(rooms);
         return rooms[Random.Range(0, rooms.Count)];
     }
 
-    public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position)
+    public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position) // "Drops" player gun at index gunindex at position position
     {
         GameObject newap = Instantiate(GunAparatus);
 
@@ -87,8 +97,6 @@ public class index : MonoBehaviour
         attrs.Gun = null;
 
         newap.transform.position = position;
-
-        // TODO: make sure that it doesn't clip outside of the world
 
         return newap;
     }
@@ -108,7 +116,7 @@ public class index : MonoBehaviour
 
     public bool randomBool()
     {
-        Debug.Log("randombool");
+        //Debug.Log("randombool");
         return randdict[Random.Range(0,2)];
     }
 
@@ -122,7 +130,7 @@ public class index : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Debug.Log("start");
+        //Debug.Log("start");
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
 
