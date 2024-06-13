@@ -13,8 +13,8 @@ public class PlayerHealth : DamageManager
 
             if (pir)
             {
-                emepos = pir.transform.position;
-                addHealth(-pir.damage);
+                emepos = pir.transform.position; // sets the position of the enemy to the current enemy
+                addHealth(-pir.damage); // damages player
             }
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class door : MonoBehaviour
 {
+    // Coconut.jpg
+
     public bool closed;
 
     public void isClosed(bool close)

@@ -43,10 +43,10 @@ public class gunholderspawner : MonoBehaviour
         if (price > 0) { nopickup = true; }
 
         pa = index.idx.Player.GetComponent<PlayerMoney>();
-    }
+    } // Set price, text & gun
 
     private void Update()
-    {
+    { // makes gun  free w/o a specified price
         pa = index.idx.Player.GetComponent<PlayerMoney>();
 
         if (gpa == null) return;
@@ -65,7 +65,7 @@ public class gunholderspawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // makes the "to buy press _" text appear when in proximity
     {
         if (gpa == null) return;
         toBuy.text = "To buy press 'E'";

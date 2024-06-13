@@ -14,7 +14,7 @@ public class GunUIManager : MonoBehaviour
 
     // Update is called once per frame
 
-    public void setblack(bool isblack)
+    public void setblack(bool isblack)// sets black ui element to be active if active
     {
         raw.SetActive(isblack);
     }

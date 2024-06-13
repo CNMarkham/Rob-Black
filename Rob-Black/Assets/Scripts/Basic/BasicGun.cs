@@ -74,7 +74,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         disableShooting = true;
     }
 
-    void instanciateBullet()
+    void instanciateBullet() // instansiates bullet
     {
         GameObject newBullet = Instantiate(Bullet);
 
@@ -102,7 +102,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         bulletScript.enabled = true;
     }
 
-    IEnumerator reload()
+    IEnumerator reload() // reloads gun when run
     {
         if (isReloading || magazineCount <= 0 || shotsFired == 0)
         {
@@ -126,7 +126,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         spriteRenderer.color = oldColor;
     }
 
-    IEnumerator shoot()
+    IEnumerator shoot() // Shoots gun if magazine is full, not reloading and can shoot is true
     {
         if (shotsFired >= magazineSize || isReloading || !canShoot)
         {

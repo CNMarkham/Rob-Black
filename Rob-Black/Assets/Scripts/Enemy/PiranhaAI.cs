@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PiranhaAI : BasicEnemy
 {
+    // moves in the direction of the playtrer snf gets damages if touching bullet
+
     public DamageManager dm;
 
     public GameObject Player;

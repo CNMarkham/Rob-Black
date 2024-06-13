@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomActivator : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // If touching room initialize room
     {
         if (other.CompareTag("Room"))
         {

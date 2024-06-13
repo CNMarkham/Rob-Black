@@ -19,7 +19,7 @@ public class dollabill : MonoBehaviour
 
 
     private void OnCollisionEnter(Collision collision)
-    {
+    { // when touching player add money to player
         if (collision.gameObject.CompareTag("Player"))
         {
             index.idx.getPlayer().GetComponent<PlayerMoney>().addMoney(den);

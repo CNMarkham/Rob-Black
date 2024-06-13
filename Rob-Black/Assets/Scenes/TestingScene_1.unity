@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 4.1
   m_FrequencyGain: 0.01
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: 338.87408, y: -394.83032, z: -469.94128}
 --- !u!1001 &914327992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2309,8 +2309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4925c543cfe474ea66e90bf5819bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawns: []
-  enemyTypes: []
+  spawnLists: []
   enemySpawnNumber: 0
   spawnRate: 0
   spawnRateAmplitude: 0

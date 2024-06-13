@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLookAt : MonoBehaviour
 {
     // Update is called once per frame
-    void Update()
+    void Update() // rotates player to mouse position
     {
         Quaternion oldrotation = transform.rotation;
 

@@ -24,7 +24,7 @@ public class PlayerAttributes : MonoBehaviour
         scrollCooldown = false;
     }
 
-    public void disableGunsAndEnableGun(int gunIndex)
+    public void disableGunsAndEnableGun(int gunIndex) // this disables all of the guns currently in inventory and then enables the gun @ index
     {
         foreach (GameObject gun in playerGuns)
         {
@@ -54,7 +54,7 @@ public class PlayerAttributes : MonoBehaviour
         scrollCooldown = false;
     }
 
-    IEnumerator scrollGuns(int scrollBy) // eww Selenium
+    IEnumerator scrollGuns(int scrollBy) // eww Selenium reference?, it scrolls the guns by a dactor of scrollby
     {
         if (currentGunIndex < 0 || scrollCooldown) {  yield break; }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPay : EnemyDeathEvent
 {
-    public override void OnDeath(GameObject enemy)
+    public override void OnDeath(GameObject enemy) // drops bills on death
     {
         Debug.LogError(index.idx.randomChoice(index.idx.bills).GetComponent<dollabill>().den);
 

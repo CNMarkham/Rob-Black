@@ -12,7 +12,8 @@ public class BasicEnemy : MonoBehaviour
 
 
 
-    public void Damage(int amount) {
+    public void Damage(int amount) // Damages enemy untill health <= 0 in which case it dies
+    {
 
         health -= amount;
 
@@ -23,12 +24,12 @@ public class BasicEnemy : MonoBehaviour
 
     }
 
-    public void Heal(int amount)
+    public void Heal(int amount) // heals player by ammount
     {
         health += amount;
     }
 
-    public void Die()
+    public void Die() // deletes self + rujns every on death event stored in the enemy
     {
         EnemyDeathEvent[] deathEvents = gameObject.GetComponents<EnemyDeathEvent>();
         // Debug.LogError(deathEvents[0]);

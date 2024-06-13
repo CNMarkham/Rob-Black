@@ -9,13 +9,13 @@ public class PlayerMoney : MonoBehaviour
 
     public GameObject tobepurchased;
 
-    public void addMoney(int money)
+    public void addMoney(int money) // money += x
     {
         playerMoney += money;
 
     }
 
-    public void addMoney(dollabill.denomonation money)
+    public void addMoney(dollabill.denomonation money) // uruly function that can easily be relplacerd by a dictionary (Adds money by denomonation e.g. twenty gives += 20 money)
     {
         switch (money)
         {

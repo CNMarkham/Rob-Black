@@ -10,7 +10,7 @@ public class GunPickupAparatus : MonoBehaviour
 
     public bool nopickup = false;
 
-    public static void dropGun(GameObject gun, GameObject player)
+    public static void dropGun(GameObject gun, GameObject player) // instansiates new gun aparatus with gun input obj as gun
     {
 
         GameObject newAparatus = Instantiate(index.idx.GunAparatus);
@@ -31,14 +31,14 @@ public class GunPickupAparatus : MonoBehaviour
 
     }
 
-    public void doublePickupRadius()
+    public void doublePickupRadius() // the pickup radius is the bounding bot that the payer needs to touch in order to pick up the gun so this doubles that size
     {
         var box = GetComponent<BoxCollider>();
         box.size = new Vector3(box.size.x * 2, box.size.y * 2, box.size.z * 2);
 
     }
 
-    public void OnTriggerEnter(Collider other) // fdro[t adoijwijoe djoiwhogi
+    public void OnTriggerEnter(Collider other) // Gives palyer gun if it can pick it up
     {
         if (nopickup) return;
 
@@ -55,7 +55,7 @@ public class GunPickupAparatus : MonoBehaviour
         }
     }
 
-    public void playercol(GameObject other)
+    public void playercol(GameObject other) // adds gun to player arsenal or replaces current gun if at max
     {
         //Debug.Log(other.name);
         PlayerAttributes attr = other.GetComponentInParent<PlayerAttributes>();

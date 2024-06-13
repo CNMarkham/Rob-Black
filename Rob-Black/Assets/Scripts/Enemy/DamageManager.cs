@@ -5,9 +5,9 @@ using UnityEngine;
 public class DamageManager : MonoBehaviour
 {
     public int health;
-    public bool ignoredamage;
-    public float iframelength;
-    public int blips;
+    public bool ignoredamage; // if true ignore damage
+    public float iframelength; // time it takes for the iframe to blink
+    public int blips; // amount of blinks in iframe blink
 
     public float recoilForce = 15f;
 
@@ -21,7 +21,7 @@ public class DamageManager : MonoBehaviour
     public TMPro.TMP_Text playerHealth;
 
     public Vector3 emepos;
-    public void addHealth(int amount )
+    public void addHealth(int amount ) // Adds int health to player health e.g. -10 or 10
     {
         if (ignoredamage) { return; }
 
@@ -42,7 +42,7 @@ public class DamageManager : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Die() // Destroys player object OR runs enemy die function
     {
         try
         {
@@ -57,7 +57,7 @@ public class DamageManager : MonoBehaviour
 
     }
 
-    IEnumerator Iframe()
+    IEnumerator Iframe() // Makes the player/enemy blink when hit and make them invincible for that time
     {
 
 
@@ -84,12 +84,12 @@ public class DamageManager : MonoBehaviour
 
 
 
-    private void Start()
+    private void Start() // Start of script init
     {
         StartCoroutine("Iframe");
     }
 
-    private void Update()
+    private void Update() // Update func
     {
         if (playerHealth != null) playerHealth.text = health.ToString();
         if (healthbar != null) healthbar.health = health;

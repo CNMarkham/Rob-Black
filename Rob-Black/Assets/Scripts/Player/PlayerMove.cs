@@ -23,7 +23,6 @@ public class PlayerMove : MonoBehaviour
     {
 
 
-        // It works it's just WASD doesn't work too well
         // WASD movement
 
         rb.AddForce(transform.right * 10 * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);

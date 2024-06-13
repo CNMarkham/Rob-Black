@@ -21,7 +21,7 @@ public class healthBarScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // changes size of green bar and black bar relative to eachother;
     {
         greenPart.transform.localScale = new Vector3((maxgreenwidthtohealthratio[0] / maxgreenwidthtohealthratio[1]) * (float)health, greenPart.transform.localScale.y, greenPart.transform.localScale.z);
         blackPart.transform.localScale = new Vector3((maxblackwidthtohealthratio[0] / maxblackwidthtohealthratio[1]) * (float)maxhealth, blackPart.transform.localScale.y, blackPart.transform.localScale.z);

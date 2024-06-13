@@ -14,7 +14,7 @@ public class floormanager : MonoBehaviour
 
     // public index index;
 
-    GameObject selectroom(int roomtype)
+    GameObject selectroom(int roomtype) // roomtypeint -> gameobject instance from rooms list
     {
         switch (roomtype)
         {
@@ -32,20 +32,21 @@ public class floormanager : MonoBehaviour
 
     }
 
-    public IEnumerator stopblack(int delayms)
+    public IEnumerator stopblack(int delayms) // corutine to stop the screen from being black
     {
         yield return new WaitForSeconds(delayms / 1000);
         index.idx.screenblack(false);
     }
 
-    public void resetrooms()
+    public void resetrooms() // kill all money, sets screen black, finds all objects with room tags, deletes them then starts the
+                             // 1000 ms corutine to stop the screen from being black
     {
 
-        index.idx.kill_bill(); // It is strange to see money you stole one the *next* floor
+        index.idx.kill_bill(); // It is strange to see money you stole on the *next* floor
 
         index.idx.screenblack(true);
 
-        System.Threading.Thread.Sleep(100);
+        //System.Threading.Thread.Sleep(100);
 
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
 
@@ -58,7 +59,10 @@ public class floormanager : MonoBehaviour
 
     }
 
-    public void newfloor(int level, Vector3 position)
+    public void newfloor(int level, Vector3 position) // Using the position vector as a root it uses the floor generation script attatched to the 
+                                                      // index file to generate a room and then it enumerates all of the rooms in newley generated floor
+                                                      // in order to place them aroiund the position
+        
     {
 
         PlayerFloorCount.floorNumber += 1;

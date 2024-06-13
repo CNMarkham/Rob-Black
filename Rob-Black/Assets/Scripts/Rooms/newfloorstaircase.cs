@@ -21,7 +21,9 @@ public class newfloorstaircase : MonoBehaviour
         StartCoroutine(zoom());
     }
 
-    private IEnumerator zoom() // genjutsu
+    private IEnumerator zoom() // genjutsu:
+                               // zooms in, makes the screen black, loads out all of the enemies, items, rooms and money,
+                               // loads in new enemies, rooms, items and money makes screen not black, zooms out
     {
 
         
@@ -37,7 +39,7 @@ public class newfloorstaircase : MonoBehaviour
         index.idx.Player.GetComponent<PlayerMove>().playerSpeed = 0;
         //index.idx.Player.transform.position = new Vector3(-33, 0, 0);
         float timer = 0;
-        while (timer < zoomanimlength)
+        while (timer < zoomanimlength) // zoom in
         {
             yield return new WaitForFixedUpdate();
             timer += Time.fixedDeltaTime;
@@ -51,11 +53,11 @@ public class newfloorstaircase : MonoBehaviour
 
         index.idx.screenblack(true);
 
-        index.idx.floormanager.resetrooms();
-        index.idx.floormanager.newfloor(1, new Vector3(0, 0, 0));
+        index.idx.floormanager.resetrooms(); // remove all rooms and items and money
+        index.idx.floormanager.newfloor(1, new Vector3(0, 0, 0)); // make new floor @ 0,0,0
 
         Debug.LogError("point 1");
-        while (timer > 0)
+        while (timer > 0) // zoom out
         {
             yield return new WaitForFixedUpdate();
             timer -= Time.fixedDeltaTime;
