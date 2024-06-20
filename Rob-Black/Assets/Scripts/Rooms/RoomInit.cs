@@ -29,6 +29,9 @@ public class RoomInit : MonoBehaviour
     IEnumerator enemySpawnCoroutine() // Spawn an enemy from enemy list at random positkion from enemy positions every spawnrate seconds
     {
 
+        EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, index.idx.currentdifficulty, index.idx.currentenvironment);
+        // acctually implement current env stuff
+
         //EnemySpawnModule esm = gameObject.GetComponents<EnemySpawnModule>();
         int currentLevel = PlayerFloorCount.floorNumber;
         if (currentLevel > spawnLists.Count) { currentLevel = spawnLists.Count - 1; }

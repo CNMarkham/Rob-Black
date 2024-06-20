@@ -21,7 +21,7 @@ public class newfloorstaircase : MonoBehaviour
         StartCoroutine(zoom());
     }
 
-    private IEnumerator zoom() // genjutsu:
+    private IEnumerator zoom()
                                // zooms in, makes the screen black, loads out all of the enemies, items, rooms and money,
                                // loads in new enemies, rooms, items and money makes screen not black, zooms out
     {

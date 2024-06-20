@@ -47,7 +47,7 @@ public class gunholderspawner : MonoBehaviour
 
     private void Update()
     { // makes gun  free w/o a specified price
-        pa = index.idx.Player.GetComponent<PlayerMoney>();
+        //pa = index.idx.Player.GetComponent<PlayerMoney>();
 
         if (gpa == null) return;
 

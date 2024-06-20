@@ -15,7 +15,7 @@ public class PlayerMoney : MonoBehaviour
 
     }
 
-    public void addMoney(dollabill.denomonation money) // uruly function that can easily be relplacerd by a dictionary (Adds money by denomonation e.g. twenty gives += 20 money)
+    public void addMoney(dollabill.denomonation money) // Adds money by denomonation e.g. twenty gives += 20 money
     {
         switch (money)
         {

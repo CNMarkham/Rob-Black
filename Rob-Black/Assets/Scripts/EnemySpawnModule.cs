@@ -10,7 +10,7 @@ public class EnemySpawnModule : ScriptableObject
     public List<GameObject> EnemyTypes;
 
     public index.difficulty difficulty;
-
+    public index.environment environment;
     
 
 }
