@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RoomInit : MonoBehaviour
 {
-    public List<EnemySpawnModule> spawnLists = new List<EnemySpawnModule>();
+
+    public List<EnemySpawnModule>? spawnLists;
 
     public int enemySpawnNumber;
 
@@ -17,6 +18,14 @@ public class RoomInit : MonoBehaviour
     public List<door> doors;
 
     private List<GameObject> enemies;
+
+    private void Start()
+    {
+        if (spawnLists == null)
+        {
+            spawnLists = new List<EnemySpawnModule>(GetComponentsInChildren<EnemySpawnModule>());
+        }
+    }
 
     void doorsAreClosed(bool closed)
     {
@@ -40,9 +49,9 @@ public class RoomInit : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnRate + index.idx.randomSign() * Random.Range(0, spawnRateAmplitude));
 
-            GameObject enemy = index.idx.randomChoice(spawnLists[currentLevel].EnemyTypes);
+            GameObject enemy = index.idx.randomChoice(esm.EnemyTypes);
 
-            Vector3 enemypos = index.idx.randomChoice(spawnLists[currentLevel].EnemySpawns).position;
+            Vector3 enemypos = index.idx.randomChoice(esm.EnemySpawns).position;
 
             GameObject newenemy = Instantiate(enemy, enemypos, Quaternion.identity);
 

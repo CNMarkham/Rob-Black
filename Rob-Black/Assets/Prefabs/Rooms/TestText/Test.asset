@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2e65db23215ea4587879313fea4a53, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  environment: 0
+  normalRooms:
+  - {fileID: 0}
+  bossRooms:
+  - {fileID: 7605402338380311413, guid: 383f2d1efe13723488c40abd4b9e84c5, type: 3}
+  storeRooms:
+  - {fileID: 8144021999180489231, guid: 1dbb75e8f728d0547961b65d45f3d4dc, type: 3}
+  itemRooms:
+  - {fileID: 3704171485144747962, guid: 40b5f9a1d527d794c8578596041f8d96, type: 3}
+  startRooms:
+  - {fileID: 1701224172763466414, guid: e1a0a83ade589ad4daab775d62929fed, type: 3}

@@ -11,6 +11,5 @@ public class EnemySpawnModule : ScriptableObject
 
     public index.difficulty difficulty;
     public index.environment environment;
-    
 
 }

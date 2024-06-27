@@ -17,6 +17,8 @@ public class index : MonoBehaviour
 
     public GunUIManager guimg;
 
+    public EnvironmentPool environmentPool;
+
     public FloorGenerator FloorGeneratorIndex;
 
     public GameObject Player;
@@ -40,10 +42,36 @@ public class index : MonoBehaviour
     public environment currentenvironment;
     public difficulty currentdifficulty;
 
+    public Environment defaultenvironment;
+
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
         currentenvironment = environment.test; // CHANGE LATER
+
+        List<Environment> environments = new();
+
+        foreach (Environment potentialenvironment in environmentPool.enviro)
+        {
+            if (potentialenvironment.environment == currentenvironment)
+            {
+                environments.Add(potentialenvironment);
+            }
+        }
+
+
+        Environment env = defaultenvironment;
+
+        if (environments.Count !=0)
+        {
+            env = environments[0];
+        }
+
+        normalRooms = env.normalRooms;
+        bossRooms = env.bossRooms;
+        storeRooms = env.storeRooms;
+        itemRooms = env.itemRooms;
+        startRooms = env.startRooms;
     }
 
     public enum difficulty // Speicfy the dificulty of an enemy spawn module
@@ -75,6 +103,13 @@ public class index : MonoBehaviour
         sand = 0x2, // sand environment
         arct = 0x3 // arctic
     }
+
+    public List<environment> availableenvironments = new List<environment>() 
+        {
+    
+        environment.test
+
+        };
 
     public difficulty prevdiff(difficulty difficulty)
     {
@@ -125,7 +160,8 @@ public class index : MonoBehaviour
             }
 
             // same as previous if
-            if (module.environment != environment && environment != null)
+            if (module.environment != environment
+                && environment != null)
             {
                 continue;
             }

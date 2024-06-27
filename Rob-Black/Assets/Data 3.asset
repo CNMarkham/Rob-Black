@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394fa43dfd8ecdb47bd45d3b29a375c6, type: 3}
+  m_Name: Data 3
+  m_EditorClassIdentifier: 
+  disableShooting: 0
+  Name: 
+  spriteRenderer: {fileID: 0}
+  Bullet: {fileID: 0}
+  bulletBurnColor:
+    serializedVersion: 2
+    rgba: 0
+  holdDown: 0
+  bulletSpeed: 0
+  bulletStartPos: {fileID: 0}
+  magazineSize: 0
+  reloadTime: 0
+  bulletsPerShot: 1
+  bulletsPerSecond: 0
+  bulletSpreadDegree: 0
+  decayTime: 0
+  decayStartDegrees: 0
+  decayEndDegrees: 0
+  decayIterations: 100
+  DECAY: 0
+  disableBurst: 0
+  burstSize: 0
+  timeBetweenBursts: 0
+  shotsFired: 0
+  canShoot: 0
+  isReloading: 0
