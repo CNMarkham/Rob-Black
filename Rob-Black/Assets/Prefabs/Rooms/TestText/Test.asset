@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   environment: 0
+  globalLightColour: {r: 1, g: 0, b: 0, a: 0}
+  globalLightIntensity: 1
+  flashlightEnabled: 1
   normalRooms:
-  - {fileID: 0}
+  - {fileID: 8019420992770663888, guid: 8b8d154e5071db84aabfcd0d4eae0b16, type: 3}
   bossRooms:
   - {fileID: 7605402338380311413, guid: 383f2d1efe13723488c40abd4b9e84c5, type: 3}
   storeRooms:

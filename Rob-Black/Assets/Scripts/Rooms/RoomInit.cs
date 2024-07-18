@@ -6,6 +6,7 @@ public class RoomInit : MonoBehaviour
 {
 
     public List<EnemySpawnModule>? spawnLists;
+    public List<Transform> enemySpawns;
 
     public int enemySpawnNumber;
 
@@ -51,7 +52,7 @@ public class RoomInit : MonoBehaviour
 
             GameObject enemy = index.idx.randomChoice(esm.EnemyTypes);
 
-            Vector3 enemypos = index.idx.randomChoice(esm.EnemySpawns).position;
+            Vector3 enemypos = index.idx.randomChoice(this.enemySpawns).position; // esm.EnemySpawns
 
             GameObject newenemy = Instantiate(enemy, enemypos, Quaternion.identity);
 

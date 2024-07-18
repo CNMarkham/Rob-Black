@@ -8,7 +8,16 @@ public class newfloorstaircase : MonoBehaviour
 
     private void Start()
     {
-        transform.parent = transform.parent.parent;
+        try
+        {
+            transform.parent = transform.parent.parent;
+        }
+
+        catch // it failed so it is already at the top 
+        {
+
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)

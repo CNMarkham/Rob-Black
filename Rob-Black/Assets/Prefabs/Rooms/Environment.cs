@@ -8,6 +8,11 @@ public class Environment : ScriptableObject
 {
     public index.environment environment;
 
+    public Color globalLightColour;
+    public float globalLightIntensity;
+
+    public bool flashlightEnabled;
+
     [Header("Rooms")]
     public List<GameObject> normalRooms;
     public List<GameObject> bossRooms;

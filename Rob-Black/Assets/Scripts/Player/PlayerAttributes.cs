@@ -16,6 +16,9 @@ public class PlayerAttributes : MonoBehaviour
     private bool scrollCooldown;
     public float scrollCooldownTime;
 
+    public GameObject flashLight;
+    public bool flashlightEnabled;
+
 
 
     // Start is called before the first frame update
@@ -83,6 +86,8 @@ public class PlayerAttributes : MonoBehaviour
         {
             index.idx.guntoaparatus(Gun, currentGunIndex, index.idx.Player.transform.position + new Vector3(-1, -1, -1));
         }
+
+        if (flashlightEnabled) { flashLight.SetActive(true); }
 
         if (scrollDeltaY != 0 && Gun != null)
         {

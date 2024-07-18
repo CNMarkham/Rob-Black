@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 using System;
 using System.Linq;
@@ -14,6 +15,8 @@ public class index : MonoBehaviour
     public GameObject FloorGenerationObject;
 
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
+
+    public Light2D GlobalLight;
 
     public GunUIManager guimg;
 
@@ -72,6 +75,14 @@ public class index : MonoBehaviour
         storeRooms = env.storeRooms;
         itemRooms = env.itemRooms;
         startRooms = env.startRooms;
+
+        GlobalLight.color = env.globalLightColour;
+        GlobalLight.intensity = env.globalLightIntensity;
+
+        Player.GetComponent<PlayerAttributes>().flashlightEnabled = env.flashlightEnabled;
+
+        defaultenvironment = env;
+
     }
 
     public enum difficulty // Speicfy the dificulty of an enemy spawn module
@@ -185,12 +196,17 @@ public class index : MonoBehaviour
         Instantiate(bills[(int)bill], transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
     }
 
-    public void kill_bill() // kills every bill in game
+    public void kill_bill() // kills every bill and gun in game
     {
 
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Money"))
         {
             Destroy(go); // google deepmind????
+        }
+
+        foreach (GameObject gun in GameObject.FindGameObjectsWithTag("Gun"))
+        {
+            Destroy(gun); // gun
         }
 
     }
@@ -266,7 +282,7 @@ public class index : MonoBehaviour
         return randdict[UnityEngine.Random.Range(0,2)];
     }
 
-    public float randomSign() // import random; {1: 1, 0: -1}[random.randint(0,1)]
+    public float randomSign() // import random; {True: 1, False: -1}[{1: True, 0: False}[random.randint(0,1)]]
     {
 
         if (randomBool()) return 1f;
@@ -284,6 +300,12 @@ public class index : MonoBehaviour
 
         randdict.Add(0, false);
         randdict.Add(1, true);
+
+
+        GlobalLight.color = defaultenvironment.globalLightColour;
+        GlobalLight.intensity = defaultenvironment.globalLightIntensity;
+
+        Player.GetComponent<PlayerAttributes>().flashlightEnabled = defaultenvironment.flashlightEnabled;
 
         registered = true;
     }

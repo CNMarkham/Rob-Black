@@ -16,11 +16,9 @@ public class dollabill : MonoBehaviour
     }
 
     public denomonation den;
-
-
-    private void OnCollisionEnter(Collision collision)
-    { // when touching player add money to player
-        if (collision.gameObject.CompareTag("Player"))
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
             index.idx.getPlayer().GetComponent<PlayerMoney>().addMoney(den);
             Destroy(gameObject);
