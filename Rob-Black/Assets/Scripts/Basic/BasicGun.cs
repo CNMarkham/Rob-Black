@@ -22,6 +22,9 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
 
     [Header("Bullet Settings")]
 
+    public float bulletLengthPercentOfStandardBullet = 1; // 1 = it has the same length as the regular bullet prefab; 0.5 half as long, 2 twice as long
+    public float bulletHeightPercentOfStandardBullet = 1; // Height instead of length 
+
     public float bulletSpeed;
     public int bulletDamage;
     public Transform bulletStartPos;
@@ -77,6 +80,8 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
     void instanciateBullet() // instansiates bullet
     {
         GameObject newBullet = Instantiate(Bullet);
+
+        newBullet.transform.localScale = new Vector3(bulletLengthPercentOfStandardBullet * 0.2f, bulletHeightPercentOfStandardBullet * 0.2f, (float)0.5);
 
         SimpleBullet bulletScript = newBullet.GetComponent<SimpleBullet>();
 

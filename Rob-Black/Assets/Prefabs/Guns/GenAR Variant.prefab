@@ -36,6 +36,14 @@ PrefabInstance:
       propertyPath: bulletSpreadDegree
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: bulletHeightPercentOfStandardBullet
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: bulletLengthPercentOfStandardBullet
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.3228579

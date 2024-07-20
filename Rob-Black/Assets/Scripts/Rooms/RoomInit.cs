@@ -8,6 +8,8 @@ public class RoomInit : MonoBehaviour
     public List<EnemySpawnModule>? spawnLists;
     public List<Transform> enemySpawns;
 
+    public RoomFunction RoomFunction;
+
     public int enemySpawnNumber;
 
     public float spawnRate;
@@ -32,12 +34,14 @@ public class RoomInit : MonoBehaviour
     {
         foreach (door d in doors)
         {
-            d.isClosed(closed);
+            
         }
     }
 
     IEnumerator enemySpawnCoroutine() // Spawn an enemy from enemy list at random positkion from enemy positions every spawnrate seconds
     {
+
+        RoomFunction.lockWholeRoom = true;
 
         EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, index.idx.currentdifficulty, index.idx.currentenvironment);
         // acctually implement current env stuff
@@ -60,6 +64,8 @@ public class RoomInit : MonoBehaviour
 
             enemies.Add(newenemy);
         }
+
+        RoomFunction.roomStarted = true;
 
         StartCoroutine(waitforenemiestodie());
 

@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class door : MonoBehaviour
 {
-    // Coconut.jpg
+    public bool locked;
+    public BoxCollider lockCollider;
+    public RoomFunction room;
 
-    public bool closed;
-
-    public void isClosed(bool close)
+    private void Start()
     {
-        closed = close;
+        lockCollider.enabled = locked;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        lockCollider.enabled = room.lockWholeRoom;
     }
 }

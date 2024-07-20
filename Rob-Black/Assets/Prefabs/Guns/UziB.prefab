@@ -140,6 +140,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   holdDown: 1
+  bulletLengthPercentOfStandardBullet: 2
+  bulletHeightPercentOfStandardBullet: 0.5
   bulletSpeed: 10
   bulletDamage: 5
   bulletStartPos: {fileID: 2615736940590819568}

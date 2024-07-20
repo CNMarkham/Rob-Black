@@ -206,7 +206,7 @@ public class index : MonoBehaviour
 
         foreach (GameObject gun in GameObject.FindGameObjectsWithTag("Gun"))
         {
-            Destroy(gun); // gun
+           // Destroy(gun); // gun
         }
 
     }
