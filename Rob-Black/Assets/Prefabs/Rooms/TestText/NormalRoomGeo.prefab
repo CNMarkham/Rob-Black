@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 4997229052239588906}
   - component: {fileID: 7091129221684780055}
   - component: {fileID: 3990250419196121544}
+  - component: {fileID: 6350880119547566767}
   m_Layer: 10
   m_Name: Square
   m_TagString: Room
@@ -145,7 +146,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.93, y: 0.97, z: 10}
+  m_Size: {x: 0.93, y: 0.97, z: 9.98}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7091129221684780055
 MonoBehaviour:
@@ -196,6 +197,21 @@ MonoBehaviour:
   - {fileID: 1611930720784485160}
   - {fileID: 2731455362346125120}
   lockWholeRoom: 0
+--- !u!114 &6350880119547566767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658714362799820425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67dae7876e2de54a951ec6bc5ff0068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies: []
+  boxCollider: {fileID: 4997229052239588906}
+  boxColliderComponentHolder: {fileID: 2658714362799820425}
 --- !u!1 &6904435667707551973
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.6
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -695,11 +711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.8
+      value: 16.6
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -815,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.z
