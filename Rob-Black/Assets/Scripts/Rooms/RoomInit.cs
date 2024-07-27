@@ -24,6 +24,7 @@ public class RoomInit : MonoBehaviour
 
     private void Start()
     {
+
         if (spawnLists == null)
         {
             spawnLists = new List<EnemySpawnModule>(GetComponentsInChildren<EnemySpawnModule>());

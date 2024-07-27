@@ -9,6 +9,7 @@ TagManager:
   - Room
   - Money
   - Gun
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoomFunction : MonoBehaviour
 {
+    public bool nonattackingroom;
+
     public RoomInit roomInit;
     public bool roomStarted;
     public bool roomFinished;
@@ -20,6 +22,11 @@ public class RoomFunction : MonoBehaviour
     {
         roomStarted = false;
         roomFinished = false;
+
+        if (nonattackingroom)
+        {
+            roomFinished = true;
+        }
 
         liveEnemies = roomInit.enemySpawnNumber;
         
