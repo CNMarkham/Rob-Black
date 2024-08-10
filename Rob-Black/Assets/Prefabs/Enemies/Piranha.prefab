@@ -156,6 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2c2d42154b94f4ca94bcf441051e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VARYSIZE: 1
+  VARYSIZEPERCENTMIN: 1
+  VARYSIZEPERCENTMAX: 10.84
   health: 20
   ignoredamage: 0
   iframelength: 0

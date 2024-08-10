@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: gunColor.rgba
-      value: 4278210463
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletsPerShot

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // one of if not the easiest script I've ever written (in this project) 🥲
 
     public float playerSpeed;
 
@@ -18,15 +17,9 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
-
-        // WASD movement
-
-        rb.AddForce(transform.right * 10 * Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
-        rb.AddForce(transform.forward * 10 * Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed);
-
+        rb.AddForce(transform.right * Input.GetAxis("Horizontal") * playerSpeed, ForceMode.Force);
+        rb.AddForce(transform.forward * Input.GetAxis("Vertical") * playerSpeed, ForceMode.Force);
     }
 }

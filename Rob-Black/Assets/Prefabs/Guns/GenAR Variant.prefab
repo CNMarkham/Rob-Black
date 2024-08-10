@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: gunColor.rgba
-      value: 4282006074
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletSpreadDegree
@@ -38,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletHeightPercentOfStandardBullet
-      value: 0.5
+      value: 442.1
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletLengthPercentOfStandardBullet
-      value: 2
+      value: 401.18
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.x

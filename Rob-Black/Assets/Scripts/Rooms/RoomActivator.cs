@@ -10,6 +10,9 @@ public class RoomActivator : MonoBehaviour
         {
             try
             {
+                index.idx.Player.GetComponent<PlayerAttributes>().currentRoom = other.gameObject;
+                KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player.gameObject, other.gameObject.GetComponent<BoxCollider>(), other.gameObject);
+
                 other.GetComponent<RoomInit>().initializeRoom();
             }
 
