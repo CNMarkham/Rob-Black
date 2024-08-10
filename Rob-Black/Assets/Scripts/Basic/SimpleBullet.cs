@@ -30,6 +30,7 @@ public class SimpleBullet : MonoBehaviour
     public float offsetDegrees;
 
     public bool DECAY;
+    public bool DECAYNOW;
 
     private void Start()
     {
@@ -61,13 +62,21 @@ public class SimpleBullet : MonoBehaviour
 
     public IEnumerator decayBullet() // makes the bullet fade out after time as to not explode the computer when excess bullets are fired
     {
+        float sign = -1f;
 
-        float sign = index.idx.randomSign();
+        try
+        {
+            sign = index.idx.randomSign();
+        }
+        
+        catch { }
 
         float time_between_iterations = decayTime / decayIterations;
         float scatter_degree_per_iteration = sign * (decayEndDegrees / decayIterations); // Get the scatter degree per iteration
         int end_game_iterations = (int)(Mathf.Round(decayIterations / 2)); // Get the end game iterations
         float color_amount_per_iteration = 255 / end_game_iterations;
+
+        if (DECAYNOW) { time_between_iterations = 0.01f; };
 
         SpriteRenderer renderer = image.GetComponent<SpriteRenderer>();
 
@@ -98,5 +107,15 @@ public class SimpleBullet : MonoBehaviour
         // image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
         
         transform.localPosition += transform.right * bulletspeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Destroy(image);
+            Destroy(gameObject);
+            Destroy(this);
+        }
     }
 }

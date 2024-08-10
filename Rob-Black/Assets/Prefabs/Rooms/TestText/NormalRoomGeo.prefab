@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f95c84b73cd6549b0b66579af3aaf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nonattackingroom: 0
   roomInit: {fileID: 7091129221684780055}
   roomStarted: 0
   roomFinished: 0
@@ -513,6 +514,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4995408204844284508}
     m_Modifications:
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -553,6 +562,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 7521877818371863472, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_Name
       value: DoorUp
@@ -565,6 +582,14 @@ PrefabInstance:
       propertyPath: lockCollider
       value: 
       objectReference: {fileID: 6484823565382220455}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -593,6 +618,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4995408204844284508}
     m_Modifications:
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 4683909426402680836, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -633,6 +666,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 7521877818371863472, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_Name
       value: DoorBottom
@@ -645,6 +686,14 @@ PrefabInstance:
       propertyPath: lockCollider
       value: 
       objectReference: {fileID: 7933153613961556521}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -692,6 +741,14 @@ PrefabInstance:
     - target: {fileID: 772939390962455180, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4565927402028695865, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalScale.x
@@ -749,6 +806,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 7521877818371863472, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_Name
       value: DoorRight
@@ -761,6 +826,14 @@ PrefabInstance:
       propertyPath: lockCollider
       value: 
       objectReference: {fileID: 55384557292994908}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -808,6 +881,14 @@ PrefabInstance:
     - target: {fileID: 772939390962455180, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507901094351674447, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4565927402028695865, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_LocalScale.x
@@ -865,6 +946,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5570886621541578156, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 7521877818371863472, guid: d9346999d7cedf1448715b2180522fab, type: 3}
       propertyPath: m_Name
       value: DoorLeft
@@ -877,6 +966,14 @@ PrefabInstance:
       propertyPath: lockCollider
       value: 
       objectReference: {fileID: 3707146024517750068}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991139871903941138, guid: d9346999d7cedf1448715b2180522fab, type: 3}
+      propertyPath: m_Center.y
+      value: 0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

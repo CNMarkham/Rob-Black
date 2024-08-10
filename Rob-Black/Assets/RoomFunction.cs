@@ -34,13 +34,18 @@ public class RoomFunction : MonoBehaviour
 
     private void Update()
     {
-        liveEnemies = transform.parent.GetComponentsInChildren<DamageManager>().Length;
-        roomText.text = liveEnemies.ToString();
-
-        if (roomStarted && liveEnemies == 0)
+        try
         {
-            lockWholeRoom = false;
-            roomFinished = true;
+            liveEnemies = transform.parent.GetComponentsInChildren<DamageManager>().Length;
+            roomText.text = liveEnemies.ToString();
+
+            if (roomStarted && liveEnemies == 0)
+            {
+                lockWholeRoom = false;
+                roomFinished = true;
+            }
         }
+
+        catch { }
     }
 }

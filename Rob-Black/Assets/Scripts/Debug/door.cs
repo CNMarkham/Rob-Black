@@ -52,7 +52,7 @@ public class door : MonoBehaviour
         }
         catch { }
 
-        print("not broken");
+        //print("not broken");
 
         // CHECK IF THERE IS A DOOR PEER
 
@@ -63,6 +63,7 @@ public class door : MonoBehaviour
         // IF THERE ISN'T A DOOR PEER
         // ALWAYS LOCKED
 
+        /*
         if (!doorpeerdoorscript) {
 
             // lockCollider.enabled = false;
@@ -87,6 +88,22 @@ public class door : MonoBehaviour
         {
             if (!room.lockWholeRoom && room.roomFinished) { doorColourController.color = doorClosedColour; }
         }
+        */
+
+        if (lockCollider.enabled) { doorColourController.color = doorClosedColour; } // if locked use locked color otherwise open color
+        else { doorColourController.color = doorOpenColour; }
+
+        if (doorpeerdoorscript!=null) // check if doorpeer exists
+        {
+            if (doorpeerdoorscript.lockCollider.enabled) { doorColourController.color = doorClosedColour; };
+        }
+
+        else // if not, close door
+        {
+            doorColourController.color = doorClosedColour;
+            // lockCollider.enabled = true;
+        }
+
     }
 
     private void OnTriggerStay(Collider other)

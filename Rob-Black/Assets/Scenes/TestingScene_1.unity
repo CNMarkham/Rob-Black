@@ -2846,7 +2846,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693226168}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8556155ce1532f644baa21b87fd125bb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2859,9 +2859,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.34
-  m_Height: 0.21
+  m_Height: 1.22
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.34, y: 0, z: 0}
 --- !u!1 &1812905450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,7 +3084,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 2
 --- !u!114 &1846954198
@@ -3131,6 +3131,7 @@ MonoBehaviour:
   scrollCooldownTime: 0.2
   flashLight: {fileID: 123727891}
   flashlightEnabled: 0
+  currentRoom: {fileID: 0}
 --- !u!136 &1846954200
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3138,7 +3139,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846954194}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8556155ce1532f644baa21b87fd125bb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -12,6 +12,8 @@ public class KeepEnemiesInRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (index.idx.Player.GetComponent<PlayerAttributes>())
+
         Enemies = new();
         float xbounds = (boxCollider.size.x * boxColliderComponentHolder.transform.localScale.x) / 2;
         float ybounds = (boxCollider.size.y * boxColliderComponentHolder.transform.localScale.y) / 2;
@@ -20,6 +22,8 @@ public class KeepEnemiesInRoom : MonoBehaviour
         {
             Enemies.Add(dm.gameObject);
         }
+
+        //Enemies.Add(index.idx.Player);
 
         foreach (GameObject enemy in Enemies)
         {

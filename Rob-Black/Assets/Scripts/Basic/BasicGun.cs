@@ -97,7 +97,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         bulletScript.rotation = transform.rotation;
         bulletScript.forward = transform.forward;
         bulletScript.right = transform.right;
-        newBullet.transform.position = bulletStartPos.position + new Vector3(-1, 0, 0);
+        newBullet.transform.position = bulletStartPos.position; // + new Vector3(-1, 0, 0);
 
         bulletScript.bulletspeed = bulletSpeed;
 

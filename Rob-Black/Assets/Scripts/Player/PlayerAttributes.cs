@@ -19,6 +19,7 @@ public class PlayerAttributes : MonoBehaviour
     public GameObject flashLight;
     public bool flashlightEnabled;
 
+    public GameObject currentRoom = null;
 
 
     // Start is called before the first frame update
