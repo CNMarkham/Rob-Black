@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VARYSIZE: 1
   VARYSIZEPERCENTMIN: 1
-  VARYSIZEPERCENTMAX: 10.84
+  VARYSIZEPERCENTMAX: 25
   health: 20
   ignoredamage: 0
   iframelength: 0

@@ -186,7 +186,7 @@ public class index : MonoBehaviour
 
     public float floornumtodifffloat(int floornum)
     {
-        return (float)(0.5f * Mathf.Pow(floornum, 1.5f) + 1f);
+        return (float)(0.5f * Mathf.Pow(floornum, 1.5f) + 1f); // math function where f(x) = (x^1.5)0.5 + 1, so f(0) = 1 and f(100) = 501
     }
 
     public void pay_bills(dollabill.denomonation bill, Transform transform) // spawns bill denomonation @ transforms
@@ -206,7 +206,23 @@ public class index : MonoBehaviour
 
         foreach (GameObject gun in GameObject.FindGameObjectsWithTag("Gun"))
         {
-           // Destroy(gun); // gun
+            /*
+            try
+            {
+                // checks if the player isn't holding the gun
+                if (!gun.transform.parent // GunHolder
+                    .parent // phishplaceholder
+                    .parent // Player
+                    .CompareTag("Player")
+                )
+                {
+                    Destroy(gun); // gun
+                }
+            }
+            catch { }
+        
+            }
+            */
         }
 
     }
