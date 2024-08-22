@@ -34,6 +34,10 @@ public class RoomFunction : MonoBehaviour
 
     private void Update()
     {
+        if (roomFinished) {
+            lockWholeRoom = false;
+            return; }
+
         try
         {
             liveEnemies = transform.parent.GetComponentsInChildren<DamageManager>().Length;

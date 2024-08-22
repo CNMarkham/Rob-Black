@@ -3660,6 +3660,28 @@ Transform:
   - {fileID: 7563830441059194625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957835706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6250714054303071686, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+  m_PrefabInstance: {fileID: 8635595742749521917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2c2d42154b94f4ca94bcf441051e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1957835707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 733151599567895292, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+  m_PrefabInstance: {fileID: 8635595742749521917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072d34be19d296c4b947bd272f64ccac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1959808882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,6 +4898,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: DM
+      value: 
+      objectReference: {fileID: 1957835706}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: PA
+      value: 
+      objectReference: {fileID: 1957835707}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].parameters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].parameters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].parameters.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].parameters.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].parameters.Array.data[0]
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].parameters.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].attackSequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].attackSequence.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].attackSequence.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[0].attackSequence.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].attackSequence.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 733151599567895288, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: m_Name
       value: Piranha Boss
