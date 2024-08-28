@@ -12,6 +12,8 @@ public class PiranhaAI : BasicEnemy
     public float speed;
     public bool touchingPlayer;
 
+    public bool stopLookingAt;
+
     public Rigidbody rb;
 
     // Start is called before the first frame update
@@ -53,13 +55,14 @@ public class PiranhaAI : BasicEnemy
         if (Player.gameObject == null ) { return; };
         if (!!isRecoiling) { return; }
 
-        transform.LookAt(Player.transform);
+        if (!stopLookingAt) transform.LookAt(Player.transform);
 
+        var forward = Player.transform.position - this.transform.position;
 
         if (!touchingPlayer)
         {
             // transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
-            rb.velocity += new Vector3(transform.forward.x, 0, transform.forward.z) * speed * Time.deltaTime;
+            rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;
             rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
     }

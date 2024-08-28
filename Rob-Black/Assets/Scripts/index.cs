@@ -30,6 +30,8 @@ public class index : MonoBehaviour
 
     public bool registered;
 
+    public bossuiscript bossuiscript;
+
     // Stores floor manager which generates and delete rooms and floors
     public floormanager floormanager;
 

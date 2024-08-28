@@ -9,6 +9,7 @@ public class DamageManager : MonoBehaviour
     public float VARYSIZEPERCENTMAX = 5f;
 
     public int health;
+    public int maxHealth = 0;
     public bool ignoredamage; // if true ignore damage
     public float iframelength; // time it takes for the iframe to blink
     public int blips; // amount of blinks in iframe blink
@@ -91,6 +92,8 @@ public class DamageManager : MonoBehaviour
 
     private void Start() // Start of script init
     {
+        if (maxHealth == 0) { maxHealth = health; }
+
         if (VARYSIZE)
         {
             float newscale = gameObject.transform.localScale.x + Random.Range(VARYSIZEPERCENTMIN, VARYSIZEPERCENTMAX) / 100;
@@ -102,6 +105,8 @@ public class DamageManager : MonoBehaviour
 
     private void Update() // Update func
     {
+
+
         if (playerHealth != null) playerHealth.text = health.ToString();
         if (healthbar != null) healthbar.health = health;
     }

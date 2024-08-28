@@ -1306,6 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8954da15f7bd64fb5b76737dd6f448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossbarvisible: 1
   bosstitle: Piranha Boss
   bossbarcolor: {r: 0.6509804, g: 0, b: 0.047058824, a: 1}
   bossHealth: 10
@@ -1313,6 +1314,7 @@ MonoBehaviour:
   healthAreaSprite: {fileID: 408177128}
   healthAreaOriginalSize: 0
   bossHealthPercentage: 0
+  healthContainingArea: {fileID: 1193826438}
   bossHealthOriginal: 0
   bosstitleobject: {fileID: 2099837815}
 --- !u!1 &741656812
@@ -2664,6 +2666,7 @@ MonoBehaviour:
   FloorGeneratorIndex: {fileID: 1132475351}
   Player: {fileID: 1846954194}
   registered: 0
+  bossuiscript: {fileID: 688219264}
   floormanager: {fileID: 1531854689}
   normalRooms:
   - {fileID: 7557498072830849521, guid: 3a3e4baaf46bdbf4bacf05539448985b, type: 3}
@@ -3314,6 +3317,7 @@ MonoBehaviour:
   VARYSIZEPERCENTMIN: 1
   VARYSIZEPERCENTMAX: 5
   health: 6513
+  maxHealth: 0
   ignoredamage: 0
   iframelength: 1
   blips: 4
@@ -4932,7 +4936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: attkPatts.Array.data[1].parameters.Array.data[0]
-      value: -50
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: attkPatts.Array.data[1].parameters.Array.data[1]
@@ -4948,15 +4952,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: attkPatts.Array.data[0].attackSequence.Array.data[0]
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: attkPatts.Array.data[0].attackSequence.Array.data[1]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: attkPatts.Array.data[1].attackSequence.Array.data[0]
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -912811574010361463, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: attkPatts.Array.data[1].attackSequence.Array.data[1]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 733151599567895288, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: m_Name

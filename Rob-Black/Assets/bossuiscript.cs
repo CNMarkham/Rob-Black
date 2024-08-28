@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class bossuiscript : MonoBehaviour
 {
     [Header("edited")]
+    public bool bossbarvisible;
     public string bosstitle;
     public Color bossbarcolor;
     public int bossHealth;
@@ -15,6 +16,7 @@ public class bossuiscript : MonoBehaviour
     public Image healthAreaSprite;
     public float healthAreaOriginalSize;
     public float bossHealthPercentage;
+    public GameObject healthContainingArea;
     public int bossHealthOriginal;
     public TMPro.TMP_Text bosstitleobject;
 
@@ -28,6 +30,19 @@ public class bossuiscript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!bossbarvisible)
+        {
+            healthAreaSprite.color = new Color(0, 0, 0, 0);
+            healthContainingArea.SetActive(false);
+            bosstitleobject.text = "";
+            return;
+        }
+
+        else
+        {
+            healthContainingArea.SetActive(true);
+        }
+
         bossHealthPercentage = (bossHealth * 100) / bossHealthOriginal;
 
         healthArea.transform.localScale = new Vector3(

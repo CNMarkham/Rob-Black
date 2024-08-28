@@ -7,8 +7,9 @@ public class Boss : MonoBehaviour
     public enum Attack
     {
         WaitSeconds, // wait X seconds
-     
 
+        Spin, // spin while attacking for x seconds
+     
         BulletCircle, // how many bullets in the circle
         BulletShotgun, // how many bullets should fire from shotgun
 
@@ -21,6 +22,8 @@ public class Boss : MonoBehaviour
 
     public DamageManager DM;
     public PiranhaAI PA;
+
+    public bossuiscript bui;
 
     public float cooldown;
 
@@ -40,7 +43,8 @@ public class Boss : MonoBehaviour
             case Attack.WaitSeconds:
                 float movespeedold = PA.speed;
                 print(movespeedold);
-                PA.speed = 0;
+                //PA.speed = 0;
+                //this line would make it so that the boss stops moving which may be nice but without attacks it would render the boss trivial
                 yield return new WaitForSeconds(parameter_input);
                 PA.speed = movespeedold;
                 print(movespeedold);
@@ -54,6 +58,41 @@ public class Boss : MonoBehaviour
             case Attack.BulletShotgun:
 
 
+
+                break;
+
+            case Attack.Spin:
+
+                PA.stopLookingAt = true;
+                Debug.LogWarning("Start Looking");
+                for (int i = 0; i < 360 * 1; i++)
+                {
+                    transform.rotation = Quaternion.Euler(
+                        transform.rotation.eulerAngles.x,
+                        transform.rotation.eulerAngles.y + 5,
+                        transform.rotation.eulerAngles.z
+                     );
+
+                    Debug.LogWarning("Spinning");
+                    yield return new WaitForFixedUpdate();
+                }
+
+                float timecount = 0.00f;
+
+                for (int i = 0; i < 100; i++)
+                {
+                    timecount += 0.01f;
+
+                    Quaternion q = Quaternion.LookRotation(index.idx.Player.transform.position - transform.position, Vector3.up);
+                    //q = Quaternion.Euler(q.eulerAngles.x, q.eulerAngles.y, q.eulerAngles.z);
+
+                    transform.rotation = Quaternion.Slerp(transform.rotation, q, timecount);
+                    Debug.LogWarning("Returning To OG");
+                    yield return new WaitForFixedUpdate();
+                }
+
+                Debug.LogWarning("Stop Looking");
+                PA.stopLookingAt = false;
 
                 break;
 
@@ -75,6 +114,8 @@ public class Boss : MonoBehaviour
 
     }
 
+    
+
     IEnumerator AttackSequencer()
     {
 
@@ -93,12 +134,14 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bui = index.idx.bossuiscript;
         StartCoroutine(AttackSequencer());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        bui.bossHealthOriginal = DM.maxHealth;
+        bui.bossHealth = DM.health;
     }
 }
