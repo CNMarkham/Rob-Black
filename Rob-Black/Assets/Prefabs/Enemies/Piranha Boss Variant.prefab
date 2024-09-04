@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775054, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: health
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -89,3 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7d3161248930c43b05b9182c45592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DM: {fileID: 0}
+  PA: {fileID: 0}
+  bossDrops: []
+  bui: {fileID: 0}
+  cooldown: 0
+  noupdate: 0
+  attkPatts: []

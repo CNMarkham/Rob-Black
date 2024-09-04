@@ -21,6 +21,8 @@ public class PiranhaAI : BasicEnemy
     {
         Player = FindObjectOfType<PlayerMove>().gameObject;
 
+        if (speed == 0f) { return; }
+
         speed = Random.Range(speed, speed + speed/2.5f);
     }
 
@@ -59,7 +61,7 @@ public class PiranhaAI : BasicEnemy
 
         var forward = Player.transform.position - this.transform.position;
 
-        if (!touchingPlayer)
+        if (!touchingPlayer && rb != null)
         {
             // transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
             rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;

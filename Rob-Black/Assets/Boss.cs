@@ -23,9 +23,12 @@ public class Boss : MonoBehaviour
     public DamageManager DM;
     public PiranhaAI PA;
 
+    public List<GameObject> bossDrops;
+
     public bossuiscript bui;
 
     public float cooldown;
+    public bool noupdate = false;
 
     [System.Serializable]
     public struct AttackPattern
@@ -138,9 +141,24 @@ public class Boss : MonoBehaviour
         StartCoroutine(AttackSequencer());
     }
 
+    private void OnDestroy()
+    {
+        noupdate = true;
+        bui.bossHealthOriginal = 0;
+        bui.bossHealth = 0;
+        bui.bossbarvisible = false;
+
+        if (bossDrops.Count != 0)
+        {
+            index.idx.guntoaparatus(index.idx.randomChoice(bossDrops), 0, transform.position);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (noupdate) { return; }
+
         bui.bossHealthOriginal = DM.maxHealth;
         bui.bossHealth = DM.health;
     }

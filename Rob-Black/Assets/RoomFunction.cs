@@ -6,6 +6,8 @@ public class RoomFunction : MonoBehaviour
 {
     public bool nonattackingroom;
 
+    public GameObject stairs;
+
     public RoomInit roomInit;
     public bool roomStarted;
     public bool roomFinished;
@@ -36,7 +38,22 @@ public class RoomFunction : MonoBehaviour
     {
         if (roomFinished) {
             lockWholeRoom = false;
+            try
+            {
+                stairs.SetActive(true);
+            }
+            catch { }
+
             return; }
+
+        else
+        {
+            try
+            {
+                stairs.SetActive(false);
+            }
+            catch { }
+        }
 
         try
         {
