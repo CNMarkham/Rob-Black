@@ -328,12 +328,12 @@ public class index : MonoBehaviour
         registered = true;
     }
 
-    int x = 0;
+    // int x = 0;
 
     private void FixedUpdate()
     {
-        x += 1;
-        print(floornumtodiff(x));
+        //x += 1;
+        //print(floornumtodiff(x));
     }
 
     public static index idx;

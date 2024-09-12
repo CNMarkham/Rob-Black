@@ -97,6 +97,9 @@ MonoBehaviour:
   PA: {fileID: 0}
   bossDrops: []
   bui: {fileID: 0}
-  cooldown: 0
+  cooldown: 1.02
   noupdate: 0
-  attkPatts: []
+  attkPatts:
+  - attackSequence: 04000000
+    parameters:
+    - 10

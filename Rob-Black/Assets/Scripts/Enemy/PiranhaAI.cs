@@ -35,11 +35,15 @@ public class PiranhaAI : BasicEnemy
 
         if (other.CompareTag("Bullet"))
         {
-            var damage = other.GetComponent<SimpleBullet>().damage;
+            try
+            {
+                var damage = other.GetComponent<SimpleBullet>().damage;
 
-            dm.emepos = other.transform.position;
-            
-            dm.addHealth(-damage);
+                dm.emepos = other.transform.position;
+
+                dm.addHealth(-damage);
+            }
+            catch { }
         }
     }
 

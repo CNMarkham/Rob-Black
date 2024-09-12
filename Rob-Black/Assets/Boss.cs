@@ -138,6 +138,15 @@ public class Boss : MonoBehaviour
     void Start()
     {
         bui = index.idx.bossuiscript;
+
+        PA = GetComponent<PiranhaAI>();
+        DM = GetComponent<DamageManager>();
+
+        bui.bossHealth = DM.health;
+        bui.bossHealthOriginal = DM.maxHealth;
+
+
+
         StartCoroutine(AttackSequencer());
     }
 
@@ -159,7 +168,11 @@ public class Boss : MonoBehaviour
     {
         if (noupdate) { return; }
 
+        bui.bossbarvisible = true;
+
         bui.bossHealthOriginal = DM.maxHealth;
         bui.bossHealth = DM.health;
+
+
     }
 }

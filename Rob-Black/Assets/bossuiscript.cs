@@ -40,6 +40,11 @@ public class bossuiscript : MonoBehaviour
 
         else
         {
+            healthAreaSprite.color = bossbarcolor;
+            healthContainingArea.SetActive(true);
+            bosstitleobject.text = bosstitle;
+            //return;
+
             healthContainingArea.SetActive(true);
         }
 

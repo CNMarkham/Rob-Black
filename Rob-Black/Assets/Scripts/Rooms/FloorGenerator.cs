@@ -169,8 +169,8 @@ public class FloorGenerator : MonoBehaviour
 
         // np.zeroes((x,y)) but with rooms instead of 0
 
-        print(roomsonlevel.Count);
-        print(roomsonlevel[0].Count);
+        //print(roomsonlevel.Count);
+        //print(roomsonlevel[0].Count);
 
         // init start level
 
@@ -256,7 +256,7 @@ public class FloorGenerator : MonoBehaviour
                 }
             }
 
-            print("modified possibilities: " + coolprintlist(modifiedpossibilities));
+            //print("modified possibilities: " + coolprintlist(modifiedpossibilities));
 
             List<posint> possibilitywithdist = new();
 
@@ -265,13 +265,13 @@ public class FloorGenerator : MonoBehaviour
                 possibilitywithdist.Add(new posint { position = posibility, integer = distbetweenpointsint(posibility, endpos)});
             }
 
-            print("possibilitywithdist: " + coolprintlist(possibilitywithdist));
+            //print("possibilitywithdist: " + coolprintlist(possibilitywithdist));
 
             List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
             position chosenposibility = orderedpossibilities[0].position;
 
-            print("orderedpossibilities: " + coolprintlist(orderedpossibilities));
-            print("chosenpossibility0: " + chosenposibility);
+            //print("orderedpossibilities: " + coolprintlist(orderedpossibilities));
+            //print("chosenpossibility0: " + chosenposibility);
 
 
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
@@ -297,9 +297,9 @@ public class FloorGenerator : MonoBehaviour
             roomsonlevel[chosenposibility.x][chosenposibility.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
 
             roomorder[chosenposibility] = currentroomnum;
-            print("roomorder: " + coolprintdict(roomorder));
-            print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
-            print("chosen possibility: " + chosenposibility);
+            //print("roomorder: " + coolprintdict(roomorder));
+            //print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
+            //print("chosen possibility: " + chosenposibility);
             //roomsonlevel[chosenposibility.x][chosenposibility.y] = r(, , roomtype.normal);
 
             currentroom = chosenposibility;
@@ -345,21 +345,21 @@ public class FloorGenerator : MonoBehaviour
 
                 for (int j = 0; j < npossibilities.Count; j++) // loop through possible rooms
                 {
-                    print("IN For Loop");
+                    //print("IN For Loop");
                     if (!roomorder.ContainsKey(npossibilities[j])) // Check if room is in bounds
                     {
-                        print("dididnt Contained Key");
+                        //print("dididnt Contained Key");
                         // && roomsonlevel[npossibilities[j].x][npossibilities[j].y].roomtype == roomtype.nule
                         newx = npossibilities[j].x;
                         newy = npossibilities[j].y;
-                        print("worked"); // Doesn't print TODO: fix
-                        print("worked"); // Doesn't print TODO: fix
+                        //print("worked"); // Doesn't print TODO: fix
+                        //print("worked"); // Doesn't print TODO: fix
                         break;
                     }
                 }
 
-                print(newx);
-                print(newy);
+                //print(newx);
+                //print(newy);
 
 
 
@@ -396,8 +396,8 @@ public class FloorGenerator : MonoBehaviour
 
             }
 
-            print("roomorder: " + coolprintdict(roomorder));
-            print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
+            //print("roomorder: " + coolprintdict(roomorder));
+            //print("roomsonlevel: " + coolprintmatrix(roomsonlevel));
 
          
 

@@ -5061,6 +5061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piranha Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895288, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.83

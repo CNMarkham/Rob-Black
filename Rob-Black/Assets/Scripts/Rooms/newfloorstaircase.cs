@@ -68,6 +68,7 @@ public class newfloorstaircase : MonoBehaviour
         Debug.LogError("point 1");
         while (timer > 0) // zoom out
         {
+            print("zoomout!");
             yield return new WaitForFixedUpdate();
             timer -= Time.fixedDeltaTime;
             index.idx.virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(orthsize, orthsize / orthshrinkfactor , timer / zoomanimlength);

@@ -36,11 +36,20 @@ public class RoomFunction : MonoBehaviour
 
     private void Update()
     {
+        if (stairs != null)
+        {
+            if (!index.idx.bossuiscript.bossbarvisible)
+            {
+                roomFinished = true;
+            }
+        }
+
         if (roomFinished) {
-            lockWholeRoom = false;
+            lockWholeRoom = false;                
+            stairs.SetActive(true);
             try
             {
-                stairs.SetActive(true);
+
             }
             catch { }
 
