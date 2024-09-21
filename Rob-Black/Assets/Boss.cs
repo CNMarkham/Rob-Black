@@ -142,9 +142,10 @@ public class Boss : MonoBehaviour
         PA = GetComponent<PiranhaAI>();
         DM = GetComponent<DamageManager>();
 
+        bui.bossObject = this.gameObject;
         bui.bossHealth = DM.health;
         bui.bossHealthOriginal = DM.maxHealth;
-
+        
 
 
         StartCoroutine(AttackSequencer());
@@ -161,6 +162,8 @@ public class Boss : MonoBehaviour
         {
             index.idx.guntoaparatus(index.idx.randomChoice(bossDrops), 0, transform.position);
         }
+
+        bui.bossObject = null;
     }
 
     // Update is called once per frame

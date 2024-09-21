@@ -10,6 +10,7 @@ public class bossuiscript : MonoBehaviour
     public string bosstitle;
     public Color bossbarcolor;
     public int bossHealth;
+    public GameObject bossObject;
 
     [Header("internal")]
     public GameObject healthArea;
@@ -30,6 +31,16 @@ public class bossuiscript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (bossObject == null)
+        {
+            bossbarvisible = false;
+        }
+
+        else
+        {
+            bossbarvisible = true;
+        }
+
         if (!bossbarvisible)
         {
             healthAreaSprite.color = new Color(0, 0, 0, 0);

@@ -38,28 +38,35 @@ public class RoomFunction : MonoBehaviour
     {
         if (stairs != null)
         {
-            if (!index.idx.bossuiscript.bossbarvisible)
+            try
             {
-                roomFinished = true;
+                if (index.idx.bossuiscript.bossObject == null && roomStarted)
+                {
+                    roomFinished = true;
+                }
             }
+
+            catch { }
         }
 
         if (roomFinished) {
             lockWholeRoom = false;                
-            stairs.SetActive(true);
+
             try
             {
-
+                stairs.SetActive(true);
             }
             catch { }
 
             return; }
 
         else
-        {
+        {                
+            
+            if (stairs != null) stairs.SetActive(false);
             try
             {
-                stairs.SetActive(false);
+
             }
             catch { }
         }

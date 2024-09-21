@@ -9,7 +9,7 @@ public class newfloorstaircase : MonoBehaviour
     private void Start()
     {
         try
-        {
+        { 
             transform.parent = transform.parent.parent;
         }
 
@@ -65,10 +65,10 @@ public class newfloorstaircase : MonoBehaviour
         index.idx.floormanager.resetrooms(); // remove all rooms and items and money
         index.idx.floormanager.newfloor(1, new Vector3(0, 0, 0)); // make new floor @ 0,0,0
 
-        Debug.LogError("point 1");
+        //Debug.LogError("point 1");
         while (timer > 0) // zoom out
         {
-            print("zoomout!");
+            //print("zoomout!");
             yield return new WaitForFixedUpdate();
             timer -= Time.fixedDeltaTime;
             index.idx.virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(orthsize, orthsize / orthshrinkfactor , timer / zoomanimlength);
