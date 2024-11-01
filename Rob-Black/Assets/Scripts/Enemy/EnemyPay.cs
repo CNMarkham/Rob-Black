@@ -8,7 +8,20 @@ public class EnemyPay : EnemyDeathEvent
     {
         //Debug.LogError(index.idx.randomChoice(index.idx.bills).GetComponent<dollabill>().den);
 
-        index.idx.pay_bills(index.idx.randomChoice(index.idx.bills).GetComponent<dollabill>().den, enemy.transform);
+        index.idx.drop_item(new Dictionary<GameObject, RangeInt>
+        {
+            { index.idx.bills[((int)dollabill.denomonation.one)], index.idx.chance_out_of_one_hundred(40) },
+            { index.idx.bills[((int)dollabill.denomonation.five)], index.idx.chance_out_of_one_hundred(20) },
+            { index.idx.bills[((int)dollabill.denomonation.ten)], index.idx.chance_out_of_one_hundred(10) },
+            { index.idx.bills[((int)dollabill.denomonation.tweny)], index.idx.chance_out_of_one_hundred(7) },
+            { index.idx.bills[((int)dollabill.denomonation.fifty)], index.idx.chance_out_of_one_hundred(5) },
+            { index.idx.bills[((int)dollabill.denomonation.hundred)], index.idx.chance_out_of_one_hundred(3) },
+
+            { index.idx.heart, index.idx.chance_out_of_one_hundred(100) }
+
+        },
+
+        new RangeInt(1, 100), enemy.transform);
     }
 
 }

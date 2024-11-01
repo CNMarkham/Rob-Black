@@ -43,6 +43,7 @@ public class index : MonoBehaviour
     public List<GameObject> startRooms;
 
     public List<GameObject> bills;
+    public GameObject heart;
 
     public environment currentenvironment;
     public difficulty currentdifficulty;
@@ -191,11 +192,43 @@ public class index : MonoBehaviour
         return (float)(0.5f * Mathf.Pow(floornum, 1.5f) + 1f); // math function where f(x) = (x^1.5)0.5 + 1, so f(0) = 1 and f(100) = 501
     }
 
-    public void pay_bills(dollabill.denomonation bill, Transform transform) // spawns bill denomonation @ transforms
+    public RangeInt chance_out_of_one_hundred(int x)
     {
+        return new RangeInt(1, x);
+    }
 
-        //Debug.LogError(transform);
-        Instantiate(bills[(int)bill], transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
+    public void drop_item(Dictionary<GameObject, RangeInt> items_and_probbabilities, RangeInt probability_range, Transform transform, int items_chosen = 1) // spawns item denomonation @ transforms
+    {
+        System.Random randomgen = new();
+
+        int diciding_factor = randomgen.Next(probability_range.start, probability_range.end);
+
+        List<GameObject> chosen = new();
+
+        int x = 0;
+
+        foreach (GameObject i in items_and_probbabilities.Keys)
+        {
+            // check if item is in the probbability range
+            if (items_and_probbabilities[i].start <= diciding_factor && diciding_factor <= items_and_probbabilities[i].end)
+            {
+                chosen.Add(i);
+            }
+        }
+
+        List<GameObject> true_chosen = new();
+
+        for (int i = 0; i < items_chosen; i++)
+        {
+            GameObject go = randomChoice(chosen);
+            true_chosen.Add(go);
+            chosen.Remove(go);
+        }
+
+        foreach (GameObject toBeInstantiated in true_chosen)
+        {
+            Instantiate(toBeInstantiated, transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
+        }
     }
 
     public void kill_bill() // kills every bill and gun in game

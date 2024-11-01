@@ -82,7 +82,7 @@ public class floormanager : MonoBehaviour
 
                 FloorGenerator.floor floor = fgen.generateFloor(index, index.storeRooms, index.itemRooms);
 
-                float x = position.x;
+                float x = position.x + 33;
                 float y = position.y;
 
                 Vector3 bossroom = new Vector3(0, 0, 0);
@@ -135,7 +135,8 @@ public class floormanager : MonoBehaviour
                 return;
             }
 
-            catch (System.Exception e) { print(e.ToString()); Application.Quit(); }
+            catch { //print(e.ToString());
+                                         Application.Quit(); }
         }
 
     }

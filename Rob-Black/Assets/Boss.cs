@@ -45,12 +45,12 @@ public class Boss : MonoBehaviour
         {
             case Attack.WaitSeconds:
                 float movespeedold = PA.speed;
-                print(movespeedold);
+                //print(movespeedold);
                 //PA.speed = 0;
                 //this line would make it so that the boss stops moving which may be nice but without attacks it would render the boss trivial
                 yield return new WaitForSeconds(parameter_input);
                 PA.speed = movespeedold;
-                print(movespeedold);
+                //print(movespeedold);
                 break;
 
             case Attack.BulletCircle:
@@ -67,7 +67,7 @@ public class Boss : MonoBehaviour
             case Attack.Spin:
 
                 PA.stopLookingAt = true;
-                Debug.LogWarning("Start Looking");
+                //Debug.LogWarning("Start Looking");
                 for (int i = 0; i < 360 * 1; i++)
                 {
                     transform.rotation = Quaternion.Euler(
@@ -76,7 +76,7 @@ public class Boss : MonoBehaviour
                         transform.rotation.eulerAngles.z
                      );
 
-                    Debug.LogWarning("Spinning");
+                    //Debug.LogWarning("Spinning");
                     yield return new WaitForFixedUpdate();
                 }
 
@@ -90,11 +90,11 @@ public class Boss : MonoBehaviour
                     //q = Quaternion.Euler(q.eulerAngles.x, q.eulerAngles.y, q.eulerAngles.z);
 
                     transform.rotation = Quaternion.Slerp(transform.rotation, q, timecount);
-                    Debug.LogWarning("Returning To OG");
+                    //Debug.LogWarning("Returning To OG");
                     yield return new WaitForFixedUpdate();
                 }
 
-                Debug.LogWarning("Stop Looking");
+                //Debug.LogWarning("Stop Looking");
                 PA.stopLookingAt = false;
 
                 break;
@@ -126,7 +126,7 @@ public class Boss : MonoBehaviour
 
         for (int i = 0; i < atkptr.attackSequence.Length; i++)
         {
-            print("AttackSequence" + i);
+            //print("AttackSequence" + i);
             yield return StartCoroutine(RunAttack(atkptr.attackSequence[i], atkptr.parameters[i]));
             yield return new WaitForSeconds(cooldown);
         }

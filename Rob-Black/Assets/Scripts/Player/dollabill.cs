@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dollabill : MonoBehaviour
+public class dollabill : BasicPickupObject
 {
 
     public enum denomonation
@@ -16,12 +16,9 @@ public class dollabill : MonoBehaviour
     }
 
     public denomonation den;
-    private void OnTriggerEnter(Collider other)
+    public override void OnPickup()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            index.idx.getPlayer().GetComponent<PlayerMoney>().addMoney(den);
-            Destroy(gameObject);
-        }
+        index.idx.getPlayer().GetComponent<PlayerMoney>().addMoney(den);
+        Destroy(gameObject);
     }
 }

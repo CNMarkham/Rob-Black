@@ -328,12 +328,12 @@ public class FloorGenerator : MonoBehaviour
                 List<position> npossibilities = new List<position>() { };
 
                 npossibilities.Add(p(x, y + 1));
-                print(new Vector2Int(x, y));
+                //print(new Vector2Int(x, y));
                 npossibilities.Add(p(x, y - 1));
 
                 npossibilities.Add(p(x + 1, y));
                 npossibilities.Add(p(x - 1, y));
-                print("possibilities: " + coolprintlist(npossibilities));
+                //print("possibilities: " + coolprintlist(npossibilities));
 
                 int newx = -1;
                 int newy = -1;

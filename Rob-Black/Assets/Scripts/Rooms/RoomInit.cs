@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RoomInit : MonoBehaviour
 {
 
-    public List<EnemySpawnModule>? spawnLists;
+    public List<EnemySpawnModule> spawnLists;
     public List<Transform> enemySpawns;
 
     public RoomFunction RoomFunction;
@@ -92,8 +93,11 @@ public class RoomInit : MonoBehaviour
         // close doors
         // add door close function
 
-        StartCoroutine(enemySpawnCoroutine());
+        if (!RoomFunction.nonattackingroom) {
+            StartCoroutine(enemySpawnCoroutine());
 
-        coroutineEnded = true;
+            coroutineEnded = true;
+        }
+
     }
 }

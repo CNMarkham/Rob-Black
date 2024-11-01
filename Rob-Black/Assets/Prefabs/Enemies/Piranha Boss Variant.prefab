@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3464107615479262516, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464107615479262516, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: recoilForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7818435507466775050, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: m_Name
       value: Piranha Boss Variant
@@ -65,8 +73,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7818435507466775054, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: damage
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775054, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: health
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -100,6 +112,16 @@ MonoBehaviour:
   cooldown: 1.02
   noupdate: 0
   attkPatts:
-  - attackSequence: 04000000
+  - attackSequence: 0400000004000000040000000400000004000000040000000400000004000000040000000400000001000000
     parameters:
-    - 10
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 2

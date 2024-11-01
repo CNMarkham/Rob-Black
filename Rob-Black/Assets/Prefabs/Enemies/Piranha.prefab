@@ -135,14 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072d34be19d296c4b947bd272f64ccac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 4
+  health: 40
+  damage: 7
   knockbackMultiplier: 2.11
   isRecoiling: 0
   dm: {fileID: 3464107615479262516}
   Player: {fileID: 0}
-  speed: 4.81
+  speed: 7
   touchingPlayer: 0
+  stopLookingAt: 0
   rb: {fileID: 7818435507466775051}
 --- !u!114 &3464107615479262516
 MonoBehaviour:
@@ -160,6 +161,7 @@ MonoBehaviour:
   VARYSIZEPERCENTMIN: 1
   VARYSIZEPERCENTMAX: 25
   health: 20
+  maxHealth: 0
   ignoredamage: 0
   iframelength: 0
   blips: 4

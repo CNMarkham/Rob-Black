@@ -27,17 +27,33 @@ public class DamageManager : MonoBehaviour
 
     public Vector3 emepos;
 
-    public void addHealth(int amount ) // Adds int health to player health e.g. -10 or 10
+    public void addHealth(int amount, bool stop_at_max = true) // Adds int health to player health e.g. -10 or 10
     {
         if (ignoredamage) { return; }
 
-        health += amount;
+        if (stop_at_max)
+        {
+            if (health + amount > maxHealth)
+            {
+                health = maxHealth;
+            }
+
+            else
+            {
+                health += amount;
+            }
+        }
+
+        else
+        {
+            health += amount;
+        }
 
         if (amount < 0)
         {
             //if (permaemepos != null) emepos = permaemepos.transform.position;
             Player.GetComponent<Rigidbody>().AddExplosionForce(recoilForce, emepos, 10f, 0f, ForceMode.Impulse);
-            Debug.Log("Forced");
+            //Debug.Log("Forced");
             StartCoroutine("Iframe");
         }
 
@@ -55,9 +71,9 @@ public class DamageManager : MonoBehaviour
             GetComponent<BasicEnemy>().Die();
         }
 
-        catch (System.Exception e)
+        catch //(System.Exception e)
         {
-            print(e);
+            //print(e);
             Destroy(Player);
         }
 

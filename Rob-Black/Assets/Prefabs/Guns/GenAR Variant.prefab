@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: Name
+      value: Gen AR (Assault Rifle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: decayTime
       value: 3
       objectReference: {fileID: 0}
@@ -38,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletHeightPercentOfStandardBullet
-      value: 442.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletLengthPercentOfStandardBullet
-      value: 401.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.x

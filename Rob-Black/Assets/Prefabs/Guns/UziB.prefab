@@ -140,12 +140,12 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   holdDown: 1
-  bulletLengthPercentOfStandardBullet: 401.18
-  bulletHeightPercentOfStandardBullet: 442.1
+  bulletLengthPercentOfStandardBullet: 1
+  bulletHeightPercentOfStandardBullet: 1
   bulletSpeed: 10
   bulletDamage: 5
   bulletStartPos: {fileID: 2615736940590819568}
-  magazineCount: 9999
+  magazineCount: 25
   magazineSize: 10
   reloadTime: 2000
   bulletsPerShot: 1
