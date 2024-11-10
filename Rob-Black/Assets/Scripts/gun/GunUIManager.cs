@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GunUIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GunUIManager : MonoBehaviour
     public GameObject raw;
 
     public BasicGun Gun;
+    public GameObject gunimage;
 
     // Update is called once per frame
 
@@ -41,5 +43,10 @@ public class GunUIManager : MonoBehaviour
         {
             Munitions.text = $"{Gun.magazineSize - Gun.shotsFired} / {Gun.magazineSize} / {Gun.magazineCount}";
         }
+
+        Image img = gunimage.GetComponent<Image>();
+        img.sprite = Gun.spriteRenderer.sprite;
+        gunimage.transform.localScale = new Vector3(Gun.transform.localScale.x, Gun.transform.localScale.y / 2);
+        img.color = Gun.spriteRenderer.color;
     }
 }

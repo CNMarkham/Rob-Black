@@ -107,7 +107,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         bulletScript.enabled = true;
     }
 
-    IEnumerator reload() // reloads gun when run
+    public IEnumerator reload() // reloads gun when run
     {
         if (isReloading || magazineCount <= 0 || shotsFired == 0)
         {
@@ -131,7 +131,7 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         spriteRenderer.color = oldColor;
     }
 
-    IEnumerator shoot() // Shoots gun if magazine is full, not reloading and can shoot is true
+    public IEnumerator shoot() // Shoots gun if magazine is full, not reloading and can shoot is true
     {
         if (shotsFired >= magazineSize || isReloading || !canShoot)
         {

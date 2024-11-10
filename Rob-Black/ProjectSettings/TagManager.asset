@@ -10,6 +10,7 @@ TagManager:
   - Money
   - Gun
   - Door
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,17 @@ public class PlayerHealth : DamageManager
                 addHealth(-pir.damage); // damages player
             }
         }
+
+        if (other.CompareTag("EnemyBullet"))
+        {
+            var pir = other.GetComponent<SimpleBullet>();
+
+            if (pir)
+            {
+                emepos = pir.transform.position; // sets the position of the enemy to the current enemy
+                addHealth(-pir.damage); // damages player
+            }
+        }
     }
 
 }
