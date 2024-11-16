@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyTypes:
   - {fileID: 7818435507466775050, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+  - {fileID: 7818435507466775050, guid: 9acfdd1bfd2175241a484c50bea5f48d, type: 3}
+  - {fileID: 7818435507466775050, guid: 94076598bf344ae49a937b451922374f, type: 3}
   difficulty: 0
   environment: 0

@@ -30,7 +30,7 @@ public class SimpleBullet : MonoBehaviour
     public float offsetDegrees;
 
     public bool DECAY;
-    public bool DECAYNOW;
+    // public bool DECAYNOW;
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class SimpleBullet : MonoBehaviour
         int end_game_iterations = (int)(Mathf.Round(decayIterations / 2)); // Get the end game iterations
         float color_amount_per_iteration = 255 / end_game_iterations;
 
-        if (DECAYNOW) { time_between_iterations = 0.01f; };
+        // if (DECAYNOW) { time_between_iterations = 0.01f; };
 
         SpriteRenderer renderer = image.GetComponent<SpriteRenderer>();
 
