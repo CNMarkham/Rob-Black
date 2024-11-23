@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -26,6 +27,7 @@ public class Boss : MonoBehaviour
     public List<GameObject> bossDrops;
 
     public bossuiscript bui;
+    public GameObject basicGun;
 
     public float cooldown;
     public bool noupdate = false;
@@ -54,13 +56,26 @@ public class Boss : MonoBehaviour
                 break;
 
             case Attack.BulletCircle:
+                print("bs");
+
                 // ADD DELAY BETWEEN EACH Bullet so tgat it makes a spiral to make it easier to esccape
+                for (int i = 0; i < parameter_input; i++)
+                {
+                    yield return StartCoroutine(basicGun.GetComponent<BasicGun>().shoot());
+                    basicGun.transform.Rotate(new Vector3(0, 360 / parameter_input, 0));
+                    // yield return new WaitForSeconds(5/parameter_input);
+                }
 
                 break;
 
             case Attack.BulletShotgun:
 
-
+                basicGun.transform.Rotate(new Vector3(0, 180, 0));
+                int oldshot = (int)basicGun.GetComponent<BasicGun>().bulletsPerShot;
+                basicGun.GetComponent<BasicGun>().bulletsPerShot = parameter_input;
+                yield return StartCoroutine(basicGun.GetComponent<BasicGun>().shoot());
+                basicGun.GetComponent<BasicGun>().bulletsPerShot = oldshot;
+                basicGun.transform.Rotate(new Vector3(0, -180, 0));
 
                 break;
 

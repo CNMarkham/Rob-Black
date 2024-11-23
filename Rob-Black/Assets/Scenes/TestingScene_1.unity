@@ -499,6 +499,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177166900}
   m_CullTransparentMesh: 1
+--- !u!1001 &224449473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7818435507466775050, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_Name
+      value: Ray With Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 111.9709
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.294912
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775053, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775054, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
 --- !u!1001 &227386372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -937,6 +998,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408177126}
   m_CullTransparentMesh: 1
+--- !u!1001 &428377362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 733151599567895288, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_Name
+      value: Piranha Boss Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 114.82008
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.222496
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 733151599567895295, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
 --- !u!1 &469912240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,3 +5361,5 @@ SceneRoots:
   - {fileID: 1560728881}
   - {fileID: 910248477}
   - {fileID: 1870500145}
+  - {fileID: 224449473}
+  - {fileID: 428377362}
