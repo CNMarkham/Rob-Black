@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 158330324021934025}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 0.51000005, y: 0.29000002, z: 0}
+  m_LocalPosition: {x: 1.291, y: -0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2615736940590819568}
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a00c174d0033f9449e34ee31918d4b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0ebfae102ed3584481d66346cb73254, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.29, y: 4}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2615736940590819568}
   - component: {fileID: 1889172414555397563}
   m_Layer: 0
-  m_Name: UziB
+  m_Name: Lenok
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49999982, y: 0.99999994, z: 0.4999999}
+  m_LocalScale: {x: 0.25, y: 4, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7452773847618497600}
@@ -136,6 +136,8 @@ MonoBehaviour:
   bulletBurnColor:
     serializedVersion: 2
     rgba: 1819903
+  relativeGunWidth: 2.81
+  relativeGunHeight: 2.82
   gunColor:
     serializedVersion: 2
     rgba: 4294967295

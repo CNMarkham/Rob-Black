@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime;
 
-public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDERESTIMATED THE COMPLEXITY AND AM PAYING FOR IT 😭
+public class BasicGun : MonoBehaviour
 {
-    // swords are possible with curreent architecture 🤨
+    // swords are possible with curreent architecture 
 
     [Header("Gun Data")]
 
@@ -14,6 +14,9 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
     public SpriteRenderer spriteRenderer;
     public GameObject Bullet;
     public Color32 bulletBurnColor;
+
+    public float relativeGunWidth = 1f;
+    public float relativeGunHeight = 1f;
 
     public Color32 gunColor = new Color32(255,255,255,255);
 
@@ -75,6 +78,9 @@ public class BasicGun : MonoBehaviour // This gun is NOT BASIC I COMPLETLY UNDER
         }
 
         disableShooting = true;
+
+        spriteRenderer.size = new Vector2(spriteRenderer.size.x * relativeGunWidth, spriteRenderer.size.y * relativeGunHeight);
+
     }
 
     void instanciateBullet() // instansiates bullet
