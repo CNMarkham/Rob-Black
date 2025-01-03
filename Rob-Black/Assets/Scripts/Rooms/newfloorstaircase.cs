@@ -58,7 +58,7 @@ public class newfloorstaircase : MonoBehaviour
         }
 
         //Debug.Log(timer);
-        index.idx.Player.transform.position = new Vector3(-33, 0, 0);
+        index.idx.Player.transform.position = new Vector3(0, 0, 0);
 
         index.idx.screenblack(true);
 

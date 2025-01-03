@@ -16,8 +16,12 @@ public class floormanager : MonoBehaviour
 
     GameObject selectroom(int roomtype) // roomtypeint -> gameobject instance from rooms list
     {
+
         switch (roomtype)
         {
+            //case 1:
+            //    return index.idx.randomroom(StartRooms);
+
             case -2:
                 return index.idx.randomroom(Store);
 

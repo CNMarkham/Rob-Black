@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Unity.UI;
 
 using System;
 using System.Linq;
+using UnityEngine.UI;
 
 public class index : MonoBehaviour
 {
-    // Large, possibly useless class that contains many, many, functions
+    // Large, redundant class that contains many, many, functions
 
     public GameObject SimpleBulletPrefab;
     public GameObject GunAparatus;
     public GameObject FloorGenerationObject;
+    public int testint;
 
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
@@ -34,6 +37,11 @@ public class index : MonoBehaviour
 
     // Stores floor manager which generates and delete rooms and floors
     public floormanager floormanager;
+
+    [Header("gunsprites")]
+    public Sprite pistol;
+    public Sprite assaultrifle;
+    public Sprite russianassaultrifle;
 
     [Header("Rooms")]
     public List<GameObject> normalRooms;

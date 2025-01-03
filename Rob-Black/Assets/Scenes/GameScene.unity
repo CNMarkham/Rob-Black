@@ -1227,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.65602785, y: 0.000000075791995, z: -0.000000065879476, w: 0.7547367}
-  m_LocalPosition: {x: 109, y: 7.04, z: -0.89000016}
+  m_LocalPosition: {x: 0, y: 7.04, z: -0.89000016}
   m_LocalScale: {x: 1.1097, y: 1.4133111, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2217,7 +2217,7 @@ Transform:
   m_GameObject: {fileID: 993163849}
   serializedVersion: 2
   m_LocalRotation: {x: 0.65602785, y: 0.000000075791995, z: -0.000000065879476, w: 0.7547367}
-  m_LocalPosition: {x: 109, y: 7.04, z: -0.89000016}
+  m_LocalPosition: {x: 0, y: 7.04, z: -0.89000016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3228,6 +3228,7 @@ GameObject:
   - component: {fileID: 1531854686}
   - component: {fileID: 1531854687}
   - component: {fileID: 1531854689}
+  - component: {fileID: 1531854690}
   m_Layer: 0
   m_Name: index
   m_TagString: Untagged
@@ -3267,6 +3268,7 @@ MonoBehaviour:
   SimpleBulletPrefab: {fileID: 7392325678142886653, guid: 8e982286db5773e4b8b7fced2a311558, type: 3}
   GunAparatus: {fileID: 2434259863966612509, guid: f87ed110975fbeb479b33d0611028315, type: 3}
   FloorGenerationObject: {fileID: 1132475349}
+  testint: 0
   virtualCamera: {fileID: 993163850}
   GlobalLight: {fileID: 1363415518}
   guimg: {fileID: 1163947465}
@@ -3276,6 +3278,9 @@ MonoBehaviour:
   registered: 0
   bossuiscript: {fileID: 688219264}
   floormanager: {fileID: 1531854689}
+  pistol: {fileID: 21300000, guid: b0ebfae102ed3584481d66346cb73254, type: 3}
+  assaultrifle: {fileID: 21300000, guid: 75dfdf4bbdbd8bb4a80f2e40c222051a, type: 3}
+  russianassaultrifle: {fileID: 21300000, guid: 3152d669101eafa4d8f716b219e8c9e7, type: 3}
   normalRooms:
   - {fileID: 7557498072830849521, guid: 3a3e4baaf46bdbf4bacf05539448985b, type: 3}
   bossRooms:
@@ -3353,6 +3358,19 @@ MonoBehaviour:
   - {fileID: 3704171485144747962, guid: 40b5f9a1d527d794c8578596041f8d96, type: 3}
   StartRooms:
   - {fileID: 1701224172763466414, guid: e1a0a83ade589ad4daab775d62929fed, type: 3}
+--- !u!114 &1531854690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531854684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a40ac5a2e9564439afa77ce7e61a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingui: {fileID: 1801717281}
 --- !u!1 &1535705119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,7 +4032,7 @@ Transform:
   m_GameObject: {fileID: 1846954194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109, y: 0, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
