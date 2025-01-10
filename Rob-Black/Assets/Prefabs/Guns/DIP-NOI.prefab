@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2934197443433518781
+--- !u!1001 &2723906996580460922
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: Name
-      value: F2FL-FUGU-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: holdDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: burstSize
-      value: 4
+      value: Gen AR (Assault Rifle)
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: decayTime
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: reloadTime
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletSpeed
@@ -34,43 +30,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: magazineSize
-      value: 40
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: gunColor.rgba
-      value: 4287072135
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: magazineCount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: bulletsPerShot
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: decayIterations
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: bulletsPerSecond
+      propertyPath: bulletSpreadDegree
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: timeBetweenBursts
-      value: 277
+      propertyPath: bulletHeightPercentOfStandardBullet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: bulletLengthPercentOfStandardBullet
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.28
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.3228579
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.y
@@ -78,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.3798752
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalRotation.w
@@ -110,23 +102,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3748661922860468472, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_Name
-      value: F2FL-FUGU-17
+      value: DIP-NOI
       objectReference: {fileID: 0}
     - target: {fileID: 7259587904035446365, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 75dfdf4bbdbd8bb4a80f2e40c222051a, type: 3}
+      objectReference: {fileID: 21300000, guid: 3152d669101eafa4d8f716b219e8c9e7, type: 3}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

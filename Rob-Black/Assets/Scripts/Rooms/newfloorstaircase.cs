@@ -63,7 +63,7 @@ public class newfloorstaircase : MonoBehaviour
         index.idx.screenblack(true);
 
         index.idx.floormanager.resetrooms(); // remove all rooms and items and money
-        index.idx.floormanager.newfloor(1, new Vector3(0, 0, 0)); // make new floor @ 0,0,0
+        index.idx.floormanager.newfloor(1, index.idx.Player.transform.position);// new Vector3(0, 0, 0)); // make new floor @ 0,0,0
 
         //Debug.LogError("point 1");
         while (timer > 0) // zoom out

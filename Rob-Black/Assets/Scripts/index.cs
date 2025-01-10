@@ -114,7 +114,7 @@ public class index : MonoBehaviour
     {
         test = 0,
 
-        // needs to be implemented in order to complete prototype
+
         dark = 0xD98, // D = D
                       // 9 = R
                       // 8 = B = Black = K
