@@ -6,11 +6,9 @@ public class floormanager : MonoBehaviour
 {
     FloorGenerator fgen;
 
-    public List<GameObject> Normal;
-    public List<GameObject> Boss;
-    public List<GameObject> Store;
-    public List<GameObject> Item;
-    public List<GameObject> StartRooms;
+    public List<Environment> environments;
+
+    public Environment setenvironment;
 
     // public index index;
 
@@ -23,13 +21,13 @@ public class floormanager : MonoBehaviour
             //    return index.idx.randomroom(StartRooms);
 
             case -2:
-                return index.idx.randomroom(Store);
+                return index.idx.randomroom(setenvironment.storeRooms);
 
             case -3:
-                return index.idx.randomroom(Item);
+                return index.idx.randomroom(setenvironment.itemRooms);
 
             default:
-                return index.idx.randomroom(Normal);
+                return index.idx.randomroom(setenvironment.normalRooms);
 
 
         }
@@ -66,8 +64,12 @@ public class floormanager : MonoBehaviour
     public void newfloor(int level, Vector3 position) // Using the position vector as a root it uses the floor generation script attatched to the 
                                                       // index file to generate a room and then it enumerates all of the rooms in newley generated floor
                                                       // in order to place them aroiund the position
-        
+
     {
+        Environment currentenvironment = index.idx.randomChoice<Environment>(environments);
+
+        setenvironment = currentenvironment;
+
 
         PlayerFloorCount.floorNumber += 1;
 
@@ -124,14 +126,14 @@ public class floormanager : MonoBehaviour
 
                     }
 
-                    x = 0;
+                    x = 33;
 
                     y -= 17f;
 
                 }
 
                 Destroy(rooms[bossroomindex]);
-                GameObject nrm = Instantiate(index.idx.randomroom(Boss));
+                GameObject nrm = Instantiate(index.idx.randomroom(setenvironment.bossRooms));
                 nrm.transform.position = bossroom;
 
                 index.idx.screenblack(false);
@@ -139,8 +141,10 @@ public class floormanager : MonoBehaviour
                 return;
             }
 
-            catch { //print(e.ToString());
-                                         Application.Quit(); }
+            catch
+            { //print(e.ToString()); 
+                Application.Quit();
+            }
         }
 
     }

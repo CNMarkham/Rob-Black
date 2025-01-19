@@ -2421,16 +2421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c648e429c28c20f4dad91ed3fa832714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Normal:
-  - {fileID: 8019420992770663888, guid: 8b8d154e5071db84aabfcd0d4eae0b16, type: 3}
-  Boss:
-  - {fileID: 7605402338380311413, guid: 383f2d1efe13723488c40abd4b9e84c5, type: 3}
-  Store:
-  - {fileID: 8144021999180489231, guid: 1dbb75e8f728d0547961b65d45f3d4dc, type: 3}
-  Item:
-  - {fileID: 3704171485144747962, guid: 40b5f9a1d527d794c8578596041f8d96, type: 3}
-  StartRooms:
-  - {fileID: 1701224172763466414, guid: e1a0a83ade589ad4daab775d62929fed, type: 3}
 --- !u!114 &1132475351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3547,16 +3537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604974b9018ed7f4882e8de65a48b9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Normal:
-  - {fileID: 8019420992770663888, guid: 8b8d154e5071db84aabfcd0d4eae0b16, type: 3}
-  Boss:
-  - {fileID: 7605402338380311413, guid: 383f2d1efe13723488c40abd4b9e84c5, type: 3}
-  Store:
-  - {fileID: 8144021999180489231, guid: 1dbb75e8f728d0547961b65d45f3d4dc, type: 3}
-  Item:
-  - {fileID: 3704171485144747962, guid: 40b5f9a1d527d794c8578596041f8d96, type: 3}
-  StartRooms:
-  - {fileID: 1701224172763466414, guid: e1a0a83ade589ad4daab775d62929fed, type: 3}
+  environments:
+  - {fileID: 11400000, guid: 1b8bdfdb700d480408fb148a7b157394, type: 2}
+  setenvironment: {fileID: 0}
 --- !u!114 &1531854690
 MonoBehaviour:
   m_ObjectHideFlags: 0
