@@ -56,7 +56,6 @@ public class Boss : MonoBehaviour
                 break;
 
             case Attack.BulletCircle:
-                print("bs");
 
                 // ADD DELAY BETWEEN EACH Bullet so tgat it makes a spiral to make it easier to esccape
                 for (int i = 0; i < parameter_input; i++)

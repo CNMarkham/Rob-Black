@@ -119,6 +119,8 @@ public class index : MonoBehaviour
                       // 9 = R
                       // 8 = B = Black = K
                       // = DRK
+                      // Dark is dark and requires a flashlight
+                      // -- modified version of cave/sand
 
         // 0x means not implemented yet
         cave = 0x1, // tony stark built this in a 0x1!
