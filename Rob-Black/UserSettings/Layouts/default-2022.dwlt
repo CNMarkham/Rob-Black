@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 362
     height: 556
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 92
+  controlID: 80
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs/Rooms/TestTextFixed
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,16 +329,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs/Rooms/TestTextFixed
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\cnmar\Documents\Rob-Black\Rob-Black
+  m_LastProjectPath: C:\Users\Ninjas\Documents\Training\Rob-Black\Rob-Black
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 42}
-    m_SelectedIDs: 127f0000
-    m_LastClickedID: 32530
-    m_ExpandedIDs: 00000000987e00000a7f0000168e0000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 22830000
+    m_LastClickedID: 33570
+    m_ExpandedIDs: 000000007e7e0000f07e0000007f0000ec820000f682000034f20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -366,7 +366,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000987e0000
+    m_ExpandedIDs: 000000007e7e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -394,7 +394,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c6230000327c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 24720000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1281feffa090feffe2b5feff92ecffff3cf0ffff0af4fffffef9ffff288e00004e8e0000808e0000
+      m_ExpandedIDs: e687fdff2888fdffda88fdff0489fdff48f0ffff4af0ffff60f4ffff58faffff8a8000008e8000004c820000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -940,9 +940,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -117.559, y: -2686.4922, z: 1278.2615}
+    m_Target: {x: -10.70282, y: -57.994152, z: 1.8183746}
     speed: 2
-    m_Value: {x: -117.559, y: -2686.4922, z: 1278.2615}
+    m_Value: {x: -35.893417, y: -15.832414, z: 6.2304754}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -988,13 +988,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.5327249, y: -0.039321717, z: 0.024789272, w: 0.8450087}
+    m_Target: {x: -0.013452909, y: -0.8781218, z: -0.02666863, w: 0.4778464}
     speed: 2
-    m_Value: {x: 0.53272593, y: -0.03932179, z: 0.024789318, w: 0.8450103}
+    m_Value: {x: 0.46315032, y: -0.01895331, z: 0.00900832, w: 0.8860313}
   m_Size:
-    m_Target: 1501.0992
+    m_Target: 19.352823
     speed: 2
-    m_Value: 1501.0992
+    m_Value: 19.22239
   m_Ortho:
     m_Target: 0
     speed: 2
