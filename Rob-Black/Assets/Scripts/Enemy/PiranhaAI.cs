@@ -24,6 +24,9 @@ public class PiranhaAI : BasicEnemy
         if (speed == 0f) { return; }
 
         speed = Random.Range(speed, speed + speed/2.5f);
+
+        dm.health = (int)((float)dm.health * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1);
+        damage = (int)((float)damage * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1);
     }
 
     private void OnTriggerEnter(Collider other)
