@@ -81,6 +81,8 @@ public class BasicGun : MonoBehaviour
 
         spriteRenderer.size = new Vector2(spriteRenderer.size.x * relativeGunWidth, spriteRenderer.size.y * relativeGunHeight);
 
+        bulletDamage = (int)((float)bulletDamage * (index.idx.floornumtogunfloat(PlayerFloorCount.floorNumber)) + 1);
+
     }
 
     void instanciateBullet() // instansiates bullet

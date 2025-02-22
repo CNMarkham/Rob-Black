@@ -15,6 +15,7 @@ public class index : MonoBehaviour
     public GameObject SimpleBulletPrefab;
     public GameObject GunAparatus;
     public GameObject FloorGenerationObject;
+    public PlayerAttributes playerAttributes;
     public int testint;
 
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
@@ -200,6 +201,11 @@ public class index : MonoBehaviour
     public float floornumtodifffloat(int floornum)
     {
         return (float)(0.5f * Mathf.Pow(floornum, 1.5f) + 1f); // math function where f(x) = (x^1.5)0.5 + 1, so f(0) = 1 and f(100) = 501
+    }
+
+    public float floornumtogunfloat(int floornum)
+    {
+        return (float)(0.5f * Mathf.Pow(floornum, 1.1f) + 1f); // math function where f(x) = (x^1.1)0.5 + 1, so f(0) = 1 and f(100) = ~82
     }
 
     public RangeInt chance_out_of_one_hundred(int x)

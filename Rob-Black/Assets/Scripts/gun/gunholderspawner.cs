@@ -20,6 +20,8 @@ public class gunholderspawner : MonoBehaviour
     public int priceRangeStart;
     public int priceRangeEnd;
 
+    public bool disableAfterFirstFloor;
+
     public bool nopickup;
 
     // Start is called before the first frame update
@@ -48,6 +50,8 @@ public class gunholderspawner : MonoBehaviour
     private void Update()
     { // makes gun  free w/o a specified price
         //pa = index.idx.Player.GetComponent<PlayerMoney>();
+
+        if (disableAfterFirstFloor && PlayerFloorCount.floorNumber > 1) { Destroy(this.transform.parent.transform.parent.gameObject); }
 
         if (gpa == null) return;
 

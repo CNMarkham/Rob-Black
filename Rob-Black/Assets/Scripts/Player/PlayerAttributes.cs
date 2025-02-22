@@ -26,6 +26,7 @@ public class PlayerAttributes : MonoBehaviour
     void Start()
     {
         scrollCooldown = false;
+        Gun = null;
     }
 
     public void disableGunsAndEnableGun(int gunIndex) // this disables all of the guns currently in inventory and then enables the gun @ index
@@ -58,9 +59,9 @@ public class PlayerAttributes : MonoBehaviour
         scrollCooldown = false;
     }
 
-    IEnumerator scrollGuns(int scrollBy) // eww Selenium reference?, it scrolls the guns by a dactor of scrollby
+    IEnumerator scrollGuns(int scrollBy) // eww Selenium reference?, it scrolls the guns by a factor of scrollby
     {
-        if (currentGunIndex < 0 || scrollCooldown) {  yield break; }
+        if (currentGunIndex < 0 || scrollCooldown || playerGuns[currentGunIndex].GetComponent<BasicGun>().isReloading) {  yield break; }
 
         int newGunIndex = currentGunIndex + scrollBy;
         //print(newGunIndex);

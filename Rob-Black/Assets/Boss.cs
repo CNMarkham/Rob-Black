@@ -21,6 +21,8 @@ public class Boss : MonoBehaviour
 
     }
 
+    public string bossname;
+
     public DamageManager DM;
     public PiranhaAI PA;
 
@@ -158,11 +160,12 @@ public class Boss : MonoBehaviour
 
         bui.bossObject = this.gameObject;
         bui.bossHealth = DM.health;
-        bui.bossHealthOriginal = DM.maxHealth;
-        
-
+        bui.bossHealthOriginal = DM.maxHealth; 
 
         StartCoroutine(AttackSequencer());
+
+        BasicGun bg = basicGun.GetComponent<BasicGun>();
+        bg.bulletDamage = (int)((float)bg.bulletDamage * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1);
     }
 
     private void OnDestroy()

@@ -18,7 +18,7 @@ public class floormanager : MonoBehaviour
         switch (roomtype)
         {
             case 1:
-                return index.idx.randomroom(setenvironment.storeRooms);
+                return index.idx.randomroom(setenvironment.startRooms);
 
             case -2:
                 return index.idx.randomroom(setenvironment.storeRooms);

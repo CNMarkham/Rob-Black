@@ -46,7 +46,7 @@ public class GunUIManager : MonoBehaviour
 
         Image img = gunimage.GetComponent<Image>();
         img.sprite = Gun.spriteRenderer.sprite;
-        gunimage.transform.localScale = new Vector3(Gun.transform.localScale.x, Gun.transform.localScale.y / 2);
+        //gunimage.transform.localScale = new Vector3(Gun.transform.localScale.x, Gun.transform.localScale.y / 2);
         img.color = Gun.spriteRenderer.color;
     }
 }

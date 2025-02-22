@@ -17,7 +17,7 @@ public class EnemyPay : EnemyDeathEvent
             { index.idx.bills[((int)dollabill.denomonation.fifty)], index.idx.chance_out_of_one_hundred(5) },
             { index.idx.bills[((int)dollabill.denomonation.hundred)], index.idx.chance_out_of_one_hundred(3) },
 
-            { index.idx.heart, index.idx.chance_out_of_one_hundred(100) }
+            { index.idx.heart, index.idx.chance_out_of_one_hundred((int)(100/index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber))) }
 
         },
 

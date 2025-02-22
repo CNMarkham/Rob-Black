@@ -40,6 +40,11 @@ public class GunPickupAparatus : MonoBehaviour
 
     public void OnTriggerEnter(Collider other) // Gives palyer gun if it can pick it up
     {
+        if (index.idx.playerAttributes.Gun != null) 
+        {
+            if (index.idx.playerAttributes.Gun.GetComponent<BasicGun>().isReloading) return;
+        }
+
         if (nopickup) return;
 
         if (disableNextTrigger)
