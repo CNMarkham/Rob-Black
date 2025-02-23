@@ -69,7 +69,7 @@ public class bossuiscript : MonoBehaviour
 
         healthAreaSprite.color = bossbarcolor;
 
-        bosstitleobject.text = bosstitle;
+        bosstitleobject.text = bossObject.GetComponent<Boss>().bossname;
     }
 
     // Update is called once per frame
