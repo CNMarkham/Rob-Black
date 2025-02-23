@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using Unity.UI;
 
 using System;
 using System.Linq;
@@ -62,7 +61,7 @@ public class index : MonoBehaviour
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
-        currentenvironment = environment.test; // CHANGE LATER
+        currentenvironment = randomChoice(availableenvironments);
 
         List<Environment> environments = new();
 
@@ -75,12 +74,7 @@ public class index : MonoBehaviour
         }
 
 
-        Environment env = defaultenvironment;
-
-        if (environments.Count !=0)
-        {
-            env = environments[0];
-        }
+        Environment env = randomChoice(environments);
 
         normalRooms = env.normalRooms;
         bossRooms = env.bossRooms;
@@ -132,7 +126,7 @@ public class index : MonoBehaviour
     public List<environment> availableenvironments = new List<environment>() 
         {
     
-        environment.test
+            environment.dark
 
         };
 
@@ -367,7 +361,6 @@ public class index : MonoBehaviour
 
         randdict.Add(0, false);
         randdict.Add(1, true);
-
 
         GlobalLight.color = defaultenvironment.globalLightColour;
         GlobalLight.intensity = defaultenvironment.globalLightIntensity;

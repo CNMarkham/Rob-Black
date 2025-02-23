@@ -78,7 +78,6 @@ public class floormanager : MonoBehaviour
 
             try
             {
-                // doesn't work because this runs before index is finished initializing
 
                 while (FindObjectOfType<index>() == null) { };
 
