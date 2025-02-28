@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 7775026520480124676}
   - component: {fileID: 2730880070958834807}
   m_Layer: 0
-  m_Name: DoorUp
+  m_Name: DarkDoorUp
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

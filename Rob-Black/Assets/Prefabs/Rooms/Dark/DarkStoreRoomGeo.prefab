@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3892567101418536870}
   m_Layer: 0
-  m_Name: StoreRoomGeo
+  m_Name: DarkStoreRoomGeo
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

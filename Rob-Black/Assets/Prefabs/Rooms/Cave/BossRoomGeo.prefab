@@ -293,9 +293,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1277288801818710347}
     - target: {fileID: 7091129221684780055, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
+      propertyPath: enemySpawnNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091129221684780055, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: spawnLists.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: c6e092ec9318a114f8ba99ee7dfc7596, type: 2}
+      objectReference: {fileID: 11400000, guid: 7f8ff9ae85e0a7d49926f6237664be92, type: 2}
     - target: {fileID: 8019420992770663888, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: m_Name
       value: NormalRoomGeo (1)

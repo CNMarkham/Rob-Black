@@ -7,7 +7,7 @@ public class startuputilities : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameSceneBackup");
     }
 
     public void ExitGame()

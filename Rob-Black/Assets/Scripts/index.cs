@@ -179,6 +179,9 @@ public class index : MonoBehaviour
             }
 
             // same as previous if
+
+            print(module.environment);
+            print(environment);
             if (module.environment != environment
                 && environment != null)
             {

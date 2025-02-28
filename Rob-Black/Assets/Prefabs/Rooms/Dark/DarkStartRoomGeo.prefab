@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969611160625031468}
   m_Layer: 0
-  m_Name: StartRoomGeo
+  m_Name: DarkStartRoomGeo
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

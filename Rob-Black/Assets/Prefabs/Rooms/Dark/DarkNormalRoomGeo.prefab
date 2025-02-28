@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLists:
-  - {fileID: 11400000, guid: 5ae43a310c409bd43916b56b94904bc7, type: 2}
+  - {fileID: 11400000, guid: 3c49f49ca3121d34baf89c893aa4ba31, type: 2}
   enemySpawns:
   - {fileID: 8521278581061075383}
   - {fileID: 2965744017791483928}
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101212054896165901}
   m_Layer: 0
-  m_Name: NormalRoomGeo
+  m_Name: DarkNormalRoomGeo
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

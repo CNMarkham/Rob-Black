@@ -18,4 +18,4 @@ MonoBehaviour:
   - {fileID: 7818435507466775050, guid: 94076598bf344ae49a937b451922374f, type: 3}
   - {fileID: 7818435507466775050, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
   difficulty: 0
-  environment: 0
+  environment: 1
