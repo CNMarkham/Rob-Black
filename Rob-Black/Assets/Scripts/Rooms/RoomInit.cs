@@ -52,7 +52,7 @@ public class RoomInit : MonoBehaviour
         int currentLevel = PlayerFloorCount.floorNumber;
         if (currentLevel > spawnLists.Count) { currentLevel = spawnLists.Count - 1; }
 
-        for (int i = 0; i < enemySpawnNumber; i++)
+        for (int i = 0; i < Mathf.Max(enemySpawnNumber - (currentLevel==1 ? 5 : 0), 1); i++)
         {
             yield return new WaitForSeconds(spawnRate + index.idx.randomSign() * Random.Range(0, spawnRateAmplitude));
 

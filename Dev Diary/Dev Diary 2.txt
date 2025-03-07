@@ -1,0 +1,23 @@
+# Dev Diary 2
+
+Planning: Wrote out comments to plan each section of code then implemented them when I thought it was sufficiently logical.
+
+Implemented: C#, Dictionaries, Lists, GameObjects, Classes & a large central Index script
+
+Modified: Some things have been removed from the original implementation; the fish no longer have arms and the place holder real-life images have been replaced with more interesting & sophisticated 1800s scientific diagrams (Public Domain)
+
+Challenges faced:
+
+- Trying, implementing and fixing the room generation system
+
+	- There were many points throughout in which there were problems I had trouble fixing
+	- There was one time when the rooms only existed once they were observed, like collapsing a wave function of quantum particle by interacting with it
+
+	- Otherwise the comments were a lot of help because they described what code *should* be doing
+	- If a comment contradicted the code, the code must have been changed
+
+Challenges that will be faced:
+
+- Assets may take a while to implement
+
+TODO

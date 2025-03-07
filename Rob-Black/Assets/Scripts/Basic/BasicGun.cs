@@ -83,6 +83,8 @@ public class BasicGun : MonoBehaviour
 
         bulletDamage = (int)((float)bulletDamage * (index.idx.floornumtogunfloat(PlayerFloorCount.floorNumber)) + 1);
 
+        magazineCount = magazineCount + 20 + index.idx.randomInteger(PlayerFloorCount.floorNumber, PlayerFloorCount.floorNumber * 5);
+
     }
 
     void instanciateBullet() // instansiates bullet
