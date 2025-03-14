@@ -1,9 +1,11 @@
-Introduction:
+# Dev Diary 1 (Planning)
+
+## Introduction
 My name is Robert. I am 15 years old and I love to code.
 
 How long I've been at code ninjas: ~1.5 years
 
-The game:
+## The game
 
 Name: DangerFish (Like "dangerous")
 Theme: Fish & the ocean
@@ -11,6 +13,7 @@ Mechanics: Enter the gungeon + fish
 Influences: The binding of Isaac, Enter the gungeon
 
 Challenges:
+
 - Implementing complex systems (Floor generation, gun system, ...)
 	- Planning out the systems before implementing
 	- Ensuring there are not any gaps in my theoretical implementation

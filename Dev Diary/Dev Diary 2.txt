@@ -1,4 +1,4 @@
-# Dev Diary 2
+# Dev Diary 2 (Prototype)
 
 Planning: Wrote out comments to plan each section of code then implemented them when I thought it was sufficiently logical.
 
@@ -18,6 +18,6 @@ Challenges faced:
 
 Challenges that will be faced:
 
-- Assets may take a while to implement
-
-TODO
+	- Assets may take a while to implement
+	- Testing individual systems may be hard
+	- Problems that involve the Unity Engine will be much harder than code problems because I have less experience working with the engine

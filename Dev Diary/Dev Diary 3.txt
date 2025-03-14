@@ -1,0 +1,39 @@
+# Dev Diary 3 (Alpha)
+
+How I used work from Prototype stage to build my game:
+
+	-	My code is very modular
+	-	Many of my scripts were written in a way that was easily expandable:
+			
+		-	My room generation scripts allowed for many different environments
+
+				-	Custom spawns, images, enemies, ...
+
+		-	My Gun script is extremely capable of representing many different types of guns
+				
+				-	Shotgun, pistols, lasers guns, assault rifles, sniper rifles and many more are all possible with the Basic gun script (even weapons that are not even guns can be added: punches, swords, grenades)
+
+				-	Some weapons that in theory should be hard based on the limited bullet attributes on the script, for example a gun that's bullets follow the cursor, may be hard but because of the way the bullets are implemented as long as the main class fits the basic bullet template it is possible to add custom code for specific bullet behaviours.
+				
+				-	There are only a few limitations on how the attributes of weapons change over time (e.g. a mini-gun might have more bullet spread after shooting many bullets)
+
+		- Enemies are not hard-coded to drop money or any other item on death; they have death EVENTS
+
+				-	If, for example, an enemy should drop a key at the end I would not need to hardcode a new case I would just remove the money/heath drop event and add a key drop event
+			
+		
+How the feedback I received informed my approach to developing the game:
+
+	-	My game was originally very hard, this was my intent with the game because I wanted the user to have a challenge
+
+		-	But it was suggested that I lower the difficulty ONLY in the first level because it would let the user to understand the game before they actually played it 
+
+	-	Certain parts of my games I had assumed that the user already understood might work (How to move, reload, etc.)
+
+		-	But it was suggested that I should add instructions so that the user did not need to guess to understand how to play
+
+	-	Some parts of my game were not very easily read, especially for accessibility applications
+
+		-	Black text on gray backgrounds, bold white text, no outlines
+		-	I added outlines to the text so that people could read them easier
+		-	I also adjusted the layers of transparent UI elements to make sure they did not overlap, making certain elements harder to read
