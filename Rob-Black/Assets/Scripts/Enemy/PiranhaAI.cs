@@ -74,6 +74,11 @@ public class PiranhaAI : BasicEnemy
             rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;
             rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
+
+        if (dm.health <= 0)
+        {
+            this.Die();
+        }
     }
 }
 

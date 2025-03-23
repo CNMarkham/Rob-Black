@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: Name
-      value: DIP-NOI (Assault Rifle)
+      value: RemorA-K 47
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: decayTime
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3748661922860468472, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_Name
-      value: DIP-NOI
+      value: RemorA-K 47
       objectReference: {fileID: 0}
     - target: {fileID: 7259587904035446365, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_Sprite
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3152d669101eafa4d8f716b219e8c9e7, type: 3}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.19
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.y

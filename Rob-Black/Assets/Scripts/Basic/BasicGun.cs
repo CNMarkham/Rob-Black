@@ -97,6 +97,8 @@ public class BasicGun : MonoBehaviour
 
         bulletScript.enabled = false;
 
+        bulletScript.damage = bulletDamage;
+
         bulletScript.DECAY = DECAY;
         bulletScript.decayTime = decayTime;
         bulletScript.decayStartDegrees = decayStartDegrees;

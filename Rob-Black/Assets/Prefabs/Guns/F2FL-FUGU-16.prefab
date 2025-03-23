@@ -18,11 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: burstSize
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: decayTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: reloadTime
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletSpeed
@@ -30,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletDamage
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: magazineSize
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: gunColor.rgba
-      value: 4287654196
+      value: 4287072135
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: magazineCount
@@ -49,12 +53,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: decayIterations
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletsPerSecond
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: timeBetweenBursts
-      value: 250
+      value: 277
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: bulletSpreadDegree
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2615736940590819568, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.x
@@ -108,9 +120,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: F2FL-FUGU-16
       objectReference: {fileID: 0}
+    - target: {fileID: 7259587904035446365, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 75dfdf4bbdbd8bb4a80f2e40c222051a, type: 3}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.79
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalScale.y

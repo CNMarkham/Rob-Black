@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableShooting: 1
-  Name: UziB
+  Name: Lenok
   spriteRenderer: {fileID: 7259587904035446365}
   Bullet: {fileID: 5793877904562973874, guid: 9aa3aa26806d57d44bc32b9784944f00, type: 3}
   bulletBurnColor:

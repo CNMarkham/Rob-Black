@@ -7,7 +7,8 @@ public class startuputilities : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("GameSceneBackup");
+        PlayerFloorCount.floorNumber = 0;
+        SceneManager.LoadScene("GameSceneBackup", LoadSceneMode.Single);
     }
 
     public void ExitGame()

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameSceneBackup.unity
     guid: 059845493d30f7343a1ed3e7ae30fa68
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 393cd87287f7fca4ba05c2e02acea81f
   m_configObjects: {}

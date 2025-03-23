@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7d3161248930c43b05b9182c45592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossname: Elgra Boss
   DM: {fileID: 0}
   PA: {fileID: 0}
   bossDrops: []

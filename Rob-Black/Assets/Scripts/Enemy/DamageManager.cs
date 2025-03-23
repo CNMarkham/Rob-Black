@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageManager : MonoBehaviour
 {
@@ -74,7 +75,13 @@ public class DamageManager : MonoBehaviour
         catch //(System.Exception e)
         {
             //print(e);
-            Destroy(Player);
+            if (playerHealth != null) 
+            {
+
+                Destroy(Player);
+                SceneManager.LoadScene("Ending");
+            
+            }
         }
 
     }
