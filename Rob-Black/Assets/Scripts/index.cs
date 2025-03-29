@@ -126,7 +126,7 @@ public class index : MonoBehaviour
     public List<environment> availableenvironments = new List<environment>() 
         {
     
-            environment.dark
+            environment.sand
 
         };
 

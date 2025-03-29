@@ -25,6 +25,14 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: viewResizeX
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: viewResizeY
+      value: 2.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: bulletDamage
       value: 5
       objectReference: {fileID: 0}

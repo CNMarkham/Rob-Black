@@ -142,6 +142,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   holdDown: 1
+  viewResizeX: 1
+  viewResizeY: 1
   bulletLengthPercentOfStandardBullet: 1
   bulletHeightPercentOfStandardBullet: 1
   bulletSpeed: 10

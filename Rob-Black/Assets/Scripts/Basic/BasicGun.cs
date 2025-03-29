@@ -23,6 +23,9 @@ public class BasicGun : MonoBehaviour
     [Header("Gun Settings")]
     public bool holdDown;
 
+    public float viewResizeX = 1;
+    public float viewResizeY = 1;
+
     [Header("Bullet Settings")]
 
     public float bulletLengthPercentOfStandardBullet = 1; // 1 = it has the same length as the regular bullet prefab; 0.5 half as long, 2 twice as long
