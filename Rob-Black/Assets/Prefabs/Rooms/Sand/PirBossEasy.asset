@@ -15,4 +15,4 @@ MonoBehaviour:
   EnemyTypes:
   - {fileID: 733151599567895288, guid: a5ceaaae8ed90b1479aa5f1f369d7290, type: 3}
   difficulty: 0
-  environment: 1
+  environment: 2

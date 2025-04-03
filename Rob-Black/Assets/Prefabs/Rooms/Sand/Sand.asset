@@ -17,12 +17,12 @@ MonoBehaviour:
   globalLightIntensity: 1
   flashlightEnabled: 0
   normalRooms:
-  - {fileID: 8019420992770663888, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
+  - {fileID: 8019420992770663888, guid: c5be35072c21f6346bff10535f40644c, type: 3}
   bossRooms:
-  - {fileID: 7605402338380311413, guid: ef87a473c45655b4faace8ccad1087e8, type: 3}
+  - {fileID: 7605402338380311413, guid: 2824a4bc7385f4a46a587a85a32fd512, type: 3}
   storeRooms:
-  - {fileID: 8144021999180489231, guid: d742309be8b92994e8b9ffbf57f7d721, type: 3}
+  - {fileID: 8144021999180489231, guid: d1c0781fcc51e7145a330b6028935e7b, type: 3}
   itemRooms:
-  - {fileID: 3704171485144747962, guid: 9b61f6438ef47884ea58a858dcaba71a, type: 3}
+  - {fileID: 3704171485144747962, guid: 5d6208661cdd91a43a6a7a9723d22d26, type: 3}
   startRooms:
-  - {fileID: 1701224172763466414, guid: 0eb40aed60a289b4b8d495a9d8ee0163, type: 3}
+  - {fileID: 1701224172763466414, guid: f2627c860f92c75409cc025bf3f24e70, type: 3}
