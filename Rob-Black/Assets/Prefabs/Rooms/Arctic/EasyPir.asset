@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e371ce0457ea734091fe0ab806eb257, type: 3}
-  m_Name: PirBossEasy
+  m_Name: EasyPir
   m_EditorClassIdentifier: 
   EnemyTypes:
-  - {fileID: 733151599567895288, guid: 581300c807d21604d9a7ed0cf868b525, type: 3}
+  - {fileID: 7818435507466775050, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+  - {fileID: 7818435507466775050, guid: 9acfdd1bfd2175241a484c50bea5f48d, type: 3}
+  - {fileID: 7818435507466775050, guid: 94076598bf344ae49a937b451922374f, type: 3}
+  - {fileID: 7818435507466775050, guid: 57114a06725f67e449e41a6a8b9b1467, type: 3}
   difficulty: 0
   environment: 2

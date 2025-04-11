@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class index : MonoBehaviour
 {
-    // Large, redundant class that contains many, many, functions
+    // Large class that contains many, many, functions
 
     public GameObject SimpleBulletPrefab;
     public GameObject GunAparatus;
@@ -117,7 +117,6 @@ public class index : MonoBehaviour
                       // Dark is dark and requires a flashlight
                       // -- modified version of cave/sand
 
-        // 0x means not implemented yet
         cave = 0x1, // tony stark built this in a 0x1!
         sand = 0x2, // sand environment
         arct = 0x3 // arctic
@@ -285,7 +284,7 @@ public class index : MonoBehaviour
         return Player;
     }
 
-    public void untilRegistered() // doesn't do anything untill registered is true (DO NOT USE THIS 😭)
+    public void untilRegistered() // doesn't do anything untill registered is true
     {
         while (!registered) { }
     }

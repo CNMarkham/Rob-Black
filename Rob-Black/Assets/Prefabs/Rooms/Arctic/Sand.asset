@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2e65db23215ea4587879313fea4a53, type: 3}
+  m_Name: Sand
+  m_EditorClassIdentifier: 
+  environment: 2
+  globalLightColour: {r: 1, g: 1, b: 1, a: 0}
+  globalLightIntensity: 1
+  flashlightEnabled: 0
+  normalRooms:
+  - {fileID: 8019420992770663888, guid: c5be35072c21f6346bff10535f40644c, type: 3}
+  bossRooms:
+  - {fileID: 7605402338380311413, guid: 2824a4bc7385f4a46a587a85a32fd512, type: 3}
+  storeRooms:
+  - {fileID: 8144021999180489231, guid: d1c0781fcc51e7145a330b6028935e7b, type: 3}
+  itemRooms:
+  - {fileID: 3704171485144747962, guid: 5d6208661cdd91a43a6a7a9723d22d26, type: 3}
+  startRooms:
+  - {fileID: 1701224172763466414, guid: f2627c860f92c75409cc025bf3f24e70, type: 3}
