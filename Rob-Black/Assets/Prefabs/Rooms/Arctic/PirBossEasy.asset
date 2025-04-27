@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PirBossEasy
   m_EditorClassIdentifier: 
   EnemyTypes:
-  - {fileID: 733151599567895288, guid: 581300c807d21604d9a7ed0cf868b525, type: 3}
+  - {fileID: 733151599567895288, guid: f8e636cb02fa30042949e50453b654b5, type: 3}
   difficulty: 0
-  environment: 2
+  environment: 3

@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLists:
-  - {fileID: 11400000, guid: c9abf8508d9c17541b5cc1f4dd04f73e, type: 2}
+  - {fileID: 11400000, guid: cc1e2ca3557e808468b7bc48efda3483, type: 2}
   enemySpawns:
   - {fileID: 8521278581061075383}
   - {fileID: 2965744017791483928}
@@ -289,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 376006edc75431f489f8474d2d9f572b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f88a193e7464c1344becc2ef77197595, type: 3}
   m_Color: {r: 0.9254902, g: 0.9254902, b: 0.9254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -326,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 5821526930440654828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 6.13, y: 2.79, z: 1.03}
+  m_LocalPosition: {x: -11.6, y: -5.05, z: 1.03}
   m_LocalScale: {x: 1.32, y: -1.0827146, z: -0.3708792}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -373,7 +373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 3a9949f1c85d31048af64e3fa504c5e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 627d67b8f6bb49a459f7d3263d1e8dac, type: 3}
   m_Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101212054896165901}
   m_Layer: 0
-  m_Name: NormalRoomSand
+  m_Name: NormalRoomArct 1
   m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,9 +734,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5403306680975045375, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
+    - target: {fileID: 5403306680975045375, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
     - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -833,6 +841,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5403306680975045375, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
+    - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
     - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -930,9 +946,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5403306680975045375, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
+    - target: {fileID: 5403306680975045375, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3267387ee68da22479a007fac0d41dab, type: 3}
     - target: {fileID: 6046859495424659180, guid: 9e56a57fcdf88894d978faf65b56e2ee, type: 3}
       propertyPath: m_SortingOrder
       value: 2

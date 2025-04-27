@@ -2313,6 +2313,9 @@ MonoBehaviour:
   holdDown: 1
   viewResizeX: 1
   viewResizeY: 1
+  viewOffsetX: 0
+  viewOffsetY: 0
+  viewRotateZ: 0
   bulletLengthPercentOfStandardBullet: 1.4
   bulletHeightPercentOfStandardBullet: 1.4
   bulletSpeed: 20
@@ -4281,10 +4284,10 @@ MonoBehaviour:
   - {fileID: 7707228107373800380, guid: d1f5977ec72e64c47a858e8d3c0bfb57, type: 3}
   - {fileID: 6603859554488380515, guid: 20121ce209ccf4e468106c32f7d72f9e, type: 3}
   heart: {fileID: 2642966277640843367, guid: 9c40d707269ae7a4baed6191733c1e45, type: 3}
-  currentenvironment: 2
+  currentenvironment: 1
   currentdifficulty: 0
-  defaultenvironment: {fileID: 11400000, guid: 1ba72f8a7b3ebf3439cd00fd5bed5464, type: 2}
-  availableenvironments: 02000000
+  defaultenvironment: {fileID: 11400000, guid: 4361a10e6387a7446bde489e8c92601b, type: 2}
+  availableenvironments: 010000000200000003000000980d0000
 --- !u!114 &1531854687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4330,7 +4333,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   environments:
+  - {fileID: 11400000, guid: 1b8bdfdb700d480408fb148a7b157394, type: 2}
   - {fileID: 11400000, guid: 1ba72f8a7b3ebf3439cd00fd5bed5464, type: 2}
+  - {fileID: 11400000, guid: 4361a10e6387a7446bde489e8c92601b, type: 2}
+  - {fileID: 11400000, guid: 223a39e0917ccdb44971783627757f86, type: 2}
   setenvironment: {fileID: 0}
 --- !u!114 &1531854690
 MonoBehaviour:

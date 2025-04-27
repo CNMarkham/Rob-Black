@@ -61,7 +61,7 @@ public class index : MonoBehaviour
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
-        currentenvironment = randomChoice(availableenvironments);
+        currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
 
         List<Environment> environments = new();
 
@@ -125,7 +125,10 @@ public class index : MonoBehaviour
     public List<environment> availableenvironments = new List<environment>() 
         {
     
-            environment.sand
+            environment.sand,
+            environment.arct,
+            environment.cave,
+            environment.dark
 
         };
 
@@ -168,6 +171,8 @@ public class index : MonoBehaviour
     {
 
         List<EnemySpawnModule> spawnModuleCandidates = new List<EnemySpawnModule>();
+
+        print(modules.Count);
 
         foreach (EnemySpawnModule module in modules)
         {
