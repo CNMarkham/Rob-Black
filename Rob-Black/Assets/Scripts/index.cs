@@ -61,7 +61,8 @@ public class index : MonoBehaviour
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
-        currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
+        //currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
+        //currentenvironment = floormanager.setenvironment.environment;
 
         List<Environment> environments = new();
 
@@ -373,6 +374,8 @@ public class index : MonoBehaviour
         GlobalLight.intensity = defaultenvironment.globalLightIntensity;
 
         Player.GetComponent<PlayerAttributes>().flashlightEnabled = defaultenvironment.flashlightEnabled;
+
+        //currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
 
         registered = true;
     }

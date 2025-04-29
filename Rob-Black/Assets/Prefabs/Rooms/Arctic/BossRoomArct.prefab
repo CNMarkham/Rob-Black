@@ -415,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 7091129221684780055, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: spawnLists.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 898ce894f07d8ac46be716a3107dcf68, type: 2}
+      objectReference: {fileID: 11400000, guid: b24012ab38f07be47b50f7234eb4ef0e, type: 2}
     - target: {fileID: 7187630209152581241, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: m_Sprite
       value: 

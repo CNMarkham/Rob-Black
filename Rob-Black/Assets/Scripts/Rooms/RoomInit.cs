@@ -45,7 +45,9 @@ public class RoomInit : MonoBehaviour
 
         RoomFunction.lockWholeRoom = true;
 
-        EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, null, index.idx.currentenvironment); // (spawnlists, ..., ...)
+        print(spawnLists[0].environment);
+
+        EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, null, index.idx.floormanager.setenvironment.environment); // (spawnlists, ..., ...)
         // acctually implement current env stuff
 
         //EnemySpawnModule esm = gameObject.GetComponents<EnemySpawnModule>();
