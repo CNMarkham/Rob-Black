@@ -305,7 +305,7 @@ public class index : MonoBehaviour
         return UnityEngine.Random.Range(x, y);
     }
 
-    public GameObject randomroom(List<GameObject> rooms) // Random Choice but I forgot I had already done it and now I can't change it because it's a dependency
+    public GameObject randomroom(List<GameObject> rooms) // Random Choice with added syntax sugar
     {
         //print(rooms);
         return rooms[UnityEngine.Random.Range(0, rooms.Count)];
@@ -370,10 +370,15 @@ public class index : MonoBehaviour
         randdict.Add(0, false);
         randdict.Add(1, true);
 
-        GlobalLight.color = defaultenvironment.globalLightColour;
-        GlobalLight.intensity = defaultenvironment.globalLightIntensity;
+        try
+        {
+            GlobalLight.color = floormanager.setenvironment.globalLightColour;
+            GlobalLight.intensity = floormanager.setenvironment.globalLightIntensity;
 
-        Player.GetComponent<PlayerAttributes>().flashlightEnabled = defaultenvironment.flashlightEnabled;
+            Player.GetComponent<PlayerAttributes>().flashlightEnabled = floormanager.setenvironment.flashlightEnabled;
+        }
+
+        catch { }
 
         //currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
 

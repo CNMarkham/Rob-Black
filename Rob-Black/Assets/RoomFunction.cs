@@ -30,8 +30,9 @@ public class RoomFunction : MonoBehaviour
             roomFinished = true;
         }
 
-        liveEnemies = roomInit.enemySpawnNumber;
-        
+        if (!nonattackingroom) {
+            liveEnemies = roomInit.enemySpawnNumber;
+        }
     }
 
     private void Update()

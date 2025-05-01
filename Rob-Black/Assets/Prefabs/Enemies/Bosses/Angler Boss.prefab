@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7259587904035446365, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7452773847618497600, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,9 +197,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3464107615479262516, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: health
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 7818435507466775050, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: m_Name
       value: Angler Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775052, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Height
+      value: 2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775052, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Radius
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 7818435507466775053, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: m_LocalScale.x
@@ -257,6 +269,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7818435507466775054, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: health
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 7818435507617955090, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -282,9 +298,29 @@ PrefabInstance:
       value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 7818435507617955091, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Size.x
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507617955091, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Size.y
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818435507617955091, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cb704569ffce59a45aa0d70e5c5995a4, type: 3}
+      objectReference: {fileID: 21300000, guid: 6374f84df7ff2de42a997aaca30e2e07, type: 3}
+    - target: {fileID: 7818435507617955091, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082886533055687273, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Height
+      value: 2.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082886533055687273, guid: 63b732d383e3ca4468e33f15ec0d3928, type: 3}
+      propertyPath: m_Radius
+      value: 0.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

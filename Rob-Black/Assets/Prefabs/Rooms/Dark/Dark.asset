@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environment: 3480
   globalLightColour: {r: 0, g: 0, b: 0, a: 0}
-  globalLightIntensity: -29.1
+  globalLightIntensity: 0
   flashlightEnabled: 1
   normalRooms:
-  - {fileID: 8019420992770663888, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
+  - {fileID: 8019420992770663888, guid: b18b9610d362b214684be3e93302ea6a, type: 3}
   bossRooms:
-  - {fileID: 7605402338380311413, guid: ef87a473c45655b4faace8ccad1087e8, type: 3}
+  - {fileID: 7605402338380311413, guid: 338e8191f0e570545abe3e2dbf725c22, type: 3}
   storeRooms:
-  - {fileID: 8144021999180489231, guid: d742309be8b92994e8b9ffbf57f7d721, type: 3}
+  - {fileID: 8144021999180489231, guid: e2b69da5ad863ef488088c20cfdf1a8f, type: 3}
   itemRooms:
-  - {fileID: 3704171485144747962, guid: 9b61f6438ef47884ea58a858dcaba71a, type: 3}
+  - {fileID: 3704171485144747962, guid: e0db46f1ff156444d9a5226df2e9f3f4, type: 3}
   startRooms:
-  - {fileID: 1701224172763466414, guid: 0eb40aed60a289b4b8d495a9d8ee0163, type: 3}
+  - {fileID: 1701224172763466414, guid: 0908acaf08e799a44b866f608b92329b, type: 3}

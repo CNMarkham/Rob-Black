@@ -66,11 +66,15 @@ public class floormanager : MonoBehaviour
                                                       // in order to place them aroiund the position
 
     {
-        Environment currentenvironment = environments[PlayerFloorCount.floorNumber + 3 % index.idx.availableenvironments.Count];
+        Environment currentenvironment = environments[(PlayerFloorCount.floorNumber + 2) % (index.idx.availableenvironments.Count)];
 
         setenvironment = currentenvironment;
         index.idx.currentenvironment = currentenvironment.environment;
 
+        index.idx.GlobalLight.color = index.idx.floormanager.setenvironment.globalLightColour;
+        index.idx.GlobalLight.intensity = index.idx.floormanager.setenvironment.globalLightIntensity;
+
+        index.idx.Player.GetComponent<PlayerAttributes>().flashlightEnabled = index.idx.floormanager.setenvironment.flashlightEnabled;
 
         PlayerFloorCount.floorNumber += 1;
 

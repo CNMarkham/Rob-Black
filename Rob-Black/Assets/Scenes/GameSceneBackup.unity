@@ -5092,8 +5092,8 @@ MonoBehaviour:
   VARYSIZE: 0
   VARYSIZEPERCENTMIN: 1
   VARYSIZEPERCENTMAX: 5
-  health: 100
-  maxHealth: 100
+  health: 37028
+  maxHealth: 42612
   ignoredamage: 0
   iframelength: 1
   blips: 4
