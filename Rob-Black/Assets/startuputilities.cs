@@ -11,6 +11,11 @@ public class startuputilities : MonoBehaviour
         SceneManager.LoadScene("GameSceneBackup", LoadSceneMode.Single);
     }
 
+    public void backtomainmenu()
+    {
+        SceneManager.LoadScene("Startup", LoadSceneMode.Single);
+    }
+
     public void ExitGame()
     {
         Application.Quit();

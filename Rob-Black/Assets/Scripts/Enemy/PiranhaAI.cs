@@ -25,7 +25,7 @@ public class PiranhaAI : BasicEnemy
 
         speed = Random.Range(speed, speed + speed/2.5f);
 
-        dm.health = (int)((float)dm.health * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)));
+        health = (int)((float)health * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)));
         damage = (int)((float)damage * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1);
     }
 

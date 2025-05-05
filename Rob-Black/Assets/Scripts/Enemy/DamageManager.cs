@@ -123,6 +123,14 @@ public class DamageManager : MonoBehaviour
             gameObject.transform.localScale = new Vector3(newscale, newscale, newscale);
         }
 
+        PiranhaAI pai = GetComponent<PiranhaAI>();
+
+        if (pai != null)
+        {
+            this.maxHealth = pai.health;
+            this.health = pai.health;
+        }
+
         StartCoroutine("Iframe");
     }
 
