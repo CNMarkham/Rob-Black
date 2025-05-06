@@ -101,7 +101,7 @@ public class door : MonoBehaviour
         else // if not, close door
         {
             doorColourController.color = doorClosedColour;
-            // lockCollider.enabled = true;
+            lockCollider.enabled = true;
         }
 
     }

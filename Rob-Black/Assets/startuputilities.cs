@@ -16,6 +16,11 @@ public class startuputilities : MonoBehaviour
         SceneManager.LoadScene("Startup", LoadSceneMode.Single);
     }
 
+    public void credits()
+    {
+        SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    }
+
     public void ExitGame()
     {
         Application.Quit();

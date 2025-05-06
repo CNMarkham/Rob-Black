@@ -90,6 +90,7 @@ public class PlayerAttributes : MonoBehaviour
         }
 
         if (flashlightEnabled) { flashLight.SetActive(true); }
+        else { flashLight.SetActive(false); }
 
         if (scrollDeltaY != 0 && Gun != null)
         {

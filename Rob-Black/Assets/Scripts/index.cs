@@ -58,6 +58,8 @@ public class index : MonoBehaviour
 
     public Environment defaultenvironment;
 
+    public AudioSource gunaudio;
+
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
@@ -86,7 +88,7 @@ public class index : MonoBehaviour
         GlobalLight.color = env.globalLightColour;
         GlobalLight.intensity = env.globalLightIntensity;
 
-        Player.GetComponent<PlayerAttributes>().flashlightEnabled = env.flashlightEnabled;
+        Player.GetComponent<PlayerAttributes>().flashlightEnabled = floormanager.setenvironment.flashlightEnabled;
 
         defaultenvironment = env;
 

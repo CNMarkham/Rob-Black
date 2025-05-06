@@ -66,7 +66,7 @@ public class floormanager : MonoBehaviour
                                                       // in order to place them aroiund the position
 
     {
-        Environment currentenvironment = environments[(PlayerFloorCount.floorNumber + 2) % (index.idx.availableenvironments.Count)];
+        Environment currentenvironment = environments[(PlayerFloorCount.floorNumber) % (index.idx.availableenvironments.Count)];
 
         setenvironment = currentenvironment;
         index.idx.currentenvironment = currentenvironment.environment;

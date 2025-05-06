@@ -77,6 +77,7 @@ public class BasicGun : MonoBehaviour
 
     private void Start()
     {
+
         canShoot = true;
 
         if (disableBurst)
@@ -123,6 +124,8 @@ public class BasicGun : MonoBehaviour
 
         bulletScript.rotateDegrees(Random.Range(-bulletSpreadDegree, bulletSpreadDegree));
         bulletScript.updateRotation();
+
+        index.idx.gunaudio.Play();
 
         bulletScript.enabled = true;
     }

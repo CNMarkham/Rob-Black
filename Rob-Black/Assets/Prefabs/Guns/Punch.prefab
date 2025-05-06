@@ -136,10 +136,17 @@ MonoBehaviour:
   bulletBurnColor:
     serializedVersion: 2
     rgba: 16777215
+  relativeGunWidth: 1
+  relativeGunHeight: 1
   gunColor:
     serializedVersion: 2
     rgba: 4294967295
   holdDown: 1
+  viewResizeX: 5.4
+  viewResizeY: 17.66
+  viewOffsetX: -2.49
+  viewOffsetY: -61.7
+  viewRotateZ: 0
   bulletLengthPercentOfStandardBullet: 1.4
   bulletHeightPercentOfStandardBullet: 1.4
   bulletSpeed: 20
