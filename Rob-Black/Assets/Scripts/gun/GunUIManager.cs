@@ -41,7 +41,7 @@ public class GunUIManager : MonoBehaviour
 
         else
         {
-            Munitions.text = $"{Gun.magazineSize - Gun.shotsFired} / {Gun.magazineSize} / {Gun.magazineCount}";
+            Munitions.text = $"{Gun.magazineSize - Gun.shotsFired}/{Gun.magazineSize} {Gun.magazineCount}";
         }
 
         Image img = gunimage.GetComponent<Image>();

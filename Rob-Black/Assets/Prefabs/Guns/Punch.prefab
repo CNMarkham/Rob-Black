@@ -145,7 +145,7 @@ MonoBehaviour:
   viewResizeX: 5.4
   viewResizeY: 17.66
   viewOffsetX: -2.49
-  viewOffsetY: -61.7
+  viewOffsetY: -161.9
   viewRotateZ: 0
   bulletLengthPercentOfStandardBullet: 1.4
   bulletHeightPercentOfStandardBullet: 1.4

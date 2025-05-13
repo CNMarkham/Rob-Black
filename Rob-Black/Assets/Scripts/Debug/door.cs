@@ -16,11 +16,38 @@ public class door : MonoBehaviour
 
     public GameObject doorpeer;
 
+    public IEnumerator check2()
+    {
+        yield return new WaitForSeconds(2);
+
+        RaycastHit[] hits = Physics.RaycastAll(transform.position + Vector3.up, Vector3.down * 2, 110.0F);
+
+        Debug.DrawRay(transform.position + Vector3.up, Vector3.down * 2, Color.red, 110.0f);
+
+        Debug.Break();
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.transform != transform)
+            {
+                if (hit.collider.gameObject.CompareTag("Door"))
+                {
+                    doorpeer = hit.collider.gameObject;
+                }
+            }
+
+        }
+    }
+
     private void Start()
     {
         //lockCollider.enabled = locked;
 
-        RaycastHit[] hits = Physics.RaycastAll(transform.position + Vector3.up, Vector3.down, 100.0F);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position + Vector3.up, Vector3.down*2, 110.0F);
+
+        Debug.DrawRay(transform.position + Vector3.up, Vector3.down*2, Color.red, 110.0f);
+
+        //Debug.Break();
         
         foreach (RaycastHit hit in hits)
         {
@@ -33,6 +60,8 @@ public class door : MonoBehaviour
             }
 
         }
+
+        StartCoroutine(check2());
     }
 
     private void Update()
