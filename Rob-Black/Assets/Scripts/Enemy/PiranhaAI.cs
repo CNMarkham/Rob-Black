@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PiranhaAI : BasicEnemy
 {
-    // moves in the direction of the playtrer snf gets damages if touching bullet
+    // moves in the direction of the player and gets damages if touching bullet
 
     public DamageManager dm;
 
@@ -70,19 +70,9 @@ public class PiranhaAI : BasicEnemy
 
         if (!touchingPlayer && rb != null)
         {
-            // transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
             rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;
             rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
-
-        //try
-        //{
-        //    if (dm.health <= 0)
-        //    {
-        //        this.Die();
-        //    }
-        //}
-        //catch { }
     }
 }
 

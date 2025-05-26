@@ -54,7 +54,6 @@ public class bossuiscript : MonoBehaviour
             healthAreaSprite.color = bossbarcolor;
             healthContainingArea.SetActive(true);
             bosstitleobject.text = bosstitle;
-            //return;
 
             healthContainingArea.SetActive(true);
         }
@@ -70,11 +69,5 @@ public class bossuiscript : MonoBehaviour
         healthAreaSprite.color = bossbarcolor;
 
         bosstitleobject.text = bossObject.GetComponent<Boss>().bossname;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

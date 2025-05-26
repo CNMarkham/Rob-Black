@@ -52,9 +52,9 @@ public class DamageManager : MonoBehaviour
 
         if (amount < 0)
         {
-            //if (permaemepos != null) emepos = permaemepos.transform.position;
+
             Player.GetComponent<Rigidbody>().AddExplosionForce(recoilForce, emepos, 10f, 0f, ForceMode.Impulse);
-            //Debug.Log("Forced");
+
             StartCoroutine("Iframe");
         }
 
@@ -72,9 +72,9 @@ public class DamageManager : MonoBehaviour
             GetComponent<BasicEnemy>().Die();
         }
 
-        catch //(System.Exception e)
+        catch
         {
-            //print(e);
+
             if (playerHealth != null) 
             {
 
@@ -88,8 +88,6 @@ public class DamageManager : MonoBehaviour
 
     IEnumerator Iframe() // Makes the player/enemy blink when hit and make them invincible for that time
     {
-
-
         ignoredamage = true;
 
         for (int i = 0; i < blips; i++)
@@ -102,8 +100,6 @@ public class DamageManager : MonoBehaviour
 
 
             playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, 0.70f);
-
-
 
         }
 
@@ -136,8 +132,6 @@ public class DamageManager : MonoBehaviour
 
     private void Update() // Update func
     {
-
-
         if (playerHealth != null) playerHealth.text = health.ToString();
         if (healthbar != null) healthbar.health = health;
     }

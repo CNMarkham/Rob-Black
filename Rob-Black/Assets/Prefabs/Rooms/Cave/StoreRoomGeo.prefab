@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7787597157474242133, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: m_text
-      value: 
+      value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 8019420992770663888, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
       propertyPath: m_Name

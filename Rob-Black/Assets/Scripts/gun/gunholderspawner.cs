@@ -49,7 +49,6 @@ public class gunholderspawner : MonoBehaviour
 
     private void Update()
     { // makes gun  free w/o a specified price
-        //pa = index.idx.Player.GetComponent<PlayerMoney>();
 
         if (disableAfterFirstFloor && PlayerFloorCount.floorNumber > 1) { Destroy(this.transform.parent.transform.parent.gameObject); }
 

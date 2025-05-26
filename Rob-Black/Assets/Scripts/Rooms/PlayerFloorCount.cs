@@ -12,7 +12,5 @@ public class PlayerFloorCount : MonoBehaviour
     void FixedUpdate()
     {
         floornumtext.text = floorNumber.ToString();
-        // floorNumber = 3;
-        // Debugging purposes
     }
 }

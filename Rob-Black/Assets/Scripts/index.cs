@@ -63,8 +63,6 @@ public class index : MonoBehaviour
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);
-        //currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
-        //currentenvironment = floormanager.setenvironment.environment;
 
         List<Environment> environments = new();
 
@@ -94,7 +92,7 @@ public class index : MonoBehaviour
 
     }
 
-    public enum difficulty // Speicfy the dificulty of an enemy spawn module
+    public enum difficulty // Specify the dificulty of an enemy spawn module
     {
         Easy = 0,
         Medium = 5,
@@ -154,11 +152,7 @@ public class index : MonoBehaviour
     public difficulty floornumtodiff(int floornum)
     {
         
-
-        // for (int i = Enum.GetNames(typeof(difficulty)).Length - 1; i >= 0; i--)
-
-
-        // for each dificulty in dificulty enum
+        // for each difficulty in dificulty enum
         foreach (difficulty difficulty in Enum.GetValues(typeof(difficulty)).Cast<difficulty>().Distinct())
         {
             // if greaterthan or equal to previous dificulty relative to current dificulty return previous dificulty
@@ -175,8 +169,6 @@ public class index : MonoBehaviour
 
         List<EnemySpawnModule> spawnModuleCandidates = new List<EnemySpawnModule>();
 
-        print(modules.Count);
-
         foreach (EnemySpawnModule module in modules)
         {
             // if not wanted dificulty AND dificulty is not set to null and is therefore important then skip this module
@@ -187,8 +179,6 @@ public class index : MonoBehaviour
 
             // same as previous if
 
-            print(module.environment);
-            print(environment);
             if (module.environment != environment
                 && environment != null)
             {
@@ -225,8 +215,6 @@ public class index : MonoBehaviour
 
         List<GameObject> chosen = new();
 
-        int x = 0;
-
         foreach (GameObject i in items_and_probbabilities.Keys)
         {
             // check if item is in the probbability range
@@ -251,33 +239,12 @@ public class index : MonoBehaviour
         }
     }
 
-    public void kill_bill() // kills every bill and gun in game
+    public void kill_bill() // kills every bill in game
     {
 
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Money"))
         {
-            Destroy(go); // google deepmind????
-        }
-
-        foreach (GameObject gun in GameObject.FindGameObjectsWithTag("Gun"))
-        {
-            /*
-            try
-            {
-                // checks if the player isn't holding the gun
-                if (!gun.transform.parent // GunHolder
-                    .parent // phishplaceholder
-                    .parent // Player
-                    .CompareTag("Player")
-                )
-                {
-                    Destroy(gun); // gun
-                }
-            }
-            catch { }
-        
-            }
-            */
+            Destroy(go);
         }
 
     }
@@ -309,7 +276,6 @@ public class index : MonoBehaviour
 
     public GameObject randomroom(List<GameObject> rooms) // Random Choice with added syntax sugar
     {
-        //print(rooms);
         return rooms[UnityEngine.Random.Range(0, rooms.Count)];
     }
 
@@ -349,7 +315,6 @@ public class index : MonoBehaviour
 
     public bool randomBool() // import random; {1: True, 0: False}[random.randint(0,1)]
     {
-        //Debug.Log("randombool");
         return randdict[UnityEngine.Random.Range(0,2)];
     }
 
@@ -363,7 +328,6 @@ public class index : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Debug.Log("start");
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
 
@@ -382,17 +346,7 @@ public class index : MonoBehaviour
 
         catch { }
 
-        //currentenvironment = availableenvironments[PlayerFloorCount.floorNumber % availableenvironments.Count];
-
         registered = true;
-    }
-
-    // int x = 0;
-
-    private void FixedUpdate()
-    {
-        //x += 1;
-        //print(floornumtodiff(x));
     }
 
     public static index idx;

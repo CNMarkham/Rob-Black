@@ -118,7 +118,7 @@ public class BasicGun : MonoBehaviour
         bulletScript.rotation = transform.rotation;
         bulletScript.forward = transform.forward;
         bulletScript.right = transform.right;
-        newBullet.transform.position = bulletStartPos.position; // + new Vector3(-1, 0, 0);
+        newBullet.transform.position = bulletStartPos.position;
 
         bulletScript.bulletspeed = bulletSpeed;
 
@@ -184,17 +184,7 @@ public class BasicGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // timeinms = (int)Mathf.Floor(Time.time * 1000);
-
-        // time delta time is chjange in time per fram
-        // have seperate varialbe always going up (by delta time)
-        // each time you wsnty to shoot subtract cooldown from variablde
-        // and you can only shoot when the variable is greater than cooldown
-        //stop adding delta time if more than cooldown
-
-        // ATUALLTLY USE VARIABLES
-
-        spriteRenderer.color = gunColor; // maybe add 2 colors and have them occilate between another
+        spriteRenderer.color = gunColor;
 
         if (disableShooting) return;
 

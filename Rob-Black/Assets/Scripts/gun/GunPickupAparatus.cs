@@ -10,7 +10,7 @@ public class GunPickupAparatus : MonoBehaviour
 
     public bool nopickup = false;
 
-    public static void dropGun(GameObject gun, GameObject player) // instansiates new gun aparatus with gun input obj as gun
+    public static void dropGun(GameObject gun, GameObject player) // instantiates new gun aparatus with gun input obj as gun
     {
 
         GameObject newAparatus = Instantiate(index.idx.GunAparatus);
@@ -62,7 +62,6 @@ public class GunPickupAparatus : MonoBehaviour
 
     public void playercol(GameObject other) // adds gun to player arsenal or replaces current gun if at max
     {
-        //Debug.Log(other.name);
         PlayerAttributes attr = other.GetComponentInParent<PlayerAttributes>();
 
         try

@@ -6,8 +6,6 @@ public class EnemyPay : EnemyDeathEvent
 {
     public override void OnDeath(GameObject enemy) // drops bills on death
     {
-        //Debug.LogError(index.idx.randomChoice(index.idx.bills).GetComponent<dollabill>().den);
-
         index.idx.drop_item(new Dictionary<GameObject, RangeInt>
         {
             { index.idx.bills[((int)dollabill.denomonation.one)], index.idx.chance_out_of_one_hundred(40) },

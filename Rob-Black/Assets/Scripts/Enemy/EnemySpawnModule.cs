@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EnemySpawnModule : ScriptableObject
 {
-    //public List<Transform> EnemySpawns;
     public List<GameObject> EnemyTypes;
 
     public index.difficulty difficulty;

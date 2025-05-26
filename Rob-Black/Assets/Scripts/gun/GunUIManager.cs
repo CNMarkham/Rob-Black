@@ -34,9 +34,16 @@ public class GunUIManager : MonoBehaviour
 
         GunName.text = Gun.Name;
 
+        float ammoleft = Gun.magazineSize - Gun.shotsFired;
+
         if (Gun.isReloading)
         {
             Munitions.text = "Reloading...";
+        }
+
+        else if (ammoleft==0)
+        {
+            Munitions.text = "Reload!";
         }
 
         else

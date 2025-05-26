@@ -10,8 +10,6 @@ public class floormanager : MonoBehaviour
 
     public Environment setenvironment;
 
-    // public index index;
-
     GameObject selectroom(int roomtype) // roomtypeint -> gameobject instance from rooms list
     {
 
@@ -47,8 +45,6 @@ public class floormanager : MonoBehaviour
         index.idx.kill_bill(); // It is strange to see money you stole on the *next* floor
 
         index.idx.screenblack(true);
-
-        //System.Threading.Thread.Sleep(100);
 
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
 
@@ -146,7 +142,7 @@ public class floormanager : MonoBehaviour
             }
 
             catch
-            { //print(e.ToString()); 
+            {
                 Application.Quit();
             }
         }

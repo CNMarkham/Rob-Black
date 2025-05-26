@@ -31,8 +31,6 @@ public class KeepEnemiesInRoom : MonoBehaviour
             Enemies.Add(dm.gameObject);
         }
 
-        //Enemies.Add(index.idx.Player);
-
         foreach (GameObject enemy in Enemies)
         {
             keepEntityInRoom(enemy, boxCollider, boxColliderComponentHolder);            

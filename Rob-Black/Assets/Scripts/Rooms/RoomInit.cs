@@ -32,14 +32,6 @@ public class RoomInit : MonoBehaviour
         }
     }
 
-    void doorsAreClosed(bool closed)
-    {
-        foreach (door d in doors)
-        {
-            
-        }
-    }
-
     IEnumerator enemySpawnCoroutine() // Spawn an enemy from enemy list at random positkion from enemy positions every spawnrate seconds
     {
 
@@ -50,7 +42,6 @@ public class RoomInit : MonoBehaviour
         EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, null, index.idx.floormanager.setenvironment.environment); // (spawnlists, ..., ...)
         // acctually implement current env stuff
 
-        //EnemySpawnModule esm = gameObject.GetComponents<EnemySpawnModule>();
         int currentLevel = PlayerFloorCount.floorNumber;
         if (currentLevel > spawnLists.Count) { currentLevel = spawnLists.Count - 1; }
 
@@ -76,13 +67,12 @@ public class RoomInit : MonoBehaviour
 
     }
 
-    IEnumerator waitforenemiestodie()  // waits untill end of frame repeatedly untill all enemies are dead
+    IEnumerator waitforenemiestodie()  // waits until end of frame repeatedly untill all enemies are dead
     {
         while (enemies.Count > 0) { yield return new WaitForEndOfFrame(); }
-        //opendoors();
     }
 
-    public void initializeRoom() // starts enemyt spawn corutine when run, unless the init function has alreafdy been run
+    public void initializeRoom() // starts enemy spawn corutine when run, unless the init function has already been run
     {
 
         if (coroutineEnded)

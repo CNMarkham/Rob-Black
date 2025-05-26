@@ -10,10 +10,10 @@ public class BasicEnemy : MonoBehaviour
     Vector3 RecoilDestination;
     public bool isRecoiling;
 
-    public void Die() // deletes self + rujns every on death event stored in the enemy
+    public void Die() // deletes self + runs every on death event stored in the enemy
     {
         EnemyDeathEvent[] deathEvents = gameObject.GetComponents<EnemyDeathEvent>();
-        // Debug.LogError(deathEvents[0]);
+        
         foreach (EnemyDeathEvent e in deathEvents)
         {
             try { 

@@ -140,10 +140,13 @@ MonoBehaviour:
   relativeGunHeight: 2.82
   gunColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4288782753
   holdDown: 1
   viewResizeX: 1
   viewResizeY: 1
+  viewOffsetX: 0
+  viewOffsetY: 0
+  viewRotateZ: 0
   bulletLengthPercentOfStandardBullet: 1
   bulletHeightPercentOfStandardBullet: 1
   bulletSpeed: 10

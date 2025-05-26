@@ -11,6 +11,15 @@ public class pause : MonoBehaviour
 
     public List<GameObject> tobeinvisible;
 
+    void setcanshoot(bool value)
+    {
+        try
+        {
+            index.idx.playerAttributes.Gun.GetComponent<BasicGun>().canShoot = false;
+        }
+
+        catch { } // Player must not be holding a gun
+    }
 
 
     // Update is called once per frame
@@ -31,7 +40,7 @@ public class pause : MonoBehaviour
         {
             if (paused)
             {
-                index.idx.playerAttributes.Gun.GetComponent<BasicGun>().canShoot = false;
+                setcanshoot(false);
 
                 Time.timeScale = 0;
 
@@ -45,7 +54,7 @@ public class pause : MonoBehaviour
 
             else if (!paused)
             {
-                index.idx.playerAttributes.Gun.GetComponent<BasicGun>().canShoot = true;
+                setcanshoot(true);
 
                 Time.timeScale = 1;
 

@@ -7,12 +7,6 @@ public class SimpleBullet : MonoBehaviour
     public int damage;
     public int knockback;
 
-    // any more required attrs
-    // public AudioSource shoot noise ...
-
-    // Homing Rocket Launcher
-    // The rocket follows the mouse
-
     public float bulletspeed;
     public Quaternion rotation; // rotation of the gun
     public Vector3 forward;
@@ -30,7 +24,6 @@ public class SimpleBullet : MonoBehaviour
     public float offsetDegrees;
 
     public bool DECAY;
-    // public bool DECAYNOW;
 
     private void Start()
     {
@@ -76,8 +69,6 @@ public class SimpleBullet : MonoBehaviour
         int end_game_iterations = (int)(Mathf.Round(decayIterations / 2)); // Get the end game iterations
         float color_amount_per_iteration = 255 / end_game_iterations;
 
-        // if (DECAYNOW) { time_between_iterations = 0.01f; };
-
         SpriteRenderer renderer = image.GetComponent<SpriteRenderer>();
 
         rotateDegrees(decayStartDegrees * sign); // Choses randomly in which direction the bullet should rotate as it decays
@@ -104,8 +95,6 @@ public class SimpleBullet : MonoBehaviour
 
     void Update()
     {
-        // image.transform.rotation = Quaternion.Euler(image.transform.rotation.eulerAngles.x, image.transform.rotation.eulerAngles.y, rotation.rotation.eulerAngles.z);
-        
         transform.localPosition += transform.right * bulletspeed * Time.deltaTime;
     }
 

@@ -22,10 +22,6 @@ public class door : MonoBehaviour
 
         RaycastHit[] hits = Physics.RaycastAll(transform.position + Vector3.up, Vector3.down * 2, 110.0F);
 
-        Debug.DrawRay(transform.position + Vector3.up, Vector3.down * 2, Color.red, 110.0f);
-
-        Debug.Break();
-
         foreach (RaycastHit hit in hits)
         {
             if (hit.transform != transform)
@@ -41,13 +37,10 @@ public class door : MonoBehaviour
 
     private void Start()
     {
-        //lockCollider.enabled = locked;
 
         RaycastHit[] hits = Physics.RaycastAll(transform.position + Vector3.up, Vector3.down*2, 110.0F);
 
         Debug.DrawRay(transform.position + Vector3.up, Vector3.down*2, Color.red, 110.0f);
-
-        //Debug.Break();
         
         foreach (RaycastHit hit in hits)
         {
@@ -81,8 +74,6 @@ public class door : MonoBehaviour
         }
         catch { }
 
-        //print("not broken");
-
         // CHECK IF THERE IS A DOOR PEER
 
         // IF THERE IS A DOOR PEER
@@ -91,33 +82,6 @@ public class door : MonoBehaviour
 
         // IF THERE ISN'T A DOOR PEER
         // ALWAYS LOCKED
-
-        /*
-        if (!doorpeerdoorscript) {
-
-            // lockCollider.enabled = false;
-            doorColourController.color = doorClosedColour;
-
-        }
-
-        else
-        {
-            if (doorpeerdoorscript.lockCollider.enabled)
-            {
-                doorColourController.color = new Color(0, 0, 0, 0);
-            }
-
-            else
-            {
-                doorColourController.color = doorOpenColour;
-            }
-        }
-
-        if (room)
-        {
-            if (!room.lockWholeRoom && room.roomFinished) { doorColourController.color = doorClosedColour; }
-        }
-        */
 
         if (lockCollider.enabled) { doorColourController.color = doorClosedColour; } // if locked use locked color otherwise open color
         else { doorColourController.color = doorOpenColour; }

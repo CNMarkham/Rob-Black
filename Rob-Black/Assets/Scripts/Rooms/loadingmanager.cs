@@ -17,10 +17,4 @@ public class loadingmanager : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
         loadingui.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
