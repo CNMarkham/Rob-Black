@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RoomInit : MonoBehaviour
 {
-
     public List<EnemySpawnModule> spawnLists;
     public List<Transform> enemySpawns;
 
@@ -25,7 +24,6 @@ public class RoomInit : MonoBehaviour
 
     private void Start()
     {
-
         if (spawnLists == null)
         {
             spawnLists = new List<EnemySpawnModule>(GetComponentsInChildren<EnemySpawnModule>());

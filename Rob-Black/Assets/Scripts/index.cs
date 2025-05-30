@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 using System;
 using System.Linq;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class index : MonoBehaviour
 {
@@ -133,7 +134,7 @@ public class index : MonoBehaviour
 
         };
 
-    public difficulty prevdiff(difficulty difficulty)
+    public static difficulty prevdiff(difficulty difficulty)
     {
         return difficulty switch
         {
@@ -151,7 +152,8 @@ public class index : MonoBehaviour
 
     public difficulty floornumtodiff(int floornum)
     {
-        
+
+        difficulty tep = (difficulty)2;
         // for each difficulty in dificulty enum
         foreach (difficulty difficulty in Enum.GetValues(typeof(difficulty)).Cast<difficulty>().Distinct())
         {
@@ -331,7 +333,7 @@ public class index : MonoBehaviour
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
 
-        randdict = new();
+        randdict = new Dictionary<int, bool>();
 
         randdict.Add(0, false);
         randdict.Add(1, true);
@@ -350,4 +352,49 @@ public class index : MonoBehaviour
     }
 
     public static index idx;
+}
+
+
+namespace difficulty
+{
+    public enum environment
+    {
+        test = 0,
+
+
+        dark = 0xD98, // D = D
+                      // 9 = R
+                      // 8 = B = Black = K
+                      // = DRK
+                      // Dark is dark and requires a flashlight
+                      // -- modified version of cave/sand
+
+        cave = 0x1, // tony stark built this in a 0x1!
+        sand = 0x2, // sand environment
+        arct = 0x3 // arctic
+    }
+
+    public enum difficulty // Specify the dificulty of an enemy spawn module
+    {
+        Easy = 0,
+        Medium = 5,
+        Hard = 10,
+        Extra_Hard = 25,
+        Extra_Extra_Hard = 35,
+
+        REQUIEM = 50,
+
+        ARMAGEDDON = 100,
+
+    }
+}
+
+public abstract class MathMethods : MonoBehaviour
+{
+    public static int add()
+    {
+        return 0;
+    }
+
+    protected abstract void fire();
 }

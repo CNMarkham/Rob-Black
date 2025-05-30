@@ -28,12 +28,8 @@ public class KeepEnemiesInRoom : MonoBehaviour
 
         foreach (DamageManager dm in transform.parent.GetComponentsInChildren<DamageManager>())
         {
-            Enemies.Add(dm.gameObject);
-        }
-
-        foreach (GameObject enemy in Enemies)
-        {
-            keepEntityInRoom(enemy, boxCollider, boxColliderComponentHolder);            
+            //Enemies.Add(dm.gameObject);
+            keepEntityInRoom(dm.gameObject, boxCollider, boxColliderComponentHolder);
         }
     }
 }

@@ -34,19 +34,23 @@ public class PiranhaAI : BasicEnemy
         if (other.CompareTag("Player"))
         {
             touchingPlayer = true;
+            return;
+        }
+        if (!other.CompareTag("Bullet") || !other.GetComponent<SimpleBullet>())
+        {
+            return;
         }
 
-        if (other.CompareTag("Bullet"))
+        try
         {
-            try
-            {
-                var damage = other.GetComponent<SimpleBullet>().damage;
+            var damage = other.GetComponent<SimpleBullet>().damage;
 
-                dm.emepos = other.transform.position;
+            dm.emepos = other.transform.position;
 
-                dm.addHealth(-damage);
-            }
-            catch { }
+            dm.addHealth(-damage);
+        }
+        catch {
+            Debug.LogWarning("");
         }
     }
 
@@ -71,7 +75,8 @@ public class PiranhaAI : BasicEnemy
         if (!touchingPlayer && rb != null)
         {
             rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;
-            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
+            Vector3.ClampMagnitude(rb.velocity, speed);
+            //rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
     }
 }

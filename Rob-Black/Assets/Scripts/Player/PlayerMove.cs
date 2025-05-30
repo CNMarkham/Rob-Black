@@ -19,7 +19,9 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(transform.right * Input.GetAxis("Horizontal") * playerSpeed, ForceMode.Force);
-        rb.AddForce(transform.forward * Input.GetAxis("Vertical") * playerSpeed, ForceMode.Force);
+        Vector3 forceVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * playerSpeed;
+        rb.AddForce(forceVector, ForceMode.Force);
+        //rb.AddForce(transform.right * Input.GetAxis("Horizontal") * playerSpeed, ForceMode.Force);
+        //rb.AddForce(transform.forward * Input.GetAxis("Vertical") * playerSpeed, ForceMode.Force);
     }
 }
