@@ -79,6 +79,10 @@ public class DamageManager : MonoBehaviour
             {
 
                 Destroy(Player);
+                
+                ScoreKeeper.lost = true;
+                ScoreKeeper.updated = false;
+
                 SceneManager.LoadScene("Ending");
             
             }

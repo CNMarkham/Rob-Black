@@ -11,6 +11,9 @@ TagManager:
   - Gun
   - Door
   - EnemyBullet
+  - ScoreBoard
+  - UserName
+  - HighScore
   layers:
   - Default
   - TransparentFX

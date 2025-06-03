@@ -73,6 +73,7 @@ public class floormanager : MonoBehaviour
         index.idx.Player.GetComponent<PlayerAttributes>().flashlightEnabled = index.idx.floormanager.setenvironment.flashlightEnabled;
 
         PlayerFloorCount.floorNumber += 1;
+        ScoreKeeper.score += 1;
 
         while (true)
         {

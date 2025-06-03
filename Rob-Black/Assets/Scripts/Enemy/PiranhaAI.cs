@@ -75,8 +75,8 @@ public class PiranhaAI : BasicEnemy
         if (!touchingPlayer && rb != null)
         {
             rb.velocity += new Vector3(forward.x, 0, forward.z) * speed * Time.deltaTime;
-            Vector3.ClampMagnitude(rb.velocity, speed);
-            //rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
+            //Vector3.ClampMagnitude(rb.velocity, speed);
+            rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -speed, speed), 0, Mathf.Clamp(rb.velocity.z, -speed, speed));
         }
     }
 }
