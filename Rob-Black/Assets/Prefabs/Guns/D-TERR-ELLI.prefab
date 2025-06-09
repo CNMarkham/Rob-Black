@@ -144,6 +144,9 @@ MonoBehaviour:
   holdDown: 1
   viewResizeX: 1.5
   viewResizeY: 1.5
+  viewOffsetX: 0
+  viewOffsetY: 0
+  viewRotateZ: 0
   bulletLengthPercentOfStandardBullet: 1.2
   bulletHeightPercentOfStandardBullet: 1.2
   bulletSpeed: 15
@@ -167,3 +170,5 @@ MonoBehaviour:
   canShoot: 1
   isReloading: 0
   isHeld: 1
+  flashgun: 0
+  flashinggun: 0

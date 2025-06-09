@@ -59,7 +59,7 @@ public class SimpleBullet : MonoBehaviour
 
         try
         {
-            sign = index.idx.randomSign();
+            sign = mathindex.randomSign();
         }
         
         catch { }

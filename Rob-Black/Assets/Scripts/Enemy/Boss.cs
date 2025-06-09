@@ -129,7 +129,7 @@ public class Boss : MonoBehaviour
     IEnumerator AttackSequencer()
     {
 
-        AttackPattern atkptr = index.idx.randomChoice(attkPatts);
+        AttackPattern atkptr = mathindex.randomChoice(attkPatts);
 
         for (int i = 0; i < atkptr.attackSequence.Length; i++)
         {
@@ -155,7 +155,7 @@ public class Boss : MonoBehaviour
         StartCoroutine(AttackSequencer());
 
         BasicGun bg = basicGun.GetComponent<BasicGun>();
-        bg.bulletDamage = (int)((float)bg.bulletDamage * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1);
+        bg.bulletDamage = (int)((float)bg.bulletDamage * (index.idx.floornumtodifffloat(PlayerFloorCount.floorNumber)) + 1) + 1;
     }
 
     private void OnDestroy()
@@ -167,7 +167,7 @@ public class Boss : MonoBehaviour
 
         if (bossDrops.Count != 0)
         {
-            index.idx.guntoaparatus(index.idx.randomChoice(bossDrops), 0, transform.position);
+            index.idx.guntoaparatus(mathindex.randomChoice(bossDrops), 0, transform.position);
         }
 
         bui.bossObject = null;

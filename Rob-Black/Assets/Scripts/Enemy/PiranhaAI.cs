@@ -36,22 +36,17 @@ public class PiranhaAI : BasicEnemy
             touchingPlayer = true;
             return;
         }
-        if (!other.CompareTag("Bullet") || !other.GetComponent<SimpleBullet>())
+        if (!other.CompareTag("Bullet") || !other.GetComponent<SimpleBullet>() || dm.emepos == null)
         {
             return;
         }
 
-        try
-        {
-            var damage = other.GetComponent<SimpleBullet>().damage;
+        var damage = other.GetComponent<SimpleBullet>().damage;
 
-            dm.emepos = other.transform.position;
+        dm.emepos = other.transform.position;
 
-            dm.addHealth(-damage);
-        }
-        catch {
-            Debug.LogWarning("");
-        }
+        dm.addHealth(-damage);
+
     }
 
     private void OnTriggerExit(Collider other)

@@ -45,11 +45,11 @@ public class RoomInit : MonoBehaviour
 
         for (int i = 0; i < Mathf.Max(enemySpawnNumber - (currentLevel==1 ? 5 : 0), 1); i++)
         {
-            yield return new WaitForSeconds(spawnRate + index.idx.randomSign() * Random.Range(0, spawnRateAmplitude));
+            yield return new WaitForSeconds(spawnRate + mathindex.randomSign() * Random.Range(0, spawnRateAmplitude));
 
-            GameObject enemy = index.idx.randomChoice(esm.EnemyTypes);
+            GameObject enemy = mathindex.randomChoice(esm.EnemyTypes);
 
-            Vector3 enemypos = index.idx.randomChoice(this.enemySpawns).position; // esm.EnemySpawns
+            Vector3 enemypos = mathindex.randomChoice(this.enemySpawns).position; // esm.EnemySpawns
 
             GameObject newenemy = Instantiate(enemy, enemypos, Quaternion.identity);
 

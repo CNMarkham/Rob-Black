@@ -180,7 +180,7 @@ public class FloorGenerator : MonoBehaviour
 
         for (int w = 0; w < z - 1; w++)
         {
-            if (idx.randomBool())
+            if (mathindex.randomBool())
             {
 
                 tempendposX += 1;
@@ -263,7 +263,7 @@ public class FloorGenerator : MonoBehaviour
 
             if (deviations > 0)
             {
-                if (idx.randomBool() && idx.randomBool())
+                if (mathindex.randomBool() && mathindex.randomBool())
                 {
                     deviations -= 1;
 
@@ -323,7 +323,7 @@ public class FloorGenerator : MonoBehaviour
                     }
                 }
 
-                var rmtype = idx.randomBool();
+                var rmtype = mathindex.randomBool();
 
                 if (storesAllowed <= 0)
                 {
@@ -347,7 +347,7 @@ public class FloorGenerator : MonoBehaviour
                 roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
 
 
-                roomsonlevel[newx][newy] = r(idx.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                roomsonlevel[newx][newy] = r(mathindex.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
                 // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
 
                 added = true;

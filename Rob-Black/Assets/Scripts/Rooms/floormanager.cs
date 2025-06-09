@@ -16,16 +16,16 @@ public class floormanager : MonoBehaviour
         switch (roomtype)
         {
             case 1:
-                return index.idx.randomroom(setenvironment.startRooms);
+                return mathindex.randomroom(setenvironment.startRooms);
 
             case -2:
-                return index.idx.randomroom(setenvironment.storeRooms);
+                return mathindex.randomroom(setenvironment.storeRooms);
 
             case -3:
-                return index.idx.randomroom(setenvironment.itemRooms);
+                return mathindex.randomroom(setenvironment.itemRooms);
 
             default:
-                return index.idx.randomroom(setenvironment.normalRooms);
+                return mathindex.randomroom(setenvironment.normalRooms);
 
 
         }
@@ -134,7 +134,7 @@ public class floormanager : MonoBehaviour
                 }
 
                 Destroy(rooms[bossroomindex]);
-                GameObject nrm = Instantiate(index.idx.randomroom(setenvironment.bossRooms));
+                GameObject nrm = Instantiate(mathindex.randomroom(setenvironment.bossRooms));
                 nrm.transform.position = bossroom;
 
                 index.idx.screenblack(false);

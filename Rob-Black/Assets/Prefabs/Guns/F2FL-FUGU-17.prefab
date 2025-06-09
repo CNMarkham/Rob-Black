@@ -13,6 +13,10 @@ PrefabInstance:
       value: F2FL-FUGU-17
       objectReference: {fileID: 0}
     - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
+      propertyPath: flashgun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889172414555397563, guid: 0c795697c0ed34a449741b7ded1be600, type: 3}
       propertyPath: holdDown
       value: 1
       objectReference: {fileID: 0}

@@ -29,7 +29,7 @@ public class gunholderspawner : MonoBehaviour
     {
         price = Random.Range(priceRangeStart, priceRangeEnd);
 
-        gun = Instantiate(index.idx.randomChoice(gunlist));
+        gun = Instantiate(mathindex.randomChoice(gunlist));
 
         GameObject newap = Instantiate(index.idx.GunAparatus);
         gpa = newap.GetComponent<GunPickupAparatus>();

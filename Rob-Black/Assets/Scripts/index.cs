@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 
 public class index : MonoBehaviour
 {
-    // Large class that contains many, many, functions
+    // Floor Management and Global Variables
 
     public GameObject SimpleBulletPrefab;
     public GameObject GunAparatus;
@@ -29,8 +29,6 @@ public class index : MonoBehaviour
     public FloorGenerator FloorGeneratorIndex;
 
     public GameObject Player;
-
-    public Dictionary<int, bool> randdict;
 
     public bool registered;
 
@@ -76,7 +74,7 @@ public class index : MonoBehaviour
         }
 
 
-        Environment env = randomChoice(environments);
+        Environment env = mathindex.randomChoice(environments);
 
         normalRooms = env.normalRooms;
         bossRooms = env.bossRooms;
@@ -191,7 +189,7 @@ public class index : MonoBehaviour
             spawnModuleCandidates.Add(module);
         }
 
-        return randomChoice<EnemySpawnModule>(spawnModuleCandidates);
+        return mathindex.randomChoice<EnemySpawnModule>(spawnModuleCandidates);
     }
 
     public float floornumtodifffloat(int floornum)
@@ -230,7 +228,7 @@ public class index : MonoBehaviour
 
         for (int i = 0; i < items_chosen; i++)
         {
-            GameObject go = randomChoice(chosen);
+            GameObject go = mathindex.randomChoice(chosen);
             true_chosen.Add(go);
             chosen.Remove(go);
         }
@@ -266,21 +264,6 @@ public class index : MonoBehaviour
         while (!registered) { }
     }
 
-    public T randomChoice<T>(List<T> list) // import random; return random.choice
-    {
-        return list[UnityEngine.Random.Range(0, list.Count)];
-    }
-
-    public int randomInteger(int x, int y) // import random; return random.randint
-    {
-        return UnityEngine.Random.Range(x, y);
-    }
-
-    public GameObject randomroom(List<GameObject> rooms) // Random Choice with added syntax sugar
-    {
-        return rooms[UnityEngine.Random.Range(0, rooms.Count)];
-    }
-
     public GameObject guntoaparatus(GameObject gun, int gunindex, Vector3 position) // "Drops" player gun at index gunindex at position position
     {
         GameObject newap = Instantiate(GunAparatus);
@@ -302,41 +285,11 @@ public class index : MonoBehaviour
         return newap;
     }
 
-    public  Vector3 Round(Vector3 vector3, int decimalPlaces = 2) // round V3 to x decimal points
-    {
-        float multiplier = 1;
-        for (int i = 0; i < decimalPlaces; i++)
-        {
-            multiplier *= 10f;
-        }
-        return new Vector3(
-            Mathf.Round(vector3.x * multiplier) / multiplier,
-            Mathf.Round(vector3.y * multiplier) / multiplier,
-            Mathf.Round(vector3.z * multiplier) / multiplier);
-    }
-
-    public bool randomBool() // import random; {1: True, 0: False}[random.randint(0,1)]
-    {
-        return randdict[UnityEngine.Random.Range(0,2)];
-    }
-
-    public float randomSign() // import random; {True: 1, False: -1}[{1: True, 0: False}[random.randint(0,1)]]
-    {
-
-        if (randomBool()) return 1f;
-        return -1f;
-    }
-
     // Start is called before the first frame update
     void Awake()
     {
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
-
-        randdict = new Dictionary<int, bool>();
-
-        randdict.Add(0, false);
-        randdict.Add(1, true);
 
         try
         {
@@ -352,49 +305,4 @@ public class index : MonoBehaviour
     }
 
     public static index idx;
-}
-
-
-namespace difficulty
-{
-    public enum environment
-    {
-        test = 0,
-
-
-        dark = 0xD98, // D = D
-                      // 9 = R
-                      // 8 = B = Black = K
-                      // = DRK
-                      // Dark is dark and requires a flashlight
-                      // -- modified version of cave/sand
-
-        cave = 0x1, // tony stark built this in a 0x1!
-        sand = 0x2, // sand environment
-        arct = 0x3 // arctic
-    }
-
-    public enum difficulty // Specify the dificulty of an enemy spawn module
-    {
-        Easy = 0,
-        Medium = 5,
-        Hard = 10,
-        Extra_Hard = 25,
-        Extra_Extra_Hard = 35,
-
-        REQUIEM = 50,
-
-        ARMAGEDDON = 100,
-
-    }
-}
-
-public abstract class MathMethods : MonoBehaviour
-{
-    public static int add()
-    {
-        return 0;
-    }
-
-    protected abstract void fire();
 }

@@ -53,9 +53,9 @@ public class GunUIManager : MonoBehaviour
 
         Image img = gunimage.GetComponent<Image>();
         img.sprite = Gun.spriteRenderer.sprite;
-        gunimage.transform.localScale = new Vector3((Gun.transform.localScale.x*Gun.viewResizeX*2*3.12f), (Gun.transform.localScale.y*1/3*Gun.viewResizeY*0.61f), Gun.transform.localScale.z);
-        gunimage.transform.position = new Vector3(transform.position.x + Gun.viewOffsetX + 18.81f, transform.position.y + Gun.viewOffsetY - 24f - 16.52f - 5f);
-        gunimage.transform.rotation = Quaternion.Euler(gunimage.transform.rotation.eulerAngles.x, gunimage.transform.rotation.eulerAngles.y, Gun.viewRotateZ);
+        //gunimage.transform.localScale = new Vector3((Gun.transform.localScale.x*Gun.viewResizeX*2*3.12f), (Gun.transform.localScale.y*1/3*Gun.viewResizeY*0.61f), Gun.transform.localScale.z);
+        //gunimage.transform.position = new Vector3(transform.position.x + Gun.viewOffsetX + 18.81f, transform.position.y + Gun.viewOffsetY - 24f - 16.52f - 5f);
+        //gunimage.transform.rotation = Quaternion.Euler(gunimage.transform.rotation.eulerAngles.x, gunimage.transform.rotation.eulerAngles.y, Gun.viewRotateZ);
         img.color = Gun.spriteRenderer.color;
     }
 }

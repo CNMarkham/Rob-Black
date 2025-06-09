@@ -23,6 +23,11 @@ public class startuputilities : MonoBehaviour
         SceneManager.LoadScene("Credits", LoadSceneMode.Single);
     }
 
+    public void instructions()
+    {
+        SceneManager.LoadScene("Instructions", LoadSceneMode.Single);
+    }
+
     public void saveScore()
     {
         ScoreKeeper.save();
@@ -31,5 +36,13 @@ public class startuputilities : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ResetScores()
+    {
+        PlayerPrefs.SetString("scoreboard", "");
+
+        var highscore = GameObject.FindGameObjectWithTag("HighScore");
+        highscore.GetComponent<TMPro.TMP_Text>().text = "";
     }
 }

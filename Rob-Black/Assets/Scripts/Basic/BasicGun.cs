@@ -74,6 +74,9 @@ public class BasicGun : MonoBehaviour
     public bool isReloading;
     public bool isHeld;
 
+    public bool flashgun;
+    public bool flashinggun;
+
 
     private void Start()
     {
@@ -92,7 +95,25 @@ public class BasicGun : MonoBehaviour
 
         bulletDamage = (int)((float)bulletDamage * (index.idx.floornumtogunfloat(PlayerFloorCount.floorNumber)) + 1);
 
-        magazineCount = magazineCount + 20 + index.idx.randomInteger(PlayerFloorCount.floorNumber, PlayerFloorCount.floorNumber * 5);
+        magazineCount = magazineCount + 20 + mathindex.randomInteger(PlayerFloorCount.floorNumber, PlayerFloorCount.floorNumber * 5);
+    }
+
+    IEnumerator flashthegun()
+    {
+        if (flashinggun) yield break;
+        flashinggun = true;
+
+        for (int i = 0; i < 10000; i++)
+        {
+            if (!flashgun) { break; }
+
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, i%2);
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
+
+        flashinggun = false;
 
     }
 
@@ -150,6 +171,7 @@ public class BasicGun : MonoBehaviour
         shotsFired = 0;
         canShoot = true;
         isReloading = false;
+        flashgun = false;
 
         spriteRenderer.color = oldColor;
     }
@@ -177,6 +199,11 @@ public class BasicGun : MonoBehaviour
             yield return new WaitForSeconds((float)(timeBetweenBursts) / 1000f);
         }
 
+        if (shotsFired >= magazineSize)
+        {
+            flashgun = true;
+        }
+
         canShoot = true;
         
     }
@@ -200,6 +227,11 @@ public class BasicGun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(reload());
+        }
+
+        if (flashgun)
+        {
+            StartCoroutine(flashthegun());
         }
     }
 }
