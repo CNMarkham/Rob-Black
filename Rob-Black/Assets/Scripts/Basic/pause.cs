@@ -13,12 +13,10 @@ public class pause : MonoBehaviour
 
     void setcanshoot(bool value)
     {
-        try
-        {
-            index.idx.playerAttributes.Gun.GetComponent<BasicGun>().canShoot = false;
-        }
 
-        catch { } // Player must not be holding a gun
+        BasicGun bg = index.idx.playerAttributes.Gun.GetComponent<BasicGun>();
+        if (bg!=null) bg.canShoot = value;
+
     }
 
 

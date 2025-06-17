@@ -57,12 +57,7 @@ public class SimpleBullet : MonoBehaviour
     {
         float sign = -1f;
 
-        try
-        {
-            sign = mathindex.randomSign();
-        }
-        
-        catch { }
+        sign = mathindex.randomSign();
 
         float time_between_iterations = decayTime / decayIterations;
         float scatter_degree_per_iteration = sign * (decayEndDegrees / decayIterations); // Get the scatter degree per iteration

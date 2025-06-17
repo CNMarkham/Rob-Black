@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1702,12 +1703,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!82 &519420035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2702,6 +2703,8 @@ MonoBehaviour:
   canShoot: 0
   isReloading: 0
   isHeld: 1
+  flashgun: 0
+  flashinggun: 0
 --- !u!4 &869458421
 Transform:
   m_ObjectHideFlags: 0
@@ -4917,12 +4920,12 @@ MonoBehaviour:
   startRooms:
   - {fileID: 1701224172763466414, guid: f2627c860f92c75409cc025bf3f24e70, type: 3}
   bills:
-  - {fileID: 1187717976400709507, guid: 54b3ddf88a9fb58428289f063c8d443e, type: 3}
-  - {fileID: 4719777466789294533, guid: 72960966e952ba84695f8b59cd94e139, type: 3}
-  - {fileID: 2642966277640843367, guid: 880b7f5da9fc23545a5461bf003afa73, type: 3}
-  - {fileID: 4475910958974404288, guid: 768e7abd67e5cbc4f98876b80be23e34, type: 3}
-  - {fileID: 7707228107373800380, guid: d1f5977ec72e64c47a858e8d3c0bfb57, type: 3}
-  - {fileID: 6603859554488380515, guid: 20121ce209ccf4e468106c32f7d72f9e, type: 3}
+  - {fileID: 6603859554488380515, guid: 16905f46a7af02f49aa94d2481638904, type: 3}
+  - {fileID: 7707228107373800380, guid: fdcab26505b567f42997d84be5d3353c, type: 3}
+  - {fileID: 4475910958974404288, guid: 0deb9e790ec22694199bdaeb27a346ba, type: 3}
+  - {fileID: 2642966277640843367, guid: debf97124055f9e41b87d1ca723e47bb, type: 3}
+  - {fileID: 4719777466789294533, guid: e0fd048b33526954b97f4275bd8411f2, type: 3}
+  - {fileID: 1187717976400709507, guid: 9b30302999b673f4c837190da57d7899, type: 3}
   heart: {fileID: 2642966277640843367, guid: 9c40d707269ae7a4baed6191733c1e45, type: 3}
   currentenvironment: 3480
   currentdifficulty: 0
@@ -7021,7 +7024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7639965782114185856, guid: 644ec34a41e51d9418c1dc505b2f1fac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 54.7
+      value: 47.6
       objectReference: {fileID: 0}
     - target: {fileID: 7639965782114185856, guid: 644ec34a41e51d9418c1dc505b2f1fac, type: 3}
       propertyPath: m_LocalRotation.w

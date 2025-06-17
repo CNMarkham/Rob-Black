@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Much more dynamic and code modifyable version of having 4 box colliders
 public class KeepEnemiesInRoom : MonoBehaviour
 {
-    public List<GameObject> Enemies;
-
     public BoxCollider boxCollider;
     public GameObject boxColliderComponentHolder;
 
@@ -23,12 +22,8 @@ public class KeepEnemiesInRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Enemies = new();
-
         foreach (DamageManager dm in transform.parent.GetComponentsInChildren<DamageManager>())
         {
-            //Enemies.Add(dm.gameObject);
             keepEntityInRoom(dm.gameObject, boxCollider, boxColliderComponentHolder);
         }
     }

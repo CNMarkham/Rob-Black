@@ -5,8 +5,6 @@ using UnityEngine.Rendering.Universal;
 
 using System;
 using System.Linq;
-using UnityEngine.UI;
-using Unity.VisualScripting;
 
 public class index : MonoBehaviour
 {
@@ -235,7 +233,7 @@ public class index : MonoBehaviour
 
         foreach (GameObject toBeInstantiated in true_chosen)
         {
-            Instantiate(toBeInstantiated, transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
+            if (toBeInstantiated!=null) Instantiate(toBeInstantiated, transform.position, Quaternion.Euler(new Vector3(90, 0, 0))); // (int)bill
         }
     }
 
@@ -290,16 +288,6 @@ public class index : MonoBehaviour
     {
         idx = FindObjectOfType<index>();
         FloorGeneratorIndex = FindObjectOfType<FloorGenerator>();
-
-        try
-        {
-            GlobalLight.color = floormanager.setenvironment.globalLightColour;
-            GlobalLight.intensity = floormanager.setenvironment.globalLightIntensity;
-
-            Player.GetComponent<PlayerAttributes>().flashlightEnabled = floormanager.setenvironment.flashlightEnabled;
-        }
-
-        catch { }
 
         registered = true;
     }

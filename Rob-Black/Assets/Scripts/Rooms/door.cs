@@ -69,10 +69,7 @@ public class door : MonoBehaviour
 
         door doorpeerdoorscript = null;
 
-        try {
-           doorpeerdoorscript  = doorpeer.GetComponent<door>();
-        }
-        catch { }
+        if (doorpeer != null) doorpeerdoorscript  = doorpeer.GetComponent<door>();
 
         // CHECK IF THERE IS A DOOR PEER
 

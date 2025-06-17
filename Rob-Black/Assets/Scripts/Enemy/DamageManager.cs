@@ -67,25 +67,22 @@ public class DamageManager : MonoBehaviour
 
     public void Die() // Destroys player object OR runs enemy die function
     {
-        try
-        {
-            GetComponent<BasicEnemy>().Die();
+        BasicEnemy be = GetComponent<BasicEnemy>();
+
+        if (be != null) {
+            be.Die();
         }
 
-        catch
+        if (playerHealth != null) 
         {
 
-            if (playerHealth != null) 
-            {
-
-                Destroy(Player);
+            Destroy(Player);
                 
-                ScoreKeeper.lost = true;
-                ScoreKeeper.updated = false;
+            ScoreKeeper.lost = true;
+            ScoreKeeper.updated = false;
 
-                SceneManager.LoadScene("Ending");
+            SceneManager.LoadScene("Ending");
             
-            }
         }
 
     }

@@ -78,74 +78,66 @@ public class floormanager : MonoBehaviour
         while (true)
         {
 
-            try
+            while (FindObjectOfType<index>() == null) { };
+
+            index index = FindObjectOfType<index>();
+
+            fgen = gameObject.GetComponent<FloorGenerator>();
+
+            FloorGenerator.floor floor = fgen.generateFloor(index, index.storeRooms, index.itemRooms);
+
+            float x = position.x + 33;
+            float y = position.y;
+
+            Vector3 bossroom = new Vector3(0, 0, 0);
+            int bossroomnum = 0;
+            int bossroomindex = 0;
+
+            List<GameObject> rooms = new() { };
+
+            foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)
             {
 
-                while (FindObjectOfType<index>() == null) { };
 
-                index index = FindObjectOfType<index>();
-
-                fgen = gameObject.GetComponent<FloorGenerator>();
-
-                FloorGenerator.floor floor = fgen.generateFloor(index, index.storeRooms, index.itemRooms);
-
-                float x = position.x + 33;
-                float y = position.y;
-
-                Vector3 bossroom = new Vector3(0, 0, 0);
-                int bossroomnum = 0;
-                int bossroomindex = 0;
-
-                List<GameObject> rooms = new() { };
-
-                foreach (List<FloorGenerator.roomstruct> roomlist in floor.rooms)
+                foreach (FloorGenerator.roomstruct room in roomlist)
                 {
 
+                    x -= 33;
 
-                    foreach (FloorGenerator.roomstruct room in roomlist)
+                    if (room.prefab != null)
                     {
+                        GameObject rm = Instantiate(selectroom(room.roomnum));
+                        rm.transform.position = new Vector3(x, 0, y);
 
-                        x -= 33;
-
-                        if (room.prefab != null)
+                        if (room.roomnum > bossroomnum)
                         {
-                            GameObject rm = Instantiate(selectroom(room.roomnum));
-                            rm.transform.position = new Vector3(x, 0, y);
-
-                            if (room.roomnum > bossroomnum)
-                            {
-                                bossroomnum = room.roomnum;
-                                bossroomindex = rooms.Count;
-                                bossroom = rm.transform.position;
-                            }
-
-                            rooms.Add(rm);
-
-
+                            bossroomnum = room.roomnum;
+                            bossroomindex = rooms.Count;
+                            bossroom = rm.transform.position;
                         }
+
+                        rooms.Add(rm);
 
 
                     }
 
-                    x = 33;
-
-                    y -= 17f;
 
                 }
 
-                Destroy(rooms[bossroomindex]);
-                GameObject nrm = Instantiate(mathindex.randomroom(setenvironment.bossRooms));
-                nrm.transform.position = bossroom;
+                x = 33;
 
-                index.idx.screenblack(false);
+                y -= 17f;
 
-                return;
             }
 
-            catch
-            {
-                Application.Quit();
-            }
+            Destroy(rooms[bossroomindex]);
+            GameObject nrm = Instantiate(mathindex.randomroom(setenvironment.bossRooms));
+            nrm.transform.position = bossroom;
+
+            index.idx.screenblack(false);
+
+            return;
+
         }
 
     }

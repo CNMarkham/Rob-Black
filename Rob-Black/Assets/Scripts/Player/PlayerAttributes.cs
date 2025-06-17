@@ -101,16 +101,18 @@ public class PlayerAttributes : MonoBehaviour
             //print(NewCoke);
         }
 
-        try
+        if (currentRoom != null)
         {
-            if (currentRoom.GetComponent<RoomFunction>().roomFinished != true)
+            RoomFunction rf = currentRoom.GetComponent<RoomFunction>();
+
+            if (rf != null)
             {
-                KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player, currentRoom.GetComponent<BoxCollider>(), currentRoom, 1.05f);
+                if (rf.roomFinished != true)
+                {
+                    KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player, currentRoom.GetComponent<BoxCollider>(), currentRoom, 1.05f);
+                }
             }
         }
-
-        catch { }
-
   
     }
 

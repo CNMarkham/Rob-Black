@@ -8,18 +8,13 @@ public class RoomActivator : MonoBehaviour
     {
         if (other.CompareTag("Room"))
         {
-            try
-            {
-                index.idx.Player.GetComponent<PlayerAttributes>().currentRoom = other.gameObject;
-                KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player.gameObject, other.gameObject.GetComponent<BoxCollider>(), other.gameObject);
+            PlayerAttributes pa = index.idx.Player.GetComponent<PlayerAttributes>();
+            if (pa!=null) pa.currentRoom = other.gameObject;
+            
+            KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player.gameObject, other.gameObject.GetComponent<BoxCollider>(), other.gameObject);
 
-                other.GetComponent<RoomInit>().initializeRoom();
-            }
-
-            catch
-            {
-
-            }
+            RoomInit ri = other.GetComponent<RoomInit>();
+            if (ri!=null) ri.initializeRoom();
 
         }
     }

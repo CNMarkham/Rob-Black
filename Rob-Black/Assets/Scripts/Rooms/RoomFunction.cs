@@ -39,25 +39,18 @@ public class RoomFunction : MonoBehaviour
     {
         if (stairs != null)
         {
-            try
+
+            if (index.idx.bossuiscript.bossObject == null && roomStarted)
             {
-                if (index.idx.bossuiscript.bossObject == null && roomStarted)
-                {
-                    roomFinished = true;
-                }
+                roomFinished = true;
             }
 
-            catch { }
         }
 
         if (roomFinished) {
             lockWholeRoom = false;                
 
-            try
-            {
-                stairs.SetActive(true);
-            }
-            catch { }
+            if (stairs!=null) stairs.SetActive(true);
 
             return; }
 
@@ -65,25 +58,16 @@ public class RoomFunction : MonoBehaviour
         {                
             
             if (stairs != null) stairs.SetActive(false);
-            try
-            {
 
-            }
-            catch { }
         }
 
-        try
+        liveEnemies = transform.parent.GetComponentsInChildren<DamageManager>().Length;
+        roomText.text = liveEnemies.ToString();
+
+        if (roomStarted && liveEnemies == 0)
         {
-            liveEnemies = transform.parent.GetComponentsInChildren<DamageManager>().Length;
-            roomText.text = liveEnemies.ToString();
-
-            if (roomStarted && liveEnemies == 0)
-            {
-                lockWholeRoom = false;
-                roomFinished = true;
-            }
+            lockWholeRoom = false;
+            roomFinished = true;
         }
-
-        catch { }
     }
 }

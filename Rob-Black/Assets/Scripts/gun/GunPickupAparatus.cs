@@ -64,14 +64,16 @@ public class GunPickupAparatus : MonoBehaviour
     {
         PlayerAttributes attr = other.GetComponentInParent<PlayerAttributes>();
 
-        try
+        if (attr.playerGuns.Count-1 >= attr.currentGunIndex)
         {
-            if (attr.playerGuns[attr.currentGunIndex].GetComponent<BasicGun>().isReloading)
+            BasicGun bg = attr.playerGuns[attr.currentGunIndex].GetComponent<BasicGun>();
+
+            if (bg != null)
             {
-                return;
+                if (bg.isReloading) return;
             }
+
         }
-        catch { }
 
         // Remove gun if maximim guns would be reached
         if (attr.maximumGuns < attr.playerGuns.Count + 1)

@@ -6,6 +6,7 @@ public class mathindex : MonoBehaviour
 {
     public static T randomChoice<T>(List<T> list) // import random; return random.choice
     {
+        if (list.Count == 0) return default(T);
         return list[UnityEngine.Random.Range(0, list.Count)];
     }
 

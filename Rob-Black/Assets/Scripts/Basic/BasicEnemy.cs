@@ -16,11 +16,7 @@ public class BasicEnemy : MonoBehaviour
         
         foreach (EnemyDeathEvent e in deathEvents)
         {
-            try { 
-                e.OnDeath(gameObject);
-            }
-
-            catch { }
+            e.OnDeath(gameObject);
         }
 
         
