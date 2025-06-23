@@ -49,7 +49,12 @@ public class ScoreKeeper : MonoBehaviour
 
         }
 
-        highscore.GetComponent<TMPro.TMP_Text>().text = scores;
+        if (highscore != null)
+        {
+            var hst = highscore.GetComponent<TMPro.TMP_Text>();
+            if (hst != null) hst.text = scores;
+        }
+
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -253,6 +253,7 @@ public class FloorGenerator : MonoBehaviour
             }
 
             List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
+            if (orderedpossibilities.Count <= 0) { break; }
             position chosenposibility = orderedpossibilities[0].position;
 
             if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
@@ -346,8 +347,11 @@ public class FloorGenerator : MonoBehaviour
 
                 roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
 
-
-                roomsonlevel[newx][newy] = r(mathindex.randomroom(spcdict[rmtype]), spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                var prefab = mathindex.randomroom(spcdict[rmtype]);
+                if (newy <= roomsonlevel.Count || newx <= roomsonlevel[0].Count) { break; };
+                print(newx);
+                print(newy);
+                roomsonlevel[newx][newy] = r(prefab, spctydict[rmtype], spctyindict[spctydict[rmtype]]);
                 // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
 
                 added = true;
