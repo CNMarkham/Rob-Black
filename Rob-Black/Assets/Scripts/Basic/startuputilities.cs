@@ -12,7 +12,7 @@ public class startuputilities : MonoBehaviour
 
         SceneManager.LoadScene("GameSceneBackup", LoadSceneMode.Single);
     }
-
+    //TODO: Convert to single method, that accepts a string parameter of what to change to.
     public void backtomainmenu()
     {
         SceneManager.LoadScene("Startup", LoadSceneMode.Single);

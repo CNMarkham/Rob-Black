@@ -28,7 +28,7 @@ public class pause : MonoBehaviour
             paused = !paused;
             synced = false;
         }
-
+        //TODO: Consider making a button in the pause menu instead, since escape is also how the player exits fullscreen in WebGL
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Startup");

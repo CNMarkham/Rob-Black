@@ -15,6 +15,7 @@ public class PlayerMoney : MonoBehaviour
 
     }
 
+    //TODO: After making change to the dollabill enum, use the enum directly by casting to an integer.
     public void addMoney(dollabill.denomonation money) // Adds money by denomonation e.g. twenty gives += 20 money
     {
         switch (money)

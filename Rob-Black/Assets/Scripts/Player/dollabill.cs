@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dollabill : BasicPickupObject
 {
-
+    //TODO: Set the equals to the actual value amount. For example, one = 1, five = 5, ten = 10, etc
     public enum denomonation
     {
         hundred = 0,

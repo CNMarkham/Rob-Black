@@ -31,6 +31,8 @@ public class bossuiscript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //TODO: bossbarvisible = bossObject != null
+        //OR combine with following if else
         if (bossObject == null)
         {
             bossbarvisible = false;
@@ -64,7 +66,7 @@ public class bossuiscript : MonoBehaviour
             (healthAreaOriginalSize * (bossHealthPercentage/100)),
             healthArea.transform.localScale.y,
             healthArea.transform.localScale.z
-        ); ;
+        );
 
         healthAreaSprite.color = bossbarcolor;
 

@@ -104,7 +104,7 @@ public class PlayerAttributes : MonoBehaviour
         if (currentRoom != null)
         {
             RoomFunction rf = currentRoom.GetComponent<RoomFunction>();
-
+            //TODO: Reduce nesting using && or || conditions
             if (rf != null)
             {
                 if (rf.roomFinished != true)
@@ -116,6 +116,7 @@ public class PlayerAttributes : MonoBehaviour
   
     }
 
+    //TOOD: Still used?
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Room"))
