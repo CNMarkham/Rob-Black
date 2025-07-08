@@ -220,151 +220,156 @@ public class FloorGenerator : MonoBehaviour
 
         roomorder[currentroom] = currentroomnum;
 
-        while (true)
+        try
         {
-            currentroomnum += 1;
-            possiblities = new();
-
-            possiblities.Add(p(currentroom.x, currentroom.y + 1));
-            possiblities.Add(p(currentroom.x, currentroom.y - 1));
-            
-            possiblities.Add(p(currentroom.x + 1, currentroom.y));
-            possiblities.Add(p(currentroom.x - 1, currentroom.y));
-
-            List<position> modifiedpossibilities = new List<position>(possiblities);
-
-            foreach (position posibility in possiblities)
+            while (true)
             {
-                if (outofbounds(boundX, boundY, posibility))
+                currentroomnum += 1;
+                possiblities = new();
+
+                possiblities.Add(p(currentroom.x, currentroom.y + 1));
+                possiblities.Add(p(currentroom.x, currentroom.y - 1));
+
+                possiblities.Add(p(currentroom.x + 1, currentroom.y));
+                possiblities.Add(p(currentroom.x - 1, currentroom.y));
+
+                List<position> modifiedpossibilities = new List<position>(possiblities);
+
+                foreach (position posibility in possiblities)
                 {
-                    modifiedpossibilities.Remove(posibility);
-                }
-
-                if (roomorder.ContainsKey(posibility)) {
-                    modifiedpossibilities.Remove(posibility);
-                }
-            }
-
-            List<posint> possibilitywithdist = new();
-
-            foreach (position posibility in modifiedpossibilities)
-            {
-                possibilitywithdist.Add(new posint { position = posibility, integer = distbetweenpointsint(posibility, endpos)});
-            }
-
-            List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
-            if (orderedpossibilities.Count <= 0) { break; }
-            position chosenposibility = orderedpossibilities[0].position;
-
-            if (orderedpossibilities.Contains(new posint { position=endpos, integer=0 }))
-            {
-                roomsonlevel[endpos.x][endpos.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
-                break;
-            }
-
-            if (deviations > 0)
-            {
-                if (mathindex.randomBool() && mathindex.randomBool())
-                {
-                    deviations -= 1;
-
-                    chosenposibility = orderedpossibilities[orderedpossibilities.Count - 1].position;
-
-                } 
-            }
-
-            roomsonlevel[chosenposibility.x][chosenposibility.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
-
-            roomorder[chosenposibility] = currentroomnum;
-
-            currentroom = chosenposibility;
-        }
-
-        // the purpose of this dict is to cache the previously used rooms and restart the whole thing if it didn't work
-        Dictionary<position, bool> ouestcache = new();
-
-        for (int i = 0; i < specialRooms; i++)
-        {
-            var added = false;
-
-            while (!added)
-            {
-                var ouest = roomorder.ToList()[Random.Range(0, roomorder.Count - 1)].Key;
-
-                if (ouestcache.ContainsKey(ouest)) { continue; }
-
-                var x = ouest.x;
-                var y = ouest.y;
-
-                var roomtbp = roomsonlevel[x][y];
-
-                if (y == 0 && x == 0) { continue; }
-
-                List<position> npossibilities = new List<position>() { };
-
-                npossibilities.Add(p(x, y + 1));
-
-                npossibilities.Add(p(x, y - 1));
-
-                npossibilities.Add(p(x + 1, y));
-                npossibilities.Add(p(x - 1, y));
-
-                int newx = -1;
-                int newy = -1;
-
-
-                for (int j = 0; j < npossibilities.Count; j++) // loop through possible rooms
-                {
-
-                    if (!roomorder.ContainsKey(npossibilities[j])) // Check if room is in bounds
+                    if (outofbounds(boundX, boundY, posibility))
                     {
-                        newx = npossibilities[j].x;
-                        newy = npossibilities[j].y;
-                        break;
+                        modifiedpossibilities.Remove(posibility);
+                    }
+
+                    if (roomorder.ContainsKey(posibility))
+                    {
+                        modifiedpossibilities.Remove(posibility);
                     }
                 }
 
-                var rmtype = mathindex.randomBool();
+                List<posint> possibilitywithdist = new();
 
-                if (storesAllowed <= 0)
+                foreach (position posibility in modifiedpossibilities)
                 {
-                    rmtype = false;
+                    possibilitywithdist.Add(new posint { position = posibility, integer = distbetweenpointsint(posibility, endpos) });
                 }
 
-                else
+                List<posint> orderedpossibilities = possibilitywithdist.OrderBy(o => o.integer).ToList();
+                if (orderedpossibilities.Count <= 0) { break; }
+                position chosenposibility = orderedpossibilities[0].position;
+
+                if (orderedpossibilities.Contains(new posint { position = endpos, integer = 0 }))
                 {
-                    if (rmtype == true)
+                    roomsonlevel[endpos.x][endpos.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
+                    break;
+                }
+
+                if (deviations > 0)
+                {
+                    if (mathindex.randomBool() && mathindex.randomBool())
                     {
-                        storesAllowed -= 1;
+                        deviations -= 1;
+
+                        chosenposibility = orderedpossibilities[orderedpossibilities.Count - 1].position;
+
                     }
                 }
 
-                ouestcache.Add(ouest, true);
-                if (outofbounds(boundX, boundY, ouest))
+                roomsonlevel[chosenposibility.x][chosenposibility.y] = r(index.idx.Player.gameObject, roomtype.start, currentroomnum);
+
+                roomorder[chosenposibility] = currentroomnum;
+
+                currentroom = chosenposibility;
+            }
+
+            // the purpose of this dict is to cache the previously used rooms and restart the whole thing if it didn't work
+            Dictionary<position, bool> ouestcache = new();
+
+            for (int i = 0; i < specialRooms; i++)
+            {
+                var added = false;
+
+                while (!added)
                 {
-                    continue;
+                    var ouest = roomorder.ToList()[Random.Range(0, roomorder.Count - 1)].Key;
+
+                    if (ouestcache.ContainsKey(ouest)) { continue; }
+
+                    var x = ouest.x;
+                    var y = ouest.y;
+
+                    var roomtbp = roomsonlevel[x][y];
+
+                    if (y == 0 && x == 0) { continue; }
+
+                    List<position> npossibilities = new List<position>() { };
+
+                    npossibilities.Add(p(x, y + 1));
+
+                    npossibilities.Add(p(x, y - 1));
+
+                    npossibilities.Add(p(x + 1, y));
+                    npossibilities.Add(p(x - 1, y));
+
+                    int newx = -1;
+                    int newy = -1;
+
+
+                    for (int j = 0; j < npossibilities.Count; j++) // loop through possible rooms
+                    {
+
+                        if (!roomorder.ContainsKey(npossibilities[j])) // Check if room is in bounds
+                        {
+                            newx = npossibilities[j].x;
+                            newy = npossibilities[j].y;
+                            break;
+                        }
+                    }
+
+                    var rmtype = mathindex.randomBool();
+
+                    if (storesAllowed <= 0)
+                    {
+                        rmtype = false;
+                    }
+
+                    else
+                    {
+                        if (rmtype == true)
+                        {
+                            storesAllowed -= 1;
+                        }
+                    }
+
+                    ouestcache.Add(ouest, true);
+                    if (outofbounds(boundX, boundY, ouest))
+                    {
+                        continue;
+                    }
+
+                    roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
+
+                    var prefab = mathindex.randomroom(spcdict[rmtype]);
+                    if (newy <= roomsonlevel.Count || newx <= roomsonlevel[0].Count) { break; }
+                    ;
+                    print(newx);
+                    print(newy);
+                    roomsonlevel[newx][newy] = r(prefab, spctydict[rmtype], spctyindict[spctydict[rmtype]]);
+                    // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
+
+                    added = true;
+
                 }
-
-                roomorder[p(newx, newy)] = spctyindict[spctydict[rmtype]];
-
-                var prefab = mathindex.randomroom(spcdict[rmtype]);
-                if (newy <= roomsonlevel.Count || newx <= roomsonlevel[0].Count) { break; };
-                print(newx);
-                print(newy);
-                roomsonlevel[newx][newy] = r(prefab, spctydict[rmtype], spctyindict[spctydict[rmtype]]);
-                // raandomly choses room of roomtype room if room is room then store elsre not store and therefore item
-
-                added = true;
 
             }
 
+            // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
+
+            return new() { rooms = roomsonlevel };
+
         }
-
-        // randomly choose from prefabs and add special room in random direction untill specialrooms is 0
-
-        return new() { rooms = roomsonlevel };
-
-
+        catch { return generateFloor(idx, storerooms, itemrooms); }
     }
 
 }

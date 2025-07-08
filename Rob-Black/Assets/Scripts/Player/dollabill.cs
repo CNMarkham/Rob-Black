@@ -4,15 +4,38 @@ using UnityEngine;
 
 public class dollabill : BasicPickupObject
 {
-    //TODO: Set the equals to the actual value amount. For example, one = 1, five = 5, ten = 10, etc
     public enum denomonation
     {
-        hundred = 0,
-        fifty = 1,
-        tweny = 2,
-        ten = 3,
-        five = 4,
-        one = 5
+        hundred = 100,
+        fifty = 50,
+        tweny = 20,
+        ten = 10,
+        five = 5,
+        one = 1
+    }
+
+    public static int denomonationtoindex(denomonation den)
+    {
+        switch (den)
+        {
+            case denomonation.hundred:
+                return 0;
+
+            case denomonation.fifty:
+                return 1;
+
+            case denomonation.tweny:
+                return 2;
+
+            case denomonation.ten:
+                return 3;
+
+            case denomonation.five:
+                return 4;
+
+            default:
+                return 5;
+        }
     }
 
     public denomonation den;

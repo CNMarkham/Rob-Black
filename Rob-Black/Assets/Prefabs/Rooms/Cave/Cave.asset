@@ -18,6 +18,8 @@ MonoBehaviour:
   flashlightEnabled: 0
   normalRooms:
   - {fileID: 8019420992770663888, guid: 17340bb380aa8ae429447a76aebd1e22, type: 3}
+  - {fileID: 8019420992770663888, guid: 3e327ab82fe22c8438c2cad3e433963a, type: 3}
+  - {fileID: 8019420992770663888, guid: 78ed9a581ae573640abd0f1b9e263b1f, type: 3}
   bossRooms:
   - {fileID: 7605402338380311413, guid: ef87a473c45655b4faace8ccad1087e8, type: 3}
   storeRooms:

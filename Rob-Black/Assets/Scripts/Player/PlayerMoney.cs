@@ -15,39 +15,9 @@ public class PlayerMoney : MonoBehaviour
 
     }
 
-    //TODO: After making change to the dollabill enum, use the enum directly by casting to an integer.
     public void addMoney(dollabill.denomonation money) // Adds money by denomonation e.g. twenty gives += 20 money
     {
-        switch (money)
-        {
-            case dollabill.denomonation.hundred:
-                addMoney(100);
-                break;
-
-            case dollabill.denomonation.fifty:
-                addMoney(50);
-                break;
-
-            case dollabill.denomonation.tweny:
-                addMoney(20);
-                break;
-
-            case dollabill.denomonation.ten:
-                addMoney(10);
-                break;
-
-            case dollabill.denomonation.five:
-                addMoney(5);
-                break;
-
-            case dollabill.denomonation.one:
-                addMoney(1);
-                break;
-
-            default:
-                break;
-        }
-
+        addMoney((int)money);
     }
 
     // Update is called once per frame

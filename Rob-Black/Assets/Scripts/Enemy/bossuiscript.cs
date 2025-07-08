@@ -31,17 +31,8 @@ public class bossuiscript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //TODO: bossbarvisible = bossObject != null
-        //OR combine with following if else
-        if (bossObject == null)
-        {
-            bossbarvisible = false;
-        }
 
-        else
-        {
-            bossbarvisible = true;
-        }
+        bossbarvisible = bossObject != null;
 
         if (!bossbarvisible)
         {

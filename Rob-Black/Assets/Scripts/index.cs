@@ -57,6 +57,8 @@ public class index : MonoBehaviour
 
     public AudioSource gunaudio;
 
+    public GameObject reloadtext;
+
     public void updatefloor(int floor)
     {
         currentdifficulty = floornumtodiff(floor);

@@ -14,13 +14,6 @@ public class healthBarScript : MonoBehaviour
     public float[] maxgreenwidthtohealthratio = new float[2];
     public float[] maxblackwidthtohealthratio = new float[2];
 
-    // Start is called before the first frame update
-    //TODO: Empty Start?
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update() // changes size of green bar and black bar relative to eachother;
     {

@@ -39,11 +39,13 @@ public class GunUIManager : MonoBehaviour
         if (Gun.isReloading)
         {
             Munitions.text = "Reloading...";
+            index.idx.reloadtext.SetActive(false);
         }
 
         else if (ammoleft==0)
         {
             Munitions.text = "Reload!";
+            index.idx.reloadtext.SetActive(true);
         }
 
         else

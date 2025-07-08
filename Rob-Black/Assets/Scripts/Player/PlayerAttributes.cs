@@ -79,7 +79,6 @@ public class PlayerAttributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (playerGuns.Count != currentGunIndex) { currentGunIndex = 0; }
         if (playerGuns.Count != 0) { Gun = playerGuns[currentGunIndex]; }
 
         var scrollDeltaY = (int)Input.mouseScrollDelta.y;
@@ -104,24 +103,12 @@ public class PlayerAttributes : MonoBehaviour
         if (currentRoom != null)
         {
             RoomFunction rf = currentRoom.GetComponent<RoomFunction>();
-            //TODO: Reduce nesting using && or || conditions
-            if (rf != null)
+            
+            if (rf != null && rf.roomFinished != true)
             {
-                if (rf.roomFinished != true)
-                {
-                    KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player, currentRoom.GetComponent<BoxCollider>(), currentRoom, 1.05f);
-                }
+                KeepEnemiesInRoom.keepEntityInRoom(index.idx.Player, currentRoom.GetComponent<BoxCollider>(), currentRoom, 1.05f);
             }
         }
   
-    }
-
-    //TOOD: Still used?
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Room"))
-        {
-            //currentRoom = other.gameObject;
-        }
     }
 }
