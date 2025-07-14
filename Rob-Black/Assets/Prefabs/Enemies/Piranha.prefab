@@ -141,7 +141,7 @@ MonoBehaviour:
   isRecoiling: 0
   dm: {fileID: 3464107615479262516}
   Player: {fileID: 0}
-  speed: 7
+  speed: 4
   touchingPlayer: 0
   stopLookingAt: 0
   rb: {fileID: 7818435507466775051}

@@ -16,6 +16,7 @@ public class startuputilities : MonoBehaviour
     // Could be changed to be a single method, which itself is called from the button, but there's more friction when trying to make modifications to the scene
     public void backtomainmenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Startup", LoadSceneMode.Single);
     }
 

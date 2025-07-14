@@ -43,9 +43,9 @@ public class RoomInit : MonoBehaviour
         int currentLevel = PlayerFloorCount.floorNumber;
         if (currentLevel > spawnLists.Count) { currentLevel = spawnLists.Count - 1; }
 
-        for (int i = 0; i < Mathf.Max(enemySpawnNumber - (currentLevel==1 ? 5 : 0), 1); i++)
+        for (int i = 0; i < Mathf.Min(enemySpawnNumber, 5); i++)
         {
-            yield return new WaitForSeconds(spawnRate + mathindex.randomSign() * Random.Range(0, spawnRateAmplitude));
+            // yield return new WaitForSeconds(spawnRate + mathindex.randomSign() * Random.Range(0, spawnRateAmplitude));
 
             GameObject enemy = mathindex.randomChoice(esm.EnemyTypes);
 
@@ -62,6 +62,7 @@ public class RoomInit : MonoBehaviour
 
         StartCoroutine(waitforenemiestodie());
 
+        yield return new WaitForEndOfFrame();
 
     }
 

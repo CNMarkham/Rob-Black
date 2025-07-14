@@ -14,6 +14,12 @@ public class pause : MonoBehaviour
     void setcanshoot(bool value)
     {
 
+        if (index.idx.playerAttributes.Gun == null)
+        {
+            return;
+        }
+
+
         BasicGun bg = index.idx.playerAttributes.Gun.GetComponent<BasicGun>();
         if (bg!=null) bg.canShoot = value;
 
@@ -28,10 +34,22 @@ public class pause : MonoBehaviour
             paused = !paused;
             synced = false;
         }
-        //TODO: Consider making a button in the pause menu instead, since escape is also how the player exits fullscreen in WebGL
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+
+            foreach (GameObject go in tobeinvisible)
+            {
+                go.SetActive(false);
+            }
+
+            paused = false;
+            synced = true;
+
+            Time.timeScale = 1;
+            
             SceneManager.LoadScene("Startup");
+
         }
 
         if (!synced)

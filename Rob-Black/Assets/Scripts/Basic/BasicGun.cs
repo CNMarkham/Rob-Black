@@ -146,9 +146,32 @@ public class BasicGun : MonoBehaviour
         bulletScript.rotateDegrees(Random.Range(-bulletSpreadDegree, bulletSpreadDegree));
         bulletScript.updateRotation();
 
-        index.idx.gunaudio.Play();
+        if (bulletsPerShot > 1)
+        {
+            if (mathindex.randomBool())
+            {
+                index.idx.shotgunaudio.Play();
+            }
+            else
+            {
+                index.idx.shotgunaudio2.Play();
+            }
 
-        bulletScript.enabled = true;
+        }
+
+        else
+        {
+            if (mathindex.randomBool())
+            {
+                index.idx.regulargunaudio.Play();
+            }
+            else
+            {
+                index.idx.regulargunaudio2.Play();
+            }
+        }
+
+            bulletScript.enabled = true;
     }
 
     public IEnumerator reload() // reloads gun when run

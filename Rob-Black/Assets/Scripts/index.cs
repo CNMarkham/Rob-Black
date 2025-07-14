@@ -55,7 +55,10 @@ public class index : MonoBehaviour
 
     public Environment defaultenvironment;
 
-    public AudioSource gunaudio;
+    public AudioSource regulargunaudio;
+    public AudioSource regulargunaudio2;
+    public AudioSource shotgunaudio;
+    public AudioSource shotgunaudio2;
 
     public GameObject reloadtext;
 

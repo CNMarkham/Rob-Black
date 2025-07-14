@@ -380,10 +380,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e38f1fbf7489ead43a5389c4ec103e4a, type: 2}
   enemySpawns:
   - {fileID: 8521278581061075383}
-  - {fileID: 2965744017791483928}
-  - {fileID: 5897067056566708381}
-  - {fileID: 6632931839617721998}
-  - {fileID: 862282696685158909}
   RoomFunction: {fileID: 3990250419196121544}
   enemySpawnNumber: 10
   spawnRate: 1
@@ -1074,29 +1070,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
---- !u!4 &862282696685158909 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 313000796680888283, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
-  m_PrefabInstance: {fileID: 1130246395282234918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1258789601769723568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222367410093426838, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
-  m_PrefabInstance: {fileID: 1130246395282234918}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2965744017791483928 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2776189220551990846, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
-  m_PrefabInstance: {fileID: 1130246395282234918}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5897067056566708381 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6807725361559221947, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
-  m_PrefabInstance: {fileID: 1130246395282234918}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6632931839617721998 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6026829253163382952, guid: 2b4fad94b2c3f844681111adf11f4f6c, type: 3}
   m_PrefabInstance: {fileID: 1130246395282234918}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8521278581061075383 stripped
