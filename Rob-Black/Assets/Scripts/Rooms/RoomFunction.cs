@@ -39,11 +39,16 @@ public class RoomFunction : MonoBehaviour
     {
         if (stairs != null)
         {
-
-            if (index.idx.bossuiscript.bossObject == null && roomStarted)
+            try
             {
-                roomFinished = true;
+                if (index.idx.bossuiscript.bossObject == null && roomStarted)
+                {
+                    roomFinished = true;
+                }
             }
+
+            catch { }
+
 
         }
 

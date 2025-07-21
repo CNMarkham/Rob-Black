@@ -35,7 +35,7 @@ public class RoomInit : MonoBehaviour
 
         RoomFunction.lockWholeRoom = true;
 
-        print(spawnLists[0].environment);
+        //print(spawnLists[0].environment);
 
         EnemySpawnModule esm = index.idx.filterandchoosemodule(spawnLists, null, index.idx.floormanager.setenvironment.environment); // (spawnlists, ..., ...)
         // acctually implement current env stuff
